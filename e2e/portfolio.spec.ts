@@ -61,6 +61,15 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
     page.getByRole("heading", { name: "Matthew Clark", level: 1 }),
   ).toBeVisible();
 
+  const heroCaseStudyLink = page.getByRole("link", {
+    name: "Explore the case study",
+    exact: true,
+  });
+  await expect(heroCaseStudyLink).toHaveAttribute(
+    "href",
+    `${basePath}/work/pay-period-planner/`,
+  );
+
   const caseStudyLink = page.getByRole("link", {
     name: "Read case study",
     exact: true,
@@ -88,6 +97,15 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
     goodreadsLink.locator("xpath=ancestor::*[@id='contact']"),
   ).toHaveCount(1);
 
+  const emailLink = page.getByRole("link", {
+    name: "Email",
+    exact: true,
+  });
+  await expect(emailLink).toHaveAttribute("href", "mailto:everdein@gmail.com");
+  await expect(
+    emailLink.locator("xpath=ancestor::*[@id='contact']"),
+  ).toHaveCount(1);
+
   const resumeResponse = await request.get("./matthew-clark-resume.pdf");
   expect(resumeResponse.ok()).toBe(true);
   expect(resumeResponse.headers()["content-type"]).toContain("application/pdf");
@@ -99,6 +117,29 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
   await expect(
     page.getByRole("heading", { name: "Pay Period Planner", level: 1 }),
   ).toBeVisible();
+
+  await expect
+    .poll(() =>
+      page.evaluate(() => {
+        const ledger = document.querySelector(".star-ledger");
+        const actions = document.querySelector(".case-study-action-list");
+
+        if (
+          !(ledger instanceof HTMLElement) ||
+          !(actions instanceof HTMLElement)
+        ) {
+          return Number.POSITIVE_INFINITY;
+        }
+
+        const ledgerBounds = ledger.getBoundingClientRect();
+        const actionBounds = actions.getBoundingClientRect();
+        const ledgerCenter = ledgerBounds.left + ledgerBounds.width / 2;
+        const actionCenter = actionBounds.left + actionBounds.width / 2;
+
+        return Math.abs(ledgerCenter - actionCenter);
+      }),
+    )
+    .toBeLessThanOrEqual(1);
 
   const overview = page.getByRole("img", {
     name: "Pay Period Planner household overview with projection, balances, cash flow, and calendar summaries",
