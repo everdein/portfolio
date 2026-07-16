@@ -63,5 +63,5 @@ server process, runtime secrets, authentication, or persistence.
 - [Pay Period Planner](https://github.com/everdein/pay-period-planner)
 - [Pay Period Planner case study](https://github.com/everdein/pay-period-planner/blob/main/docs/portfolio-case-study.md)
 - [Pay Period Planner engineering evidence](https://github.com/everdein/pay-period-planner/blob/main/docs/engineering-evidence.md)
-- [DSA Dojo](https://github.com/everdein/dsa)
+- [DSA Dojo](https://github.com/everdein/dsa-dojo)
 - [GitHub profile](https://github.com/everdein)

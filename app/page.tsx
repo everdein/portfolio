@@ -79,12 +79,23 @@ export default function Home() {
               Accessible frontend systems. Production-minded full-stack work.
             </p>
           </div>
-          <div className="intro-note">
-            <span className="note-label">Working principle / 01</span>
-            <p>
-              I turn complex product behavior into understandable interfaces,
-              architecture, and engineering evidence.
-            </p>
+          <div className="hero-aside">
+            <div className="hero-portrait">
+              <Image
+                src={`${basePath}/images/matthew-clark.jpg`}
+                alt="Black-and-white portrait of Matthew Clark"
+                fill
+                priority
+                sizes="(max-width: 1040px) 360px, 24vw"
+              />
+            </div>
+            <div className="intro-note">
+              <span className="note-label">Working principle</span>
+              <p>
+                I turn complex product behavior into understandable interfaces,
+                architecture, and engineering evidence.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -211,7 +222,7 @@ export default function Home() {
                 <span>Clarity</span>
               </div>
               <a
-                href="https://github.com/everdein/dsa"
+                href="https://github.com/everdein/dsa-dojo"
                 {...externalLinkProps}
               >
                 View repository
@@ -228,7 +239,7 @@ export default function Home() {
           <div className="approach-grid">
             <div>
               <span className="note-label">02 / Approach</span>
-              <h2 id="approach-heading">Built to be understood.</h2>
+              <h2 id="approach-heading">Built to be understood</h2>
             </div>
             <div className="approach-item">
               <strong>Product behavior</strong>
@@ -282,7 +293,7 @@ export default function Home() {
         >
           <div>
             <span className="note-label">04 / Contact</span>
-            <h2 id="contact-heading">Start a conversation.</h2>
+            <h2 id="contact-heading">Start a conversation</h2>
           </div>
           <div className="section-copy">
             <p>
