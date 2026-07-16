@@ -16,8 +16,13 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /Pay Period Planner/);
   assert.match(html, /DSA Dojo/);
   assert.match(html, /https:\/\/github\.com\/everdein\/pay-period-planner/);
+  assert.match(html, /https:\/\/github\.com\/everdein\/dsa-dojo/);
   assert.match(html, /https:\/\/linkedin\.com\/in\/everdein/);
   assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/og\.png/);
+  assert.match(html, /Black-and-white portrait of Matthew Clark/);
+  assert.match(html, /Working principle/);
+  assert.doesNotMatch(html, /Working principle \/ 01/);
+  assert.match(html, /Start a conversation<\/h2>/);
   assert.match(html, /Toggle color theme/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Codex is building/i);
 
@@ -25,6 +30,7 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, new RegExp(`${basePath}/images/pay-period-planner-overview\\.png`));
   await access(new URL(".nojekyll", outputRoot));
   await access(new URL("og.png", outputRoot));
+  await access(new URL("images/matthew-clark.jpg", outputRoot));
 });
 
 test("keeps the static site focused and free of server runtime", async () => {
@@ -48,5 +54,6 @@ test("keeps the static site focused and free of server runtime", async () => {
   await assert.rejects(access(new URL("worker", root)));
   await assert.rejects(access(new URL(".openai", root)));
   await access(new URL("public/images/pay-period-planner-overview.png", root));
+  await access(new URL("public/images/matthew-clark.jpg", root));
   await access(new URL("public/.nojekyll", root));
 });
