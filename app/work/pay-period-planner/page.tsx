@@ -453,7 +453,7 @@ export default function PayPeriodPlannerCaseStudy() {
               </div>
               <div className="case-study-section-copy">
                 <p>
-                  The Pay Period Planner&apos;s {payPeriodPlannerEvidenceBaseline}
+                  The Pay Period Planner&apos;s {payPeriodPlannerEvidenceBaseline}{" "}
                   baseline combines local unit, integration, PostgreSQL, live-browser,
                   accessibility, responsive, and dependency checks. Hosted CI and
                   CodeQL remain commit-specific evidence.

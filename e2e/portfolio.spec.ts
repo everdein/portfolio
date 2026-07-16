@@ -117,6 +117,12 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
   await expect(
     page.getByRole("heading", { name: "Pay Period Planner", level: 1 }),
   ).toBeVisible();
+  await expect(
+    page.getByText(
+      "The Pay Period Planner's July 15, 2026 baseline combines local unit",
+      { exact: false },
+    ),
+  ).toBeVisible();
 
   await expect
     .poll(() =>
