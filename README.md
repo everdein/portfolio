@@ -22,10 +22,10 @@ The site uses the Dual Canvas visual system:
 
 - React 19
 - TypeScript
-- vinext and Vite
-- Cloudflare-compatible static delivery through Sites
-- Node's built-in test runner for rendered HTML checks
-- ESLint and GitHub Actions
+- Next.js static export
+- GitHub Pages delivery through the required CI workflow
+- Node's built-in test runner for exported HTML checks
+- ESLint and GitHub Actions verification
 
 The first version intentionally has no authentication, database, contact form,
 analytics, or chatbot. Those features should be added only when they serve a
@@ -47,9 +47,16 @@ npm run lint
 npm test
 ```
 
-`npm test` creates a production build and verifies the rendered portfolio
-content, metadata, public links, theme support, and removal of starter-only
-surfaces.
+`npm test` creates a static production export and verifies its content,
+metadata, public links, theme support, GitHub Pages asset paths, and absence of
+server-only runtime surfaces.
+
+## Deployment
+
+Pull requests run the same static export checks without publishing. A passing
+push to `main` uploads the generated `out/` directory and deploys it to
+[GitHub Pages](https://everdein.github.io/portfolio/). The portfolio contains no
+server process, runtime secrets, authentication, or persistence.
 
 ## Content Sources
 

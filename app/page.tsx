@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { ThemeToggle } from "./ThemeToggle";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const externalLinkProps = {
   target: "_blank",
   rel: "noreferrer",
@@ -142,7 +144,7 @@ export default function Home() {
               </div>
               <div className="project-image">
                 <Image
-                  src="/images/pay-period-planner-overview.png"
+                  src={`${basePath}/images/pay-period-planner-overview.png`}
                   alt="Pay Period Planner household overview with projection, balances, cash flow, and calendar summaries"
                   fill
                   priority

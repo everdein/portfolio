@@ -34,3 +34,12 @@ npm test
 ```
 
 Update rendered HTML tests when public content or metadata changes.
+
+## Hosting
+
+- The site is a Next.js static export deployed to GitHub Pages.
+- Keep `/portfolio` base-path handling aligned across `next.config.ts`, page
+  assets, metadata, tests, and `.github/workflows/ci.yml`.
+- Pull requests verify but do not deploy. Only a passing `main` workflow may
+  publish the `out/` artifact.
+- Do not add server-only Next.js APIs unless the hosting decision changes.
