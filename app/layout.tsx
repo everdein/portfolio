@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import "./globals.css";
 
 const themeScript = `
@@ -22,44 +21,39 @@ const themeScript = `
 const title = "Matthew Clark | Software Engineer";
 const description =
   "Engineering portfolio for Matthew Clark, featuring accessible frontend systems, production-minded full-stack work, and verifiable project evidence.";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  "https://everdein.github.io/portfolio";
+const socialImage = `${siteUrl}/og.png`;
 
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host =
-    requestHeaders.get("x-forwarded-host") ??
-    requestHeaders.get("host") ??
-    "localhost:3000";
-  const protocol =
-    requestHeaders.get("x-forwarded-proto") ??
-    (host.startsWith("localhost") || host.startsWith("127.0.0.1")
-      ? "http"
-      : "https");
-  const socialImage = `${protocol}://${host}/og.png`;
-
-  return {
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  alternates: {
+    canonical: siteUrl,
+  },
+  openGraph: {
+    type: "website",
+    url: siteUrl,
     title,
     description,
-    openGraph: {
-      type: "website",
-      title,
-      description,
-      images: [
-        {
-          url: socialImage,
-          width: 1200,
-          height: 630,
-          alt: "Matthew Clark engineering portfolio",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [socialImage],
-    },
-  };
-}
+    images: [
+      {
+        url: socialImage,
+        width: 1200,
+        height: 630,
+        alt: "Matthew Clark engineering portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [socialImage],
+  },
+};
 
 export default function RootLayout({
   children,
