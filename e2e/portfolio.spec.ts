@@ -70,6 +70,24 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
     `${basePath}/work/pay-period-planner/`,
   );
 
+  const resumeLink = page.getByRole("link", {
+    name: "View resume (opens in a new tab)",
+    exact: true,
+  });
+  await expect(resumeLink).toHaveAttribute("target", "_blank");
+
+  const goodreadsLink = page.getByRole("link", {
+    name: "Goodreads (opens in a new tab)",
+    exact: true,
+  });
+  await expect(goodreadsLink).toHaveAttribute(
+    "href",
+    "https://www.goodreads.com/everdein",
+  );
+  await expect(
+    goodreadsLink.locator("xpath=ancestor::*[@id='contact']"),
+  ).toHaveCount(1);
+
   const resumeResponse = await request.get("./matthew-clark-resume.pdf");
   expect(resumeResponse.ok()).toBe(true);
   expect(resumeResponse.headers()["content-type"]).toContain("application/pdf");
@@ -122,6 +140,19 @@ test("persists the selected color theme", async ({ page }) => {
       exact: true,
     }),
   ).toHaveAttribute("aria-pressed", "true");
+});
+
+test("keeps primary action text readable on hover", async ({ page }) => {
+  await page.goto(homePath);
+
+  const caseStudyLink = page.getByRole("link", {
+    name: "Read case study",
+    exact: true,
+  });
+  await caseStudyLink.hover();
+
+  await expect(caseStudyLink).toHaveCSS("color", "rgb(255, 255, 255)");
+  await expect(caseStudyLink).toHaveCSS("background-color", "rgb(16, 72, 51)");
 });
 
 test("contains both routes across supported portfolio widths", async ({ page }) => {

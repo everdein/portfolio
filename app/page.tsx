@@ -84,7 +84,7 @@ export default function Home() {
                 <a className="primary-link" href="#work">
                   Explore the planner
                 </a>
-                <a href={resumeHref}>View resume</a>
+                <ExternalLink href={resumeHref}>View resume</ExternalLink>
               </div>
             </div>
             <div className="hero-portrait">
@@ -307,9 +307,9 @@ export default function Home() {
                 interface, in the architecture, and in the evidence that shows
                 the system works.
               </p>
-              <a className="text-link" href={resumeHref}>
+              <ExternalLink className="text-link" href={resumeHref}>
                 Read the full resume
-              </a>
+              </ExternalLink>
             </div>
           </div>
         </section>
@@ -338,7 +338,10 @@ export default function Home() {
               <ExternalLink href="https://github.com/everdein">
                 GitHub
               </ExternalLink>
-              <a href={resumeHref}>Resume</a>
+              <ExternalLink href={resumeHref}>Resume</ExternalLink>
+              <ExternalLink href="https://www.goodreads.com/everdein">
+                Goodreads
+              </ExternalLink>
             </div>
           </div>
         </section>
@@ -346,9 +349,6 @@ export default function Home() {
         <footer>
           <span>Matthew Clark / Engineering portfolio</span>
           <div className="footer-links">
-            <ExternalLink href="https://www.goodreads.com/everdein">
-              Goodreads
-            </ExternalLink>
             <a href="#top">Back to top</a>
           </div>
         </footer>
