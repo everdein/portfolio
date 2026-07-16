@@ -492,10 +492,23 @@ h1 {
   color: #ffffff;
 }
 
+.hero-actions .primary-link:hover,
+.case-study-actions .primary-link:hover,
+.project-links .primary-link:hover,
+.contact-links .primary-link:hover {
+  border-color: var(--forest-strong);
+  background: var(--forest-strong);
+  color: #ffffff;
+}
+
 html[data-theme="dark"] .hero-actions .primary-link,
 html[data-theme="dark"] .case-study-actions .primary-link,
 html[data-theme="dark"] .project-links .primary-link,
-html[data-theme="dark"] .contact-links .primary-link {
+html[data-theme="dark"] .contact-links .primary-link,
+html[data-theme="dark"] .hero-actions .primary-link:hover,
+html[data-theme="dark"] .case-study-actions .primary-link:hover,
+html[data-theme="dark"] .project-links .primary-link:hover,
+html[data-theme="dark"] .contact-links .primary-link:hover {
   color: #101412;
 }
 

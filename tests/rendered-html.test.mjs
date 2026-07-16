@@ -7,6 +7,8 @@ const outputRoot = new URL("../out/", import.meta.url);
 
 test("exports the portfolio content and metadata", async () => {
   const html = await readFile(new URL("index.html", outputRoot), "utf8");
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
   assert.match(html, /<title>Matthew Clark \| Lead Software Engineer<\/title>/i);
   assert.match(html, /<h1[^>]*>Matthew Clark<\/h1>/i);
   assert.match(html, /I build understandable systems for complex product behavior/);
@@ -20,6 +22,16 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /https:\/\/github\.com\/everdein\/dsa-dojo/);
   assert.match(html, /https:\/\/linkedin\.com\/in\/everdein/);
   assert.match(html, /https:\/\/www\.goodreads\.com\/everdein/);
+  assert.match(
+    html,
+    /id="contact"[\s\S]*https:\/\/www\.goodreads\.com\/everdein[\s\S]*<footer/,
+  );
+  assert.match(
+    html,
+    new RegExp(
+      `href="${basePath}/matthew-clark-resume\\.pdf" target="_blank"`,
+    ),
+  );
   assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/og\.png/);
   assert.match(html, /Black-and-white portrait of Matthew Clark/);
   assert.match(html, /Working principle/);
@@ -31,7 +43,6 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /aria-pressed="false"/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Codex is building/i);
 
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   assert.match(html, new RegExp(`${basePath}/images/pay-period-planner-overview\\.png`));
   assert.match(html, new RegExp(`${basePath}/work/pay-period-planner/`));
   assert.match(html, new RegExp(`${basePath}/matthew-clark-resume\\.pdf`));
