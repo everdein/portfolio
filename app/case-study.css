@@ -264,7 +264,7 @@
 
 .case-study-action-list {
   max-width: 860px;
-  margin-right: 0;
+  margin-right: auto;
   padding: 0;
   list-style: none;
 }

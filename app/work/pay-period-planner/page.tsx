@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ExternalLink } from "../../ExternalLink";
+import {
+  payPeriodPlannerEvidence,
+  payPeriodPlannerEvidenceBaseline,
+} from "../../payPeriodPlannerEvidence";
 import { ThemeToggle } from "../../ThemeToggle";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -59,15 +63,6 @@ const architectureSteps = [
     name: "PostgreSQL + Flyway",
     detail: "Identity, relational financial records, ownership, and audit history",
   },
-];
-
-const evidenceItems = [
-  { value: "119", label: "Frontend tests", detail: "20 files" },
-  { value: "63", label: "Backend tests", detail: "12 classes" },
-  { value: "28", label: "PostgreSQL tests", detail: "8 classes" },
-  { value: "6", label: "Browser scenarios", detail: "3 specifications" },
-  { value: "2", label: "Axe scenarios", detail: "WCAG A/AA rules" },
-  { value: "4", label: "Responsive widths", detail: "320px through 1024px" },
 ];
 
 export default function PayPeriodPlannerCaseStudy() {
@@ -458,15 +453,16 @@ export default function PayPeriodPlannerCaseStudy() {
               </div>
               <div className="case-study-section-copy">
                 <p>
-                  The July 15, 2026 baseline combines local unit, integration,
-                  PostgreSQL, live-browser, accessibility, responsive, and dependency
-                  checks. Hosted CI and CodeQL remain commit-specific evidence.
+                  The Pay Period Planner&apos;s {payPeriodPlannerEvidenceBaseline}
+                  baseline combines local unit, integration, PostgreSQL, live-browser,
+                  accessibility, responsive, and dependency checks. Hosted CI and
+                  CodeQL remain commit-specific evidence.
                 </p>
               </div>
             </div>
 
             <div className="case-study-evidence-grid">
-              {evidenceItems.map((item) => (
+              {payPeriodPlannerEvidence.map((item) => (
                 <div key={item.label}>
                   <strong>{item.value}</strong>
                   <span>{item.label}</span>

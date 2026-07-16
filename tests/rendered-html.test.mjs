@@ -17,10 +17,14 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /id="about"/);
   assert.match(html, /id="contact"/);
   assert.match(html, /Pay Period Planner/);
+  assert.match(html, /119[\s\S]{0,80}frontend tests/);
+  assert.match(html, /63[\s\S]{0,80}backend tests/);
+  assert.match(html, /28[\s\S]{0,80}PostgreSQL integration tests/);
   assert.match(html, /DSA Dojo/);
   assert.match(html, /https:\/\/github\.com\/everdein\/pay-period-planner/);
   assert.match(html, /https:\/\/github\.com\/everdein\/dsa-dojo/);
   assert.match(html, /https:\/\/linkedin\.com\/in\/everdein/);
+  assert.match(html, /href="mailto:everdein@gmail\.com"[^>]*>Email<\/a>/);
   assert.match(html, /https:\/\/www\.goodreads\.com\/everdein/);
   assert.match(
     html,
@@ -45,6 +49,12 @@ test("exports the portfolio content and metadata", async () => {
 
   assert.match(html, new RegExp(`${basePath}/images/pay-period-planner-overview\\.png`));
   assert.match(html, new RegExp(`${basePath}/work/pay-period-planner/`));
+  assert.match(
+    html,
+    new RegExp(
+      `href="${basePath}/work/pay-period-planner/"[^>]*>Explore the case study</a>`,
+    ),
+  );
   assert.match(html, new RegExp(`${basePath}/matthew-clark-resume\\.pdf`));
   assert.match(html, new RegExp(`${basePath}/icon\\.svg\\?`));
   await access(new URL(".nojekyll", outputRoot));
@@ -68,6 +78,23 @@ test("exports the Pay Period Planner case study and approved evidence", async ()
   assert.match(html, /Situation/);
   assert.match(html, /Versioned aggregate replacement/);
   assert.match(html, /Claims with scope and limits/);
+  assert.match(
+    html,
+    /Pay Period Planner[\s\S]{0,120}July 15, 2026[\s\S]{0,80}baseline/,
+  );
+  for (const [value, label] of [
+    [119, "Frontend tests"],
+    [63, "Backend tests"],
+    [28, "PostgreSQL tests"],
+    [6, "Browser scenarios"],
+    [2, "Axe scenarios"],
+    [4, "Responsive widths"],
+  ]) {
+    assert.match(
+      html,
+      new RegExp(`<strong>${value}</strong><span>${label}</span>`),
+    );
+  }
   assert.match(html, /Synthetic portfolio data only/);
   assert.match(html, /https:\/\/github\.com\/everdein\/pay-period-planner/);
   assert.match(

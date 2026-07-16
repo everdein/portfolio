@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { ExternalLink } from "./ExternalLink";
+import { payPeriodPlannerEvidenceHighlights } from "./payPeriodPlannerEvidence";
 import { ThemeToggle } from "./ThemeToggle";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const caseStudyHref = `${basePath}/work/pay-period-planner/`;
 const resumeHref = `${basePath}/matthew-clark-resume.pdf`;
 
 export default function Home() {
@@ -81,8 +83,8 @@ export default function Home() {
                 production-minded Spring Boot and PostgreSQL delivery.
               </p>
               <div className="hero-actions">
-                <a className="primary-link" href="#work">
-                  Explore the planner
+                <a className="primary-link" href={caseStudyHref}>
+                  Explore the case study
                 </a>
                 <ExternalLink href={resumeHref}>View resume</ExternalLink>
               </div>
@@ -125,7 +127,7 @@ export default function Home() {
               <div className="project-links" aria-label="Pay Period Planner links">
                 <a
                   className="primary-link"
-                  href={`${basePath}/work/pay-period-planner/`}
+                  href={caseStudyHref}
                 >
                   Read case study
                 </a>
@@ -202,9 +204,11 @@ export default function Home() {
                   <b aria-hidden="true" />
                 </div>
                 <ul className="evidence-list">
-                  <li>119 frontend tests</li>
-                  <li>63 backend tests</li>
-                  <li>28 PostgreSQL integration tests</li>
+                  {payPeriodPlannerEvidenceHighlights.map((item) => (
+                    <li key={item.label}>
+                      {item.value} {item.summaryLabel}
+                    </li>
+                  ))}
                   <li>Accessibility and security gates</li>
                 </ul>
               </div>
@@ -335,6 +339,7 @@ export default function Home() {
               >
                 LinkedIn
               </ExternalLink>
+              <a href="mailto:everdein@gmail.com">Email</a>
               <ExternalLink href="https://github.com/everdein">
                 GitHub
               </ExternalLink>
