@@ -5,7 +5,11 @@ work, architectural reasoning, and engineering evidence without coupling the
 portfolio itself to any one product.
 
 Pay Period Planner is the flagship case study. DSA Dojo provides supporting
-evidence of deliberate practice and explainable problem solving.
+evidence of deliberate practice and explainable problem solving. A public
+resume and compact experience summary connect that project evidence to
+professional scope without turning the homepage into a second resume.
+The internal `/work/pay-period-planner/` route turns the approved repository
+case study into a product-first walkthrough with qualified engineering evidence.
 
 ## Design Direction
 
@@ -25,6 +29,8 @@ The site uses the Dual Canvas visual system:
 - Next.js static export
 - GitHub Pages delivery through the required CI workflow
 - Node's built-in test runner for exported HTML checks
+- Playwright smoke coverage for routes, theme persistence, responsive
+  containment, anchors, screenshots, and the public resume
 - ESLint and GitHub Actions verification
 
 The first version intentionally has no authentication, database, contact form,
@@ -45,11 +51,13 @@ npm run dev
 ```bash
 npm run lint
 npm test
+npm run test:browser
 ```
 
 `npm test` creates a static production export and verifies its content,
 metadata, public links, theme support, GitHub Pages asset paths, and absence of
-server-only runtime surfaces.
+server-only runtime surfaces. `npm run test:browser` starts the site on an
+isolated local port and exercises the portfolio-critical Chromium workflows.
 
 ## Deployment
 
@@ -65,3 +73,4 @@ server process, runtime secrets, authentication, or persistence.
 - [Pay Period Planner engineering evidence](https://github.com/everdein/pay-period-planner/blob/main/docs/engineering-evidence.md)
 - [DSA Dojo](https://github.com/everdein/dsa-dojo)
 - [GitHub profile](https://github.com/everdein)
+- [Goodreads](https://www.goodreads.com/everdein)

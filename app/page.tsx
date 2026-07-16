@@ -1,12 +1,9 @@
 import Image from "next/image";
+import { ExternalLink } from "./ExternalLink";
 import { ThemeToggle } from "./ThemeToggle";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
-const externalLinkProps = {
-  target: "_blank",
-  rel: "noreferrer",
-} as const;
+const resumeHref = `${basePath}/matthew-clark-resume.pdf`;
 
 export default function Home() {
   return (
@@ -72,14 +69,24 @@ export default function Home() {
         </header>
 
         <section className="hero" aria-labelledby="page-title">
-          <div>
-            <p className="role">Lead Software Engineer</p>
-            <h1 id="page-title">Matthew Clark</h1>
-            <p className="hero-line">
-              Accessible frontend systems. Production-minded full-stack work.
-            </p>
-          </div>
-          <div className="hero-aside">
+          <div className="hero-main">
+            <div className="hero-copy">
+              <p className="role">Lead Software Engineer</p>
+              <h1 id="page-title">Matthew Clark</h1>
+              <p className="hero-line">
+                I build understandable systems for complex product behavior.
+              </p>
+              <p className="hero-detail">
+                Accessible React and TypeScript architecture, backed by
+                production-minded Spring Boot and PostgreSQL delivery.
+              </p>
+              <div className="hero-actions">
+                <a className="primary-link" href="#work">
+                  Explore the planner
+                </a>
+                <a href={resumeHref}>View resume</a>
+              </div>
+            </div>
             <div className="hero-portrait">
               <Image
                 src={`${basePath}/images/matthew-clark.jpg`}
@@ -89,13 +96,13 @@ export default function Home() {
                 sizes="(max-width: 1040px) 360px, 24vw"
               />
             </div>
-            <div className="intro-note">
-              <span className="note-label">Working principle</span>
-              <p>
-                I turn complex product behavior into understandable interfaces,
-                architecture, and engineering evidence.
-              </p>
-            </div>
+          </div>
+          <div className="intro-note">
+            <span className="note-label">Working principle</span>
+            <p>
+              Make the product decision clear, keep system boundaries explicit,
+              and leave evidence that the result works.
+            </p>
           </div>
         </section>
 
@@ -118,23 +125,20 @@ export default function Home() {
               <div className="project-links" aria-label="Pay Period Planner links">
                 <a
                   className="primary-link"
+                  href={`${basePath}/work/pay-period-planner/`}
+                >
+                  Read case study
+                </a>
+                <ExternalLink
                   href="https://github.com/everdein/pay-period-planner"
-                  {...externalLinkProps}
                 >
                   View source
-                </a>
-                <a
-                  href="https://github.com/everdein/pay-period-planner/blob/main/docs/portfolio-case-study.md"
-                  {...externalLinkProps}
-                >
-                  Case study
-                </a>
-                <a
+                </ExternalLink>
+                <ExternalLink
                   href="https://github.com/everdein/pay-period-planner/blob/main/docs/engineering-evidence.md"
-                  {...externalLinkProps}
                 >
                   Evidence
-                </a>
+                </ExternalLink>
               </div>
               <div className="stack-list" aria-label="Technology stack">
                 <span>React</span>
@@ -208,10 +212,10 @@ export default function Home() {
           </article>
 
           <article className="project-ledger">
-            <span className="ledger-number">Project / 02</span>
+            <span className="ledger-number">Deliberate practice</span>
             <h3>DSA Dojo</h3>
             <p>
-              A focused practice repository for reasoning through data
+              An ongoing JavaScript study repository for reasoning through data
               structures and algorithms with deliberate, explainable solutions.
             </p>
             <div className="ledger-action">
@@ -221,12 +225,9 @@ export default function Home() {
                 <span>Practice</span>
                 <span>Clarity</span>
               </div>
-              <a
-                href="https://github.com/everdein/dsa-dojo"
-                {...externalLinkProps}
-              >
+              <ExternalLink href="https://github.com/everdein/dsa-dojo">
                 View repository
-              </a>
+              </ExternalLink>
             </div>
           </article>
         </section>
@@ -270,19 +271,46 @@ export default function Home() {
             <span className="note-label">03 / About</span>
             <h2 id="about-heading">About</h2>
           </div>
-          <div className="section-copy">
-            <p>
-              I am a Lead Software Engineer at State Farm focused on frontend
-              architecture, product engineering, and reliable customer-facing
-              systems. My recent full-stack work extends that foundation through
-              Spring Boot, PostgreSQL, system design, and production-minded
-              engineering.
-            </p>
-            <p>
-              I care about making complex behavior understandable in the
-              interface, in the architecture, and in the evidence that shows the
-              system works.
-            </p>
+          <div className="about-content">
+            <dl className="experience-facts" aria-label="Professional experience">
+              <div>
+                <dt>Current role</dt>
+                <dd>
+                  <strong>Lead Software Engineer</strong>
+                  <span>State Farm / 2023-present</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Experience</dt>
+                <dd>
+                  <strong>5+ years</strong>
+                  <span>Customer-facing systems</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Focus</dt>
+                <dd>
+                  <strong>Frontend architecture</strong>
+                  <span>Full-stack delivery</span>
+                </dd>
+              </div>
+            </dl>
+            <div className="section-copy">
+              <p>
+                I lead frontend architecture, product engineering, and reliable
+                customer-facing delivery. My full-stack work extends that
+                foundation through Spring Boot, PostgreSQL, system design, and
+                production-minded engineering.
+              </p>
+              <p>
+                I care about making complex behavior understandable in the
+                interface, in the architecture, and in the evidence that shows
+                the system works.
+              </p>
+              <a className="text-link" href={resumeHref}>
+                Read the full resume
+              </a>
+            </div>
           </div>
         </section>
 
@@ -301,26 +329,28 @@ export default function Home() {
               systems, and full-stack collaboration.
             </p>
             <div className="contact-links">
-              <a
+              <ExternalLink
                 className="primary-link"
                 href="https://linkedin.com/in/everdein"
-                {...externalLinkProps}
               >
                 LinkedIn
-              </a>
-              <a
-                href="https://github.com/everdein"
-                {...externalLinkProps}
-              >
+              </ExternalLink>
+              <ExternalLink href="https://github.com/everdein">
                 GitHub
-              </a>
+              </ExternalLink>
+              <a href={resumeHref}>Resume</a>
             </div>
           </div>
         </section>
 
         <footer>
           <span>Matthew Clark / Engineering portfolio</span>
-          <a href="#top">Back to top</a>
+          <div className="footer-links">
+            <ExternalLink href="https://www.goodreads.com/everdein">
+              Goodreads
+            </ExternalLink>
+            <a href="#top">Back to top</a>
+          </div>
         </footer>
       </main>
     </div>

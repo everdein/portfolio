@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./case-study.css";
 import "./globals.css";
 
 const themeScript = `
@@ -18,7 +19,7 @@ const themeScript = `
   })();
 `;
 
-const title = "Matthew Clark | Software Engineer";
+const title = "Matthew Clark | Lead Software Engineer";
 const description =
   "Engineering portfolio for Matthew Clark, featuring accessible frontend systems, production-minded full-stack work, and verifiable project evidence.";
 const siteUrl =
