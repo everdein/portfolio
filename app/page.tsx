@@ -111,7 +111,7 @@ export default function Home() {
         <section id="work" aria-labelledby="work-heading">
           <div className="section-heading">
             <span>01 / Work</span>
-            <h2 id="work-heading">Selected systems</h2>
+            <h2 id="work-heading">Featured system</h2>
             <p>Product surface to persistence</p>
           </div>
 
@@ -215,25 +215,6 @@ export default function Home() {
             </aside>
           </article>
 
-          <article className="project-ledger">
-            <span className="ledger-number">Deliberate practice</span>
-            <h3>DSA Dojo</h3>
-            <p>
-              An ongoing JavaScript study repository for reasoning through data
-              structures and algorithms with deliberate, explainable solutions.
-            </p>
-            <div className="ledger-action">
-              <div className="ledger-tags" aria-label="DSA Dojo qualities">
-                <span>Algorithms</span>
-                <span>Testing</span>
-                <span>Practice</span>
-                <span>Clarity</span>
-              </div>
-              <ExternalLink href="https://github.com/everdein/dsa-dojo">
-                View repository
-              </ExternalLink>
-            </div>
-          </article>
         </section>
 
         <section
@@ -335,7 +316,7 @@ export default function Home() {
             <div className="contact-links">
               <ExternalLink
                 className="primary-link"
-                href="https://linkedin.com/in/everdein"
+                href="https://linkedin.com/in/mclark1"
               >
                 LinkedIn
               </ExternalLink>
