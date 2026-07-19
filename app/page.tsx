@@ -316,7 +316,7 @@ export default function Home() {
             <div className="contact-links">
               <ExternalLink
                 className="primary-link"
-                href="https://linkedin.com/in/mclark1"
+                href="https://linkedin.com/in/everdein"
               >
                 LinkedIn
               </ExternalLink>
