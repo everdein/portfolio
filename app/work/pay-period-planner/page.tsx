@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ExternalLink } from "../../ExternalLink";
-import {
-  payPeriodPlannerEvidence,
-  payPeriodPlannerEvidenceBaseline,
-} from "../../payPeriodPlannerEvidence";
+import { payPeriodPlannerEvidence } from "../../payPeriodPlannerEvidence";
 import { ThemeToggle } from "../../ThemeToggle";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -263,7 +260,8 @@ export default function PayPeriodPlannerCaseStudy() {
                 </div>
                 <figcaption>
                   Grouped navigation becomes one section selector, controls wrap,
-                  and wide tables stay inside keyboard-accessible scroll regions.
+                  and financial tables reflow into labeled rows without horizontal
+                  scrolling.
                 </figcaption>
               </figure>
             </div>
@@ -453,10 +451,11 @@ export default function PayPeriodPlannerCaseStudy() {
               </div>
               <div className="case-study-section-copy">
                 <p>
-                  The Pay Period Planner&apos;s {payPeriodPlannerEvidenceBaseline}{" "}
-                  baseline combines local unit, integration, PostgreSQL, live-browser,
-                  accessibility, responsive, and dependency checks. Hosted CI and
-                  CodeQL remain commit-specific evidence.
+                  The repository&apos;s{" "}
+                  <ExternalLink href={evidenceUrl}>qualified evidence report</ExternalLink>{" "}
+                  maintains current counts and limitations. This portfolio summarizes
+                  the durable risk coverage across product behavior, PostgreSQL,
+                  live-browser, accessibility, responsive, and security checks.
                 </p>
               </div>
             </div>

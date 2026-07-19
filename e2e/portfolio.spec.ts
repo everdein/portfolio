@@ -1,4 +1,4 @@
-import { expect, type Page, test } from "@playwright/test";
+import { expect, type Locator, type Page, test } from "@playwright/test";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const homePath = "./";
@@ -21,6 +21,19 @@ async function expectFirstViewportHint(page: Page, selector: string) {
         const top = element.getBoundingClientRect().top;
         return top >= 0 && top < window.innerHeight;
       }),
+    )
+    .toBe(true);
+}
+
+async function expectImageLoaded(image: Locator) {
+  await image.scrollIntoViewIfNeeded();
+  await expect(image).toBeVisible();
+  await expect
+    .poll(() =>
+      image.evaluate(
+        (element) =>
+          element instanceof HTMLImageElement && element.naturalWidth > 0,
+      ),
     )
     .toBe(true);
 }
@@ -118,10 +131,15 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
     page.getByRole("heading", { name: "Pay Period Planner", level: 1 }),
   ).toBeVisible();
   await expect(
-    page.getByText(
-      "The Pay Period Planner's July 15, 2026 baseline combines local unit",
-      { exact: false },
-    ),
+    page.getByRole("link", { name: "qualified evidence report" }),
+  ).toHaveAttribute(
+    "href",
+    "https://github.com/everdein/pay-period-planner/blob/main/docs/engineering-evidence.md",
+  );
+  await expect(
+    page.getByText("durable risk coverage across product behavior", {
+      exact: false,
+    }),
   ).toBeVisible();
 
   await expect
@@ -150,14 +168,17 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
   const overview = page.getByRole("img", {
     name: "Pay Period Planner household overview with projection, balances, cash flow, and calendar summaries",
   });
-  await expect(overview).toBeVisible();
-  await expect
-    .poll(() =>
-      overview.evaluate(
-        (image) => image instanceof HTMLImageElement && image.naturalWidth > 0,
-      ),
-    )
-    .toBe(true);
+  await expectImageLoaded(overview);
+  await expectImageLoaded(
+    page.getByRole("img", {
+      name: "Pay Period Planner next-paycheck projection with planning schedule, selected inputs, and possible allocations",
+    }),
+  );
+  await expectImageLoaded(
+    page.getByRole("img", {
+      name: "Pay Period Planner monthly withdrawals workflow at a 390 pixel mobile viewport",
+    }),
+  );
 });
 
 test("persists the selected color theme", async ({ page }) => {
