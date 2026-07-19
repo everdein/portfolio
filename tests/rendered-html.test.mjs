@@ -22,7 +22,7 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /PostgreSQL[\s\S]{0,80}relational runtime coverage/);
   assert.match(html, /https:\/\/github\.com\/everdein\/pay-period-planner/);
   assert.doesNotMatch(html, /DSA Dojo|github\.com\/everdein\/dsa-dojo/i);
-  assert.match(html, /https:\/\/linkedin\.com\/in\/mclark1/);
+  assert.match(html, /https:\/\/linkedin\.com\/in\/everdein/);
   assert.match(html, /href="mailto:everdein@gmail\.com"[^>]*>Email<\/a>/);
   assert.match(html, /https:\/\/www\.goodreads\.com\/everdein/);
   assert.match(
