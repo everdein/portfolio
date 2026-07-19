@@ -17,9 +17,9 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /id="about"/);
   assert.match(html, /id="contact"/);
   assert.match(html, /Pay Period Planner/);
-  assert.match(html, /119[\s\S]{0,80}frontend tests/);
-  assert.match(html, /63[\s\S]{0,80}backend tests/);
-  assert.match(html, /28[\s\S]{0,80}PostgreSQL integration tests/);
+  assert.match(html, /Unit \+ integration[\s\S]{0,80}product behavior coverage/);
+  assert.match(html, /Live browser[\s\S]{0,80}cross-layer workflow coverage/);
+  assert.match(html, /PostgreSQL[\s\S]{0,80}relational runtime coverage/);
   assert.match(html, /https:\/\/github\.com\/everdein\/pay-period-planner/);
   assert.doesNotMatch(html, /DSA Dojo|github\.com\/everdein\/dsa-dojo/i);
   assert.match(html, /https:\/\/linkedin\.com\/in\/mclark1/);
@@ -77,23 +77,23 @@ test("exports the Pay Period Planner case study and approved evidence", async ()
   assert.match(html, /Situation/);
   assert.match(html, /Versioned aggregate replacement/);
   assert.match(html, /Claims with scope and limits/);
+  for (const [value, label] of [
+    ["Unit + integration", "Product behavior"],
+    ["Live browser", "Cross-layer workflows"],
+    ["PostgreSQL", "Relational runtime"],
+    ["Axe + keyboard", "Accessible workflows"],
+    ["320-1024px", "Responsive layouts"],
+    ["CI + scans", "Security gates"],
+  ]) {
+    assert.ok(html.includes(`<strong>${value}</strong><span>${label}</span>`));
+  }
+  assert.doesNotMatch(html, /<strong>(119|123|63|28|29)<\/strong>/);
+  assert.match(html, /qualified evidence report/);
   assert.match(
     html,
-    /Pay Period Planner[\s\S]{0,120}July 15, 2026[\s\S]{0,80}baseline/,
+    /github\.com\/everdein\/pay-period-planner\/blob\/main\/docs\/engineering-evidence\.md/,
   );
-  for (const [value, label] of [
-    [119, "Frontend tests"],
-    [63, "Backend tests"],
-    [28, "PostgreSQL tests"],
-    [6, "Browser scenarios"],
-    [2, "Axe scenarios"],
-    [4, "Responsive widths"],
-  ]) {
-    assert.match(
-      html,
-      new RegExp(`<strong>${value}</strong><span>${label}</span>`),
-    );
-  }
+  assert.match(html, /reflow into labeled rows without horizontal scrolling/);
   assert.match(html, /Synthetic portfolio data only/);
   assert.match(html, /https:\/\/github\.com\/everdein\/pay-period-planner/);
   assert.match(
