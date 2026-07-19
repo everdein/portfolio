@@ -20,10 +20,9 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /119[\s\S]{0,80}frontend tests/);
   assert.match(html, /63[\s\S]{0,80}backend tests/);
   assert.match(html, /28[\s\S]{0,80}PostgreSQL integration tests/);
-  assert.match(html, /DSA Dojo/);
   assert.match(html, /https:\/\/github\.com\/everdein\/pay-period-planner/);
-  assert.match(html, /https:\/\/github\.com\/everdein\/dsa-dojo/);
-  assert.match(html, /https:\/\/linkedin\.com\/in\/everdein/);
+  assert.doesNotMatch(html, /DSA Dojo|github\.com\/everdein\/dsa-dojo/i);
+  assert.match(html, /https:\/\/linkedin\.com\/in\/mclark1/);
   assert.match(html, /href="mailto:everdein@gmail\.com"[^>]*>Email<\/a>/);
   assert.match(html, /https:\/\/www\.goodreads\.com\/everdein/);
   assert.match(
@@ -40,7 +39,7 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /Black-and-white portrait of Matthew Clark/);
   assert.match(html, /Working principle/);
   assert.doesNotMatch(html, /Working principle \/ 01/);
-  assert.match(html, /Deliberate practice/);
+  assert.match(html, /Featured system/);
   assert.doesNotMatch(html, /Project \/ 02/);
   assert.match(html, /Start a conversation<\/h2>/);
   assert.match(html, /Switch to dark theme/);

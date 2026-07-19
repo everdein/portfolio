@@ -4,10 +4,9 @@ Public engineering portfolio for Matthew Clark. The site presents selected
 work, architectural reasoning, and engineering evidence without coupling the
 portfolio itself to any one product.
 
-Pay Period Planner is the flagship case study. DSA Dojo provides supporting
-evidence of deliberate practice and explainable problem solving. A public
-resume and compact experience summary connect that project evidence to
-professional scope without turning the homepage into a second resume.
+Pay Period Planner is the flagship case study. A public resume and compact
+experience summary connect that project evidence to professional scope without
+turning the homepage into a second resume.
 The internal `/work/pay-period-planner/` route turns the approved repository
 case study into a product-first walkthrough with qualified engineering evidence.
 
@@ -71,6 +70,5 @@ server process, runtime secrets, authentication, or persistence.
 - [Pay Period Planner](https://github.com/everdein/pay-period-planner)
 - [Pay Period Planner case study](https://github.com/everdein/pay-period-planner/blob/main/docs/portfolio-case-study.md)
 - [Pay Period Planner engineering evidence](https://github.com/everdein/pay-period-planner/blob/main/docs/engineering-evidence.md)
-- [DSA Dojo](https://github.com/everdein/dsa-dojo)
 - [GitHub profile](https://github.com/everdein)
 - [Goodreads](https://www.goodreads.com/everdein)

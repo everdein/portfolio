@@ -422,7 +422,6 @@ h1 {
 }
 
 .project-copy h3,
-.project-ledger h3,
 .approach h2,
 .about h2,
 .contact h2 {
@@ -642,60 +641,6 @@ html[data-theme="dark"] .contact-links .primary-link:hover {
   content: "";
 }
 
-.project-ledger {
-  display: grid;
-  min-height: 126px;
-  grid-template-columns: 80px 180px minmax(300px, 1fr) 260px;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 52px;
-  border-top: 1px solid var(--rule);
-  background: var(--paper-soft);
-}
-
-.ledger-number {
-  color: var(--cobalt);
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.project-ledger h3 {
-  margin: 0;
-  font-size: 25px;
-}
-
-.project-ledger > p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-.ledger-tags {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--rule);
-}
-
-.ledger-tags span {
-  padding: 6px 0;
-  border-bottom: 1px solid var(--rule);
-  color: var(--ink-soft);
-  font-size: 9px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.ledger-action > a {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--cobalt);
-  font-size: 12px;
-  font-weight: 800;
-  text-underline-offset: 4px;
-}
-
 .approach,
 .about,
 .contact {
@@ -856,9 +801,6 @@ footer a {
     margin-top: 0;
   }
 
-  .project-ledger {
-    grid-template-columns: 72px 160px minmax(260px, 1fr) 220px;
-  }
 }
 
 @media (max-width: 1040px) {
@@ -936,15 +878,6 @@ footer a {
   .project-links {
     grid-row: 1 / span 3;
     align-content: start;
-  }
-
-  .project-ledger {
-    grid-template-columns: 72px 1fr;
-  }
-
-  .project-ledger > p,
-  .ledger-action {
-    grid-column: 2;
   }
 
   .approach-grid {
@@ -1227,17 +1160,6 @@ footer a {
 
   .project-signals {
     grid-template-columns: 1fr;
-  }
-
-  .project-ledger {
-    display: block;
-    padding: 28px 18px;
-  }
-
-  .project-ledger h3,
-  .project-ledger > p,
-  .ledger-action {
-    margin-top: 14px;
   }
 
   .approach,
