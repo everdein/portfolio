@@ -172,8 +172,10 @@ p {
 }
 
 .nav-label {
+  display: block;
   font-size: 14px;
   font-weight: 700;
+  line-height: 1.15;
 }
 
 .rail-status {
@@ -464,13 +466,18 @@ h1 {
 .case-study-actions a,
 .project-links a,
 .contact-links a {
+  display: inline-flex;
   min-height: 38px;
+  align-items: center;
+  justify-content: center;
   padding: 9px 12px;
   border: 1px solid var(--rule);
   border-radius: 4px;
   color: var(--ink);
   font-size: 12px;
   font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
   text-decoration: none;
 }
 
@@ -931,7 +938,10 @@ footer a {
 
   .rail nav a,
   .rail nav a:first-child {
-    display: block;
+    display: inline-flex;
+    min-height: 36px;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
     border: 0;
   }
