@@ -38,6 +38,32 @@ async function expectImageLoaded(image: Locator) {
     .toBe(true);
 }
 
+async function expectAlternatingSectionSurfaces(page: Page) {
+  await expect
+    .poll(() =>
+      page.evaluate(() => {
+        const professional = document.querySelector("#professional");
+        const projects = document.querySelector("#projects");
+        const about = document.querySelector("#about");
+
+        if (!professional || !projects || !about) {
+          return false;
+        }
+
+        const professionalBackground =
+          getComputedStyle(professional).backgroundColor;
+        const projectsBackground = getComputedStyle(projects).backgroundColor;
+        const aboutBackground = getComputedStyle(about).backgroundColor;
+
+        return (
+          projectsBackground === aboutBackground &&
+          projectsBackground !== professionalBackground
+        );
+      }),
+    )
+    .toBe(true);
+}
+
 async function expectAnchorBelowRail(
   page: Page,
   linkName: string,
@@ -196,9 +222,11 @@ test("persists the selected color theme", async ({ page }) => {
     exact: true,
   });
   await expect(themeToggle).toHaveAttribute("aria-pressed", "false");
+  await expectAlternatingSectionSurfaces(page);
 
   await themeToggle.click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expectAlternatingSectionSurfaces(page);
   await expect(
     page.getByRole("button", {
       name: "Switch to light theme",

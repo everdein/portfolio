@@ -633,7 +633,8 @@ html[data-theme="dark"] .contact-links .primary-link:hover {
   scroll-margin-top: 24px;
 }
 
-.projects {
+.projects,
+.about {
   background: var(--paper-soft);
 }
 
