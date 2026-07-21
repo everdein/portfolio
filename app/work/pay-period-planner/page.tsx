@@ -13,7 +13,7 @@ const evidenceUrl = `${repositoryUrl}/blob/main/docs/engineering-evidence.md`;
 
 const title = "Pay Period Planner Case Study | Matthew Clark";
 const description =
-  "How Matthew Clark evolved a household cash-flow prototype into an authenticated React, Spring Boot, and PostgreSQL planning workspace.";
+  "An independent product case study showing how Matthew Clark evolved a household cash-flow prototype into an accessible React, Spring Boot, and PostgreSQL planning workspace.";
 
 export const metadata: Metadata = {
   title,
@@ -124,7 +124,7 @@ export default function PayPeriodPlannerCaseStudy() {
 
         <article>
           <header className="case-study-hero" aria-labelledby="case-study-title">
-            <p className="role">Flagship full-stack case study</p>
+            <p className="role">Independent product case study</p>
             <h1 id="case-study-title">Pay Period Planner</h1>
             <p className="case-study-deck">
               A household cash-flow workspace that turns income, recurring bills,
@@ -141,20 +141,20 @@ export default function PayPeriodPlannerCaseStudy() {
 
             <dl className="case-study-facts" aria-label="Project summary">
               <div>
-                <dt>Product boundary</dt>
-                <dd>One household planning workspace</dd>
+                <dt>Role</dt>
+                <dd>Product design and end-to-end engineering</dd>
               </div>
               <div>
-                <dt>Mutation model</dt>
-                <dd>Versioned aggregate replacement</dd>
+                <dt>Scope</dt>
+                <dd>React, Spring Boot, PostgreSQL, and verification</dd>
               </div>
               <div>
-                <dt>Runtime store</dt>
-                <dd>Workspace-owned PostgreSQL</dd>
+                <dt>Status</dt>
+                <dd>Local-first; not production hosted</dd>
               </div>
               <div>
-                <dt>Current posture</dt>
-                <dd>Local-first portfolio release</dd>
+                <dt>Data</dt>
+                <dd>Synthetic household records only</dd>
               </div>
             </dl>
           </header>
@@ -178,11 +178,17 @@ export default function PayPeriodPlannerCaseStudy() {
               />
             </div>
             <figcaption>
-              Synthetic portfolio data only. The fixture represents an established
-              senior technical household and is not financial advice or a statement
-              about the developer&apos;s finances.
+              All screenshots use synthetic household data generated in an
+              isolated test schema. No personal or employer data is included.
             </figcaption>
           </figure>
+
+          <p className="case-study-boundary">
+            Pay Period Planner is an independently built portfolio project.
+            Professional outcomes described elsewhere on this site come from
+            separate employer work; no employer code, data, or implementation
+            details appear here.
+          </p>
 
           <section
             className="case-study-section"
@@ -196,13 +202,19 @@ export default function PayPeriodPlannerCaseStudy() {
               </div>
               <div className="case-study-section-copy">
                 <p>
-                  The product began with a practical question: after the next
-                  paycheck and its obligations, what cash is actually available for
-                  debt, savings, or the following period?
+                  I designed Pay Period Planner around one practical question:
+                  after the next paycheck and its obligations, what cash is
+                  actually available for debt, savings, or the following period?
                 </p>
                 <p>
                   The interface keeps the answer connected to its inputs instead of
                   hiding it behind an opaque score or a second editing surface.
+                </p>
+                <p>
+                  Accessibility shaped the interaction model: financial tables
+                  reflow into labeled rows, grouped navigation becomes one compact
+                  selector, dialogs preserve focus, and core workflows remain
+                  keyboard operable.
                 </p>
               </div>
             </div>
@@ -279,10 +291,11 @@ export default function PayPeriodPlannerCaseStudy() {
               </div>
               <div className="case-study-section-copy">
                 <p>
-                  The first React and Spring Boot version used one local JSON
-                  snapshot. It proved the workflow quickly, but it also created two
-                  startup modes, global ownership, file-write risk, and no safe path
-                  for multiple users.
+                  I built the first React and Spring Boot version around one local
+                  JSON snapshot to validate the workflow quickly. When that model
+                  created two startup modes, global ownership, file-write risk, and
+                  no safe path for multiple users, I chose relational workspaces,
+                  versioned saves, and independent data re-entry.
                 </p>
               </div>
             </div>

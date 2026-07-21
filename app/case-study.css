@@ -37,6 +37,18 @@
   gap: 8px;
 }
 
+.case-study-boundary {
+  width: calc(100% - 104px);
+  max-width: 860px;
+  margin: -52px auto 88px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--cobalt);
+  background: var(--paper-soft);
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
 .case-study-facts {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

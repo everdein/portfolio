@@ -1,12 +1,13 @@
 # Matthew Clark Portfolio
 
 Public engineering portfolio for Matthew Clark. The site presents selected
-work, architectural reasoning, and engineering evidence without coupling the
-portfolio itself to any one product.
+work, measurable professional impact, architectural reasoning, and engineering
+evidence without coupling the portfolio itself to any one product.
 
-Pay Period Planner is the flagship case study. A public resume and compact
-experience summary connect that project evidence to professional scope without
-turning the homepage into a second resume.
+Pay Period Planner is the independently built flagship case study. A compact
+professional-impact ledger, public resume, and career narrative connect that
+project evidence to professional scope without turning the homepage into a
+second resume or mixing employer work with portfolio-project evidence.
 The internal `/work/pay-period-planner/` route turns the approved repository
 case study into a product-first walkthrough with qualified engineering evidence.
 

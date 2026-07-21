@@ -30,21 +30,27 @@ export default function Home() {
             </span>
             <span className="nav-label">Work</span>
           </a>
-          <a href="#approach">
+          <a href="#impact">
             <span className="nav-index" aria-hidden="true">
               02
+            </span>
+            <span className="nav-label">Impact</span>
+          </a>
+          <a href="#approach">
+            <span className="nav-index" aria-hidden="true">
+              03
             </span>
             <span className="nav-label">Approach</span>
           </a>
           <a href="#about">
             <span className="nav-index" aria-hidden="true">
-              03
+              04
             </span>
             <span className="nav-label">About</span>
           </a>
           <a href="#contact">
             <span className="nav-index" aria-hidden="true">
-              04
+              05
             </span>
             <span className="nav-label">Contact</span>
           </a>
@@ -55,9 +61,9 @@ export default function Home() {
             Lead Software Engineer
           </strong>
           <span>
-            Frontend systems
+            Frontend architecture
             <br />
-            Full-stack delivery
+            Technical leadership
           </span>
         </div>
       </aside>
@@ -79,8 +85,9 @@ export default function Home() {
                 I build understandable systems for complex product behavior.
               </p>
               <p className="hero-detail">
-                Accessible React and TypeScript architecture, backed by
-                production-minded Spring Boot and PostgreSQL delivery.
+                I lead frontend architecture for complex customer-facing React
+                and TypeScript products, carrying product decisions across APIs,
+                testing, accessibility, security, and production delivery.
               </p>
               <div className="hero-actions">
                 <a className="primary-link" href={caseStudyHref}>
@@ -102,8 +109,8 @@ export default function Home() {
           <div className="intro-note">
             <span className="note-label">Working principle</span>
             <p>
-              Make the product decision clear, keep system boundaries explicit,
-              and leave evidence that the result works.
+              Make complex behavior understandable, keep system boundaries
+              explicit, and leave evidence that the result works.
             </p>
           </div>
         </section>
@@ -111,8 +118,8 @@ export default function Home() {
         <section id="work" aria-labelledby="work-heading">
           <div className="section-heading">
             <span>01 / Work</span>
-            <h2 id="work-heading">Featured system</h2>
-            <p>Product surface to persistence</p>
+            <h2 id="work-heading">Selected engineering work</h2>
+            <p>Public reasoning and evidence</p>
           </div>
 
           <article className="feature-project">
@@ -120,9 +127,9 @@ export default function Home() {
               <span className="project-number">Featured project / 01</span>
               <h3>Pay Period Planner</h3>
               <p>
-                An authenticated household cash-flow workspace designed around
-                clear financial decisions, resilient data ownership, and
-                traceable engineering quality.
+                An independently built household cash-flow product that makes
+                complex planning rules explicit—from accessible React workflows
+                to versioned PostgreSQL ownership and cross-layer verification.
               </p>
               <div className="project-links" aria-label="Pay Period Planner links">
                 <a
@@ -217,6 +224,58 @@ export default function Home() {
 
         </section>
 
+        <section className="impact" id="impact" aria-labelledby="impact-heading">
+          <div className="impact-heading">
+            <div>
+              <span className="note-label">02 / Professional impact</span>
+              <h2 id="impact-heading">Evidence from production systems</h2>
+            </div>
+            <p>
+              Across my State Farm tenure, I&apos;ve architected and delivered
+              customer-facing life-insurance workflows that connect frontend
+              behavior, APIs, testing, security, and production delivery.
+            </p>
+          </div>
+
+          <dl className="impact-facts" aria-label="Selected professional impact">
+            <div>
+              <dt>2</dt>
+              <dd>
+                <strong>Customer-facing applications</strong>
+                <span>Architected and built from the ground up</span>
+              </dd>
+            </div>
+            <div>
+              <dt>1,404</dt>
+              <dd>
+                <strong>Production submissions</strong>
+                <span>
+                  Across 1,174 policies in a measured 30-day period
+                </span>
+              </dd>
+            </div>
+            <div>
+              <dt>2,197</dt>
+              <dd>
+                <strong>Passing TypeScript tests</strong>
+                <span>131 test files; capability built from zero</span>
+              </dd>
+            </div>
+            <div>
+              <dt>40</dt>
+              <dd>
+                <strong>Shared modules</strong>
+                <span>Supporting more than 90 source and test files</span>
+              </dd>
+            </div>
+          </dl>
+
+          <p className="impact-note">
+            Additional work includes runtime-image optimization, vulnerability
+            remediation, deployment visibility, and mentoring engineers.
+          </p>
+        </section>
+
         <section
           className="approach"
           id="approach"
@@ -224,28 +283,29 @@ export default function Home() {
         >
           <div className="approach-grid">
             <div>
-              <span className="note-label">02 / Approach</span>
-              <h2 id="approach-heading">Built to be understood</h2>
+              <span className="note-label">03 / Approach</span>
+              <h2 id="approach-heading">How I lead the work</h2>
             </div>
             <div className="approach-item">
-              <strong>Product behavior</strong>
+              <strong>Clarify the product</strong>
               <p>
-                Start with the decision a person needs to make, then shape the
-                interface around it.
+                Start with the decision a person needs to make, then turn
+                ambiguous requirements into explicit behavior and testable
+                outcomes.
               </p>
             </div>
             <div className="approach-item">
-              <strong>System boundaries</strong>
+              <strong>Design the boundaries</strong>
               <p>
-                Keep domain rules, API contracts, and persistence ownership
-                explicit across the stack.
+                Keep state, domain rules, API contracts, and data ownership clear
+                across the stack.
               </p>
             </div>
             <div className="approach-item">
-              <strong>Engineering evidence</strong>
+              <strong>Build confidence</strong>
               <p>
-                Pair implementation with tests, accessibility checks, security
-                signals, and readable documentation.
+                Combine tests, accessibility, security, documentation, reviews,
+                and mentoring so the team can deliver reliably.
               </p>
             </div>
           </div>
@@ -253,7 +313,7 @@ export default function Home() {
 
         <section className="about" id="about" aria-labelledby="about-heading">
           <div>
-            <span className="note-label">03 / About</span>
+            <span className="note-label">04 / About</span>
             <h2 id="about-heading">About</h2>
           </div>
           <div className="about-content">
@@ -266,31 +326,33 @@ export default function Home() {
                 </dd>
               </div>
               <div>
-                <dt>Experience</dt>
+                <dt>Software engineering</dt>
                 <dd>
                   <strong>5+ years</strong>
-                  <span>Customer-facing systems</span>
+                  <span>Customer-facing React and TypeScript systems</span>
                 </dd>
               </div>
               <div>
-                <dt>Focus</dt>
+                <dt>Foundation</dt>
                 <dd>
-                  <strong>Frontend architecture</strong>
-                  <span>Full-stack delivery</span>
+                  <strong>10 years</strong>
+                  <span>Data and analytics at Microsoft</span>
                 </dd>
               </div>
             </dl>
             <div className="section-copy">
               <p>
-                I lead frontend architecture, product engineering, and reliable
-                customer-facing delivery. My full-stack work extends that
-                foundation through Spring Boot, PostgreSQL, system design, and
-                production-minded engineering.
+                My background spans geospatial data quality for Google Maps, a
+                decade in data and analytics at Microsoft, open-source software
+                engineering at WattTime, and customer-facing product engineering
+                at State Farm. That progression shapes how I connect technical
+                decisions to user behavior, operational context, and measurable
+                outcomes.
               </p>
               <p>
-                I care about making complex behavior understandable in the
-                interface, in the architecture, and in the evidence that shows
-                the system works.
+                Today I lead frontend architecture and full-stack delivery for
+                complex workflows, mentor engineers, and improve the systems and
+                practices that make change safer.
               </p>
               <ExternalLink className="text-link" href={resumeHref}>
                 Read the full resume
@@ -305,13 +367,13 @@ export default function Home() {
           aria-labelledby="contact-heading"
         >
           <div>
-            <span className="note-label">04 / Contact</span>
-            <h2 id="contact-heading">Start a conversation</h2>
+            <span className="note-label">05 / Contact</span>
+            <h2 id="contact-heading">Let&apos;s talk about complex systems</h2>
           </div>
           <div className="section-copy">
             <p>
-              Connect with me about engineering leadership, accessible product
-              systems, and full-stack collaboration.
+              Connect with me about frontend architecture, customer-facing
+              workflow products, technical leadership, and full-stack delivery.
             </p>
             <div className="contact-links">
               <ExternalLink
@@ -325,9 +387,6 @@ export default function Home() {
                 GitHub
               </ExternalLink>
               <ExternalLink href={resumeHref}>Resume</ExternalLink>
-              <ExternalLink href="https://www.goodreads.com/everdein">
-                Goodreads
-              </ExternalLink>
             </div>
           </div>
         </section>
@@ -335,6 +394,9 @@ export default function Home() {
         <footer>
           <span>Matthew Clark / Engineering portfolio</span>
           <div className="footer-links">
+            <ExternalLink href="https://www.goodreads.com/everdein">
+              Goodreads
+            </ExternalLink>
             <a href="#top">Back to top</a>
           </div>
         </footer>

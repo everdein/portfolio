@@ -107,7 +107,7 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
     "https://www.goodreads.com/everdein",
   );
   await expect(
-    goodreadsLink.locator("xpath=ancestor::*[@id='contact']"),
+    goodreadsLink.locator("xpath=ancestor::footer"),
   ).toHaveCount(1);
 
   const emailLink = page.getByRole("link", {
