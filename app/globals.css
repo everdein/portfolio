@@ -424,6 +424,7 @@ h1 {
 }
 
 .project-copy h3,
+.impact h2,
 .approach h2,
 .about h2,
 .contact h2 {
@@ -648,12 +649,91 @@ html[data-theme="dark"] .contact-links .primary-link:hover {
   content: "";
 }
 
+.impact,
 .approach,
 .about,
 .contact {
   padding: 72px 52px;
   border-top: 1px solid var(--rule);
   scroll-margin-top: 24px;
+}
+
+.impact-heading {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 720px);
+  gap: 34px;
+  align-items: start;
+  margin-bottom: 34px;
+}
+
+.impact h2 {
+  margin-bottom: 14px;
+  font-size: 44px;
+  line-height: 1.08;
+}
+
+.impact-heading > p,
+.impact-note {
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.impact-heading > p {
+  margin: 0;
+}
+
+.impact-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  border-top: 3px solid var(--forest);
+  border-bottom: 1px solid var(--rule);
+}
+
+.impact-facts > div {
+  min-width: 0;
+  padding: 22px 20px 24px 0;
+}
+
+.impact-facts > div + div {
+  padding-left: 20px;
+  border-left: 1px solid var(--rule);
+}
+
+.impact-facts dt {
+  margin-bottom: 14px;
+  color: var(--forest);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.impact-facts dd {
+  margin: 0;
+}
+
+.impact-facts strong,
+.impact-facts span {
+  display: block;
+}
+
+.impact-facts strong {
+  margin-bottom: 7px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.impact-facts span {
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.impact-note {
+  max-width: 880px;
+  margin: 22px 0 0;
+  font-size: 13px;
 }
 
 .approach-grid {
@@ -663,6 +743,7 @@ html[data-theme="dark"] .contact-links .primary-link:hover {
 }
 
 .approach h2,
+.impact h2,
 .about h2,
 .contact h2 {
   margin-bottom: 14px;
@@ -890,10 +971,25 @@ footer a {
   .approach-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .impact-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .impact-facts > div:nth-child(3) {
+    padding-left: 0;
+    border-top: 1px solid var(--rule);
+    border-left: 0;
+  }
+
+  .impact-facts > div:nth-child(4) {
+    border-top: 1px solid var(--rule);
+  }
 }
 
 @media (max-width: 760px) {
   #work,
+  .impact,
   .approach,
   .about,
   .contact,
@@ -993,6 +1089,12 @@ footer a {
 
   .case-study-lead-visual {
     width: calc(100% - 36px);
+    margin-bottom: 64px;
+  }
+
+  .case-study-boundary {
+    width: calc(100% - 36px);
+    margin-top: -36px;
     margin-bottom: 64px;
   }
 
@@ -1172,16 +1274,39 @@ footer a {
     grid-template-columns: 1fr;
   }
 
+  .impact,
   .approach,
   .about,
   .contact {
     padding: 54px 18px;
   }
 
+  .impact-heading,
   .approach-grid,
   .about,
   .contact {
     grid-template-columns: 1fr;
+  }
+
+  .impact-heading {
+    gap: 18px;
+  }
+
+  .impact-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-facts > div,
+  .impact-facts > div + div,
+  .impact-facts > div:nth-child(3),
+  .impact-facts > div:nth-child(4) {
+    padding: 18px 0;
+    border-top: 1px solid var(--rule);
+    border-left: 0;
+  }
+
+  .impact-facts > div:first-child {
+    border-top: 0;
   }
 
   .experience-facts {
@@ -1203,6 +1328,7 @@ footer a {
   }
 
   .approach h2,
+  .impact h2,
   .about h2,
   .contact h2 {
     font-size: 38px;

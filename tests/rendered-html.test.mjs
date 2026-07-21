@@ -13,6 +13,7 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /<h1[^>]*>Matthew Clark<\/h1>/i);
   assert.match(html, /I build understandable systems for complex product behavior/);
   assert.match(html, /id="work"/);
+  assert.match(html, /id="impact"/);
   assert.match(html, /id="approach"/);
   assert.match(html, /id="about"/);
   assert.match(html, /id="contact"/);
@@ -25,10 +26,7 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /https:\/\/linkedin\.com\/in\/everdein/);
   assert.match(html, /href="mailto:everdein@gmail\.com"[^>]*>Email<\/a>/);
   assert.match(html, /https:\/\/www\.goodreads\.com\/everdein/);
-  assert.match(
-    html,
-    /id="contact"[\s\S]*https:\/\/www\.goodreads\.com\/everdein[\s\S]*<footer/,
-  );
+  assert.match(html, /<footer[\s\S]*https:\/\/www\.goodreads\.com\/everdein/);
   assert.match(
     html,
     new RegExp(
@@ -39,9 +37,19 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /Black-and-white portrait of Matthew Clark/);
   assert.match(html, /Working principle/);
   assert.doesNotMatch(html, /Working principle \/ 01/);
-  assert.match(html, /Featured system/);
+  assert.match(html, /Selected engineering work/);
   assert.doesNotMatch(html, /Project \/ 02/);
-  assert.match(html, /Start a conversation<\/h2>/);
+  assert.match(html, /Evidence from production systems/);
+  for (const [value, label] of [
+    ["2", "Customer-facing applications"],
+    ["1,404", "Production submissions"],
+    ["2,197", "Passing TypeScript tests"],
+    ["40", "Shared modules"],
+  ]) {
+    assert.ok(html.includes(`<dt>${value}</dt><dd><strong>${label}</strong>`));
+  }
+  assert.match(html, /How I lead the work/);
+  assert.match(html, /Let&#x27;s talk about complex systems<\/h2>/);
   assert.match(html, /Switch to dark theme/);
   assert.match(html, /aria-pressed="false"/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Codex is building/i);
@@ -75,7 +83,9 @@ test("exports the Pay Period Planner case study and approved evidence", async ()
   assert.match(html, /id="architecture"/);
   assert.match(html, /id="evidence"/);
   assert.match(html, /Situation/);
-  assert.match(html, /Versioned aggregate replacement/);
+  assert.match(html, /Independent product case study/);
+  assert.match(html, /Product design and end-to-end engineering/);
+  assert.match(html, /no employer code, data, or implementation details appear here/);
   assert.match(html, /Claims with scope and limits/);
   for (const [value, label] of [
     ["Unit + integration", "Product behavior"],
@@ -94,7 +104,7 @@ test("exports the Pay Period Planner case study and approved evidence", async ()
     /github\.com\/everdein\/pay-period-planner\/blob\/main\/docs\/engineering-evidence\.md/,
   );
   assert.match(html, /reflow into labeled rows without horizontal scrolling/);
-  assert.match(html, /Synthetic portfolio data only/);
+  assert.match(html, /All screenshots use synthetic household data/);
   assert.match(html, /https:\/\/github\.com\/everdein\/pay-period-planner/);
   assert.match(
     html,

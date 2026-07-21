@@ -21,11 +21,11 @@ const themeScript = `
 
 const title = "Matthew Clark | Lead Software Engineer";
 const description =
-  "Engineering portfolio for Matthew Clark, featuring accessible frontend systems, production-minded full-stack work, and verifiable project evidence.";
+  "Lead Software Engineer Matthew Clark's portfolio, featuring frontend architecture for complex customer-facing workflows, measurable production impact, and verified full-stack case studies.";
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   "https://everdein.github.io/portfolio";
-const socialImage = `${siteUrl}/og.png`;
+const socialImage = `${siteUrl}/og.png?v=fd00e92e`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: socialImage,
-        width: 1200,
-        height: 630,
-        alt: "Matthew Clark engineering portfolio",
+        width: 1731,
+        height: 909,
+        alt: "Matthew Clark, Lead Software Engineer — systems, product, and evidence",
       },
     ],
   },
