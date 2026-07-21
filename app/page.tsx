@@ -24,17 +24,17 @@ export default function Home() {
           Selected work / 2026
         </p>
         <nav aria-label="Primary navigation">
-          <a href="#work">
+          <a href="#professional">
             <span className="nav-index" aria-hidden="true">
               01
             </span>
-            <span className="nav-label">Work</span>
+            <span className="nav-label">Professional</span>
           </a>
-          <a href="#impact">
+          <a href="#projects">
             <span className="nav-index" aria-hidden="true">
               02
             </span>
-            <span className="nav-label">Impact</span>
+            <span className="nav-label">Projects</span>
           </a>
           <a href="#approach">
             <span className="nav-index" aria-hidden="true">
@@ -115,11 +115,81 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="work" aria-labelledby="work-heading">
-          <div className="section-heading">
-            <span>01 / Work</span>
-            <h2 id="work-heading">Selected engineering work</h2>
-            <p>Public reasoning and evidence</p>
+        <section
+          className="impact"
+          id="professional"
+          aria-labelledby="professional-heading"
+        >
+          <div className="impact-heading">
+            <div>
+              <span className="note-label">01 / Professional impact</span>
+              <h2 id="professional-heading">
+                Evidence from production systems
+              </h2>
+            </div>
+            <p>
+              Across my State Farm tenure, I&apos;ve architected and delivered
+              customer-facing life-insurance workflows that connect frontend
+              behavior, APIs, testing, security, and production delivery.
+            </p>
+          </div>
+
+          <dl
+            className="impact-facts"
+            aria-label="Selected professional impact"
+          >
+            <div>
+              <dt>2</dt>
+              <dd>
+                <strong>Customer-facing applications</strong>
+                <span>Architected and built from the ground up</span>
+              </dd>
+            </div>
+            <div>
+              <dt>1,404</dt>
+              <dd>
+                <strong>Production submissions</strong>
+                <span>
+                  Across 1,174 policies in a measured 30-day period
+                </span>
+              </dd>
+            </div>
+            <div>
+              <dt>2,197</dt>
+              <dd>
+                <strong>Passing TypeScript tests</strong>
+                <span>131 test files; capability built from zero</span>
+              </dd>
+            </div>
+            <div>
+              <dt>40</dt>
+              <dd>
+                <strong>Shared modules</strong>
+                <span>Supporting more than 90 source and test files</span>
+              </dd>
+            </div>
+          </dl>
+
+          <p className="impact-note">
+            Additional work includes runtime-image optimization, vulnerability
+            remediation, deployment visibility, and mentoring engineers.
+          </p>
+        </section>
+
+        <section
+          className="projects"
+          id="projects"
+          aria-labelledby="projects-heading"
+        >
+          <div className="projects-heading">
+            <div>
+              <span className="note-label">02 / Projects</span>
+              <h2 id="projects-heading">Independent systems</h2>
+            </div>
+            <p>
+              Selected product work where the problem, architecture, tradeoffs,
+              and verification are available for inspection.
+            </p>
           </div>
 
           <article className="feature-project">
@@ -221,59 +291,6 @@ export default function Home() {
               </div>
             </aside>
           </article>
-
-        </section>
-
-        <section className="impact" id="impact" aria-labelledby="impact-heading">
-          <div className="impact-heading">
-            <div>
-              <span className="note-label">02 / Professional impact</span>
-              <h2 id="impact-heading">Evidence from production systems</h2>
-            </div>
-            <p>
-              Across my State Farm tenure, I&apos;ve architected and delivered
-              customer-facing life-insurance workflows that connect frontend
-              behavior, APIs, testing, security, and production delivery.
-            </p>
-          </div>
-
-          <dl className="impact-facts" aria-label="Selected professional impact">
-            <div>
-              <dt>2</dt>
-              <dd>
-                <strong>Customer-facing applications</strong>
-                <span>Architected and built from the ground up</span>
-              </dd>
-            </div>
-            <div>
-              <dt>1,404</dt>
-              <dd>
-                <strong>Production submissions</strong>
-                <span>
-                  Across 1,174 policies in a measured 30-day period
-                </span>
-              </dd>
-            </div>
-            <div>
-              <dt>2,197</dt>
-              <dd>
-                <strong>Passing TypeScript tests</strong>
-                <span>131 test files; capability built from zero</span>
-              </dd>
-            </div>
-            <div>
-              <dt>40</dt>
-              <dd>
-                <strong>Shared modules</strong>
-                <span>Supporting more than 90 source and test files</span>
-              </dd>
-            </div>
-          </dl>
-
-          <p className="impact-note">
-            Additional work includes runtime-image optimization, vulnerability
-            remediation, deployment visibility, and mentoring engineers.
-          </p>
         </section>
 
         <section
