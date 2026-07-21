@@ -73,6 +73,12 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
   await expect(
     page.getByRole("heading", { name: "Matthew Clark", level: 1 }),
   ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Professional", exact: true }),
+  ).toHaveAttribute("href", "#professional");
+  await expect(
+    page.getByRole("link", { name: "Projects", exact: true }),
+  ).toHaveAttribute("href", "#projects");
 
   const heroCaseStudyLink = page.getByRole("link", {
     name: "Explore the case study",
@@ -235,7 +241,7 @@ test("contains both routes across supported portfolio widths", async ({ page }) 
 
     await page.goto(homePath);
     await expectNoHorizontalOverflow(page);
-    await expectFirstViewportHint(page, "#work");
+    await expectFirstViewportHint(page, "#professional");
 
     await page.goto(caseStudyPath);
     await expectNoHorizontalOverflow(page);

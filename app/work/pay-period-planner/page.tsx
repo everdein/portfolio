@@ -109,7 +109,7 @@ export default function PayPeriodPlannerCaseStudy() {
           </a>
         </nav>
         <div className="rail-status case-study-rail-status">
-          <a href={`${basePath}/#work`}>Back to selected work</a>
+          <a href={`${basePath}/#projects`}>Back to projects</a>
           <span>React / Spring Boot / PostgreSQL</span>
         </div>
       </aside>
@@ -136,7 +136,7 @@ export default function PayPeriodPlannerCaseStudy() {
                 View source
               </ExternalLink>
               <ExternalLink href={evidenceUrl}>Engineering evidence</ExternalLink>
-              <a href={`${basePath}/#work`}>Back to portfolio</a>
+              <a href={`${basePath}/#projects`}>Back to portfolio</a>
             </div>
 
             <dl className="case-study-facts" aria-label="Project summary">
@@ -525,7 +525,7 @@ export default function PayPeriodPlannerCaseStudy() {
                     Explore the repository
                   </ExternalLink>
                   <ExternalLink href={evidenceUrl}>Read the evidence</ExternalLink>
-                  <a href={`${basePath}/#work`}>Return to selected work</a>
+                  <a href={`${basePath}/#projects`}>Return to projects</a>
                 </div>
               </div>
             </div>

@@ -12,11 +12,17 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /<title>Matthew Clark \| Lead Software Engineer<\/title>/i);
   assert.match(html, /<h1[^>]*>Matthew Clark<\/h1>/i);
   assert.match(html, /I build understandable systems for complex product behavior/);
-  assert.match(html, /id="work"/);
-  assert.match(html, /id="impact"/);
+  assert.match(html, /id="professional"/);
+  assert.match(html, /id="projects"/);
   assert.match(html, /id="approach"/);
   assert.match(html, /id="about"/);
   assert.match(html, /id="contact"/);
+  assert.match(html, /href="#professional"/);
+  assert.match(html, /href="#projects"/);
+  assert.ok(
+    html.indexOf('id="professional"') < html.indexOf('id="projects"'),
+    "professional impact should appear before selected projects",
+  );
   assert.match(html, /Pay Period Planner/);
   assert.match(html, /Unit \+ integration[\s\S]{0,80}product behavior coverage/);
   assert.match(html, /Live browser[\s\S]{0,80}cross-layer workflow coverage/);
@@ -37,8 +43,12 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /Black-and-white portrait of Matthew Clark/);
   assert.match(html, /Working principle/);
   assert.doesNotMatch(html, /Working principle \/ 01/);
-  assert.match(html, /Selected engineering work/);
-  assert.doesNotMatch(html, /Project \/ 02/);
+  assert.match(html, /Independent systems/);
+  assert.match(
+    html,
+    /Selected product work where the problem, architecture, tradeoffs,[\s\S]{0,80}verification are available for inspection/,
+  );
+  assert.match(html, /02 \/ Projects/);
   assert.match(html, /Evidence from production systems/);
   for (const [value, label] of [
     ["2", "Customer-facing applications"],
@@ -76,6 +86,7 @@ test("exports the Pay Period Planner case study and approved evidence", async ()
     new URL("work/pay-period-planner/index.html", outputRoot),
     "utf8",
   );
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   assert.match(html, /<title>Pay Period Planner Case Study \| Matthew Clark<\/title>/i);
   assert.match(html, /<h1[^>]*>Pay Period Planner<\/h1>/i);
   assert.match(html, /id="product"/);
@@ -108,10 +119,14 @@ test("exports the Pay Period Planner case study and approved evidence", async ()
   assert.match(html, /https:\/\/github\.com\/everdein\/pay-period-planner/);
   assert.match(
     html,
+    new RegExp(`href="${basePath}/#projects"[^>]*>Back to projects</a>`),
+  );
+  assert.doesNotMatch(html, /href="[^\"]*#work"/);
+  assert.match(
+    html,
     /https:\/\/everdein\.github\.io\/portfolio\/work\/pay-period-planner\//,
   );
 
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   assert.match(
     html,
     new RegExp(`${basePath}/images/pay-period-planner-projection\\.png`),
