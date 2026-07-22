@@ -42,6 +42,10 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/og\.png/);
   assert.match(html, /Black-and-white portrait of Matthew Clark/);
   assert.match(html, /Working principle/);
+  assert.match(
+    html,
+    /Make the product decision clear, keep system boundaries explicit,[\s\S]{0,40}leave evidence that the result works/,
+  );
   assert.doesNotMatch(html, /Working principle \/ 01/);
   assert.match(html, /Independent systems/);
   assert.match(
@@ -54,10 +58,15 @@ test("exports the portfolio content and metadata", async () => {
     ["2", "Customer-facing applications"],
     ["1,404", "Production submissions"],
     ["2,197", "Passing TypeScript tests"],
-    ["40", "Shared modules"],
+    ["~40", "Shared modules"],
   ]) {
     assert.ok(html.includes(`<dt>${value}</dt><dd><strong>${label}</strong>`));
   }
+  assert.match(
+    html,
+    /131 test files in the primary application; capability built[\s\S]{0,40}from zero/,
+  );
+  assert.match(html, /a verified full-stack case study/);
   assert.match(html, /How I lead the work/);
   assert.match(html, /Let&#x27;s talk about complex systems<\/h2>/);
   assert.match(html, /Switch to dark theme/);

@@ -21,7 +21,7 @@ export default function Home() {
         <p className="rail-edition">
           Engineering portfolio
           <br />
-          Selected work / 2026
+          Selected work
         </p>
         <nav aria-label="Primary navigation">
           <a href="#professional">
@@ -109,8 +109,8 @@ export default function Home() {
           <div className="intro-note">
             <span className="note-label">Working principle</span>
             <p>
-              Make complex behavior understandable, keep system boundaries
-              explicit, and leave evidence that the result works.
+              Make the product decision clear, keep system boundaries explicit,
+              and leave evidence that the result works.
             </p>
           </div>
         </section>
@@ -158,11 +158,14 @@ export default function Home() {
               <dt>2,197</dt>
               <dd>
                 <strong>Passing TypeScript tests</strong>
-                <span>131 test files; capability built from zero</span>
+                <span>
+                  131 test files in the primary application; capability built
+                  from zero
+                </span>
               </dd>
             </div>
             <div>
-              <dt>40</dt>
+              <dt>~40</dt>
               <dd>
                 <strong>Shared modules</strong>
                 <span>Supporting more than 90 source and test files</span>
@@ -197,9 +200,10 @@ export default function Home() {
               <span className="project-number">Featured project / 01</span>
               <h3>Pay Period Planner</h3>
               <p>
-                An independently built household cash-flow product that makes
-                complex planning rules explicit—from accessible React workflows
-                to versioned PostgreSQL ownership and cross-layer verification.
+                An independently built household cash-flow product that turns
+                income, bills, savings, and debt into a clear next-paycheck plan.
+                Its accessible React workflows connect to an authenticated Spring
+                Boot API, versioned PostgreSQL data, and cross-layer verification.
               </p>
               <div className="project-links" aria-label="Pay Period Planner links">
                 <a

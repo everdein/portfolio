@@ -80,7 +80,7 @@ export default function PayPeriodPlannerCaseStudy() {
         <p className="rail-edition">
           Flagship case study
           <br />
-          Pay Period Planner / 2026
+          Pay Period Planner
         </p>
         <nav aria-label="Case study sections">
           <a href="#product">
