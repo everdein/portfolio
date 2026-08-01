@@ -382,6 +382,12 @@ h1 {
   padding: 0;
 }
 
+.projects .feature-project + .feature-project {
+  margin-top: 52px;
+  padding-top: 52px;
+  border-top: 1px solid var(--rule);
+}
+
 .project-copy {
   display: flex;
   min-width: 0;
@@ -550,6 +556,15 @@ html[data-theme="dark"] .contact-links .primary-link:hover {
 .project-image img {
   object-fit: cover;
   object-position: top center;
+}
+
+.project-image--contain {
+  background: #06231e;
+}
+
+.project-image--contain img {
+  object-fit: contain;
+  object-position: center;
 }
 
 .project-signals {
@@ -1253,6 +1268,11 @@ footer a {
 
   .project-image {
     min-height: 250px;
+  }
+
+  .projects .feature-project + .feature-project {
+    margin-top: 38px;
+    padding-top: 38px;
   }
 
   .project-signals {
