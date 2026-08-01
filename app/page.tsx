@@ -223,7 +223,10 @@ export default function Home() {
                   Evidence
                 </ExternalLink>
               </div>
-              <div className="stack-list" aria-label="Technology stack">
+              <div
+                className="stack-list"
+                aria-label="Pay Period Planner technology stack"
+              >
                 <span>React</span>
                 <span>TypeScript</span>
                 <span>Spring Boot</span>
@@ -291,6 +294,103 @@ export default function Home() {
                     </li>
                   ))}
                   <li>Accessibility and security gates</li>
+                </ul>
+              </div>
+            </aside>
+          </article>
+
+          <article className="feature-project">
+            <div className="project-copy">
+              <span className="project-number">Showcase project / 02</span>
+              <h3>DSA Dojo</h3>
+              <p>
+                A framework-free learning product that turns algorithm execution
+                into visible decisions. Seven array and linked-list lessons pair
+                reversible traces, source highlighting, prediction prompts, and
+                Pip guidance with an accessible browser-native player.
+              </p>
+              <div className="project-links" aria-label="DSA Dojo links">
+                <ExternalLink
+                  className="primary-link"
+                  href="https://everdein.github.io/dsa-dojo/"
+                >
+                  Open DSA Dojo
+                </ExternalLink>
+                <ExternalLink href="https://github.com/everdein/dsa-dojo">
+                  View source
+                </ExternalLink>
+                <ExternalLink href="https://github.com/everdein/dsa-dojo/blob/main/docs/studio-architecture.md">
+                  Architecture
+                </ExternalLink>
+              </div>
+              <div
+                className="stack-list"
+                aria-label="DSA Dojo technology stack"
+              >
+                <span>Semantic HTML</span>
+                <span>Modern CSS</span>
+                <span>JavaScript</span>
+                <span>Playwright</span>
+              </div>
+            </div>
+
+            <div className="project-visual">
+              <div className="browser-bar" aria-hidden="true">
+                <i />
+                <i />
+                <i />
+                <span className="browser-label">
+                  Live product / Interactive lessons
+                </span>
+              </div>
+              <div className="project-image project-image--contain">
+                <Image
+                  src={`${basePath}/images/dsa-dojo-overview.jpg`}
+                  alt="DSA Dojo landing page showing the See the algorithm think headline, Pip guide, and a Find Largest visualization"
+                  fill
+                  sizes="(max-width: 760px) 100vw, (max-width: 1200px) 62vw, 52vw"
+                />
+              </div>
+            </div>
+
+            <aside
+              className="project-signals"
+              aria-label="DSA Dojo architecture and verification"
+            >
+              <div className="signal-group">
+                <div className="signal-label">
+                  <span>Architecture</span>
+                  <b aria-hidden="true" />
+                </div>
+                <ol className="architecture-map">
+                  <li>
+                    <strong>Core</strong>
+                    <span>Pure algorithm functions</span>
+                  </li>
+                  <li>
+                    <strong>Trace</strong>
+                    <span>Deterministic snapshots</span>
+                  </li>
+                  <li>
+                    <strong>Player</strong>
+                    <span>Reversible state machine</span>
+                  </li>
+                  <li>
+                    <strong>Views</strong>
+                    <span>Array and linked-list renderers</span>
+                  </li>
+                </ol>
+              </div>
+              <div className="signal-group testing">
+                <div className="signal-label">
+                  <span>Evidence</span>
+                  <b aria-hidden="true" />
+                </div>
+                <ul className="evidence-list">
+                  <li>Unit and integration coverage</li>
+                  <li>Desktop and mobile browser flows</li>
+                  <li>Keyboard and accessibility checks</li>
+                  <li>Verified static release gate</li>
                 </ul>
               </div>
             </aside>

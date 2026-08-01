@@ -28,7 +28,14 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /Live browser[\s\S]{0,80}cross-layer workflow coverage/);
   assert.match(html, /PostgreSQL[\s\S]{0,80}relational runtime coverage/);
   assert.match(html, /https:\/\/github\.com\/everdein\/pay-period-planner/);
-  assert.doesNotMatch(html, /DSA Dojo|github\.com\/everdein\/dsa-dojo/i);
+  assert.match(html, /DSA Dojo/);
+  assert.match(html, /Seven array and linked-list lessons/);
+  assert.match(html, /https:\/\/everdein\.github\.io\/dsa-dojo\//);
+  assert.match(html, /https:\/\/github\.com\/everdein\/dsa-dojo/);
+  assert.match(
+    html,
+    /github\.com\/everdein\/dsa-dojo\/blob\/main\/docs\/studio-architecture\.md/,
+  );
   assert.match(html, /https:\/\/linkedin\.com\/in\/everdein/);
   assert.match(html, /href="mailto:everdein@gmail\.com"[^>]*>Email<\/a>/);
   assert.match(html, /https:\/\/www\.goodreads\.com\/everdein/);
@@ -74,6 +81,7 @@ test("exports the portfolio content and metadata", async () => {
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Codex is building/i);
 
   assert.match(html, new RegExp(`${basePath}/images/pay-period-planner-overview\\.png`));
+  assert.match(html, new RegExp(`${basePath}/images/dsa-dojo-overview\\.jpg`));
   assert.match(html, new RegExp(`${basePath}/work/pay-period-planner/`));
   assert.match(
     html,
@@ -88,6 +96,7 @@ test("exports the portfolio content and metadata", async () => {
   await access(new URL("og.png", outputRoot));
   await access(new URL("matthew-clark-resume.pdf", outputRoot));
   await access(new URL("images/matthew-clark.jpg", outputRoot));
+  await access(new URL("images/dsa-dojo-overview.jpg", outputRoot));
 });
 
 test("exports the Pay Period Planner case study and approved evidence", async () => {
@@ -158,6 +167,7 @@ test("keeps the static site focused and free of server runtime", async () => {
   ]);
 
   assert.match(page, /pay-period-planner-overview\.png/);
+  assert.match(page, /dsa-dojo-overview\.jpg/);
   assert.match(layout, /matthew-clark-portfolio-theme/);
   assert.match(css, /html\[data-theme="dark"\]/);
   assert.match(css, /--rail-accent/);
@@ -170,6 +180,7 @@ test("keeps the static site focused and free of server runtime", async () => {
   await assert.rejects(access(new URL("worker", root)));
   await assert.rejects(access(new URL(".openai", root)));
   await access(new URL("public/images/pay-period-planner-overview.png", root));
+  await access(new URL("public/images/dsa-dojo-overview.jpg", root));
   await access(new URL("public/images/matthew-clark.jpg", root));
   await access(new URL("public/.nojekyll", root));
 });

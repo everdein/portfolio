@@ -124,6 +124,31 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
     `${basePath}/work/pay-period-planner/`,
   );
 
+  const dsaDojoLink = page.getByRole("link", {
+    name: "Open DSA Dojo (opens in a new tab)",
+    exact: true,
+  });
+  await expect(dsaDojoLink).toHaveAttribute(
+    "href",
+    "https://everdein.github.io/dsa-dojo/",
+  );
+  await expect(dsaDojoLink).toHaveAttribute("target", "_blank");
+  await expect(
+    page.getByRole("link", {
+      name: "Architecture (opens in a new tab)",
+      exact: true,
+    }),
+  ).toHaveAttribute(
+    "href",
+    "https://github.com/everdein/dsa-dojo/blob/main/docs/studio-architecture.md",
+  );
+
+  await expectImageLoaded(
+    page.getByRole("img", {
+      name: "DSA Dojo landing page showing the See the algorithm think headline, Pip guide, and a Find Largest visualization",
+    }),
+  );
+
   const resumeLink = page.getByRole("link", {
     name: "View resume (opens in a new tab)",
     exact: true,
