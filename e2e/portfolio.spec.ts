@@ -145,7 +145,7 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
 
   await expectImageLoaded(
     page.getByRole("img", {
-      name: "DSA Dojo landing page showing the See the algorithm think headline, Pip guide, and a Find Largest visualization",
+      name: "DSA Dojo curriculum map showing lesson prerequisites across the 55-lesson learning path",
     }),
   );
 

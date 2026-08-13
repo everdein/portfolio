@@ -304,10 +304,10 @@ export default function Home() {
               <span className="project-number">Showcase project / 02</span>
               <h3>DSA Dojo</h3>
               <p>
-                A framework-free learning product that turns algorithm execution
-                into visible decisions. Seven array and linked-list lessons pair
-                reversible traces, source highlighting, prediction prompts, and
-                Pip guidance with an accessible browser-native player.
+                A framework-free algorithm learning system with 55 interactive
+                lessons across 20 topics. Reversible traces power guided playback,
+                active-recall challenges, side-by-side algorithm comparisons, and
+                a searchable prerequisite map.
               </p>
               <div className="project-links" aria-label="DSA Dojo links">
                 <ExternalLink
@@ -346,7 +346,7 @@ export default function Home() {
               <div className="project-image project-image--contain">
                 <Image
                   src={`${basePath}/images/dsa-dojo-overview.jpg`}
-                  alt="DSA Dojo landing page showing the See the algorithm think headline, Pip guide, and a Find Largest visualization"
+                  alt="DSA Dojo curriculum map showing lesson prerequisites across the 55-lesson learning path"
                   fill
                   sizes="(max-width: 760px) 100vw, (max-width: 1200px) 62vw, 52vw"
                 />
@@ -364,20 +364,20 @@ export default function Home() {
                 </div>
                 <ol className="architecture-map">
                   <li>
-                    <strong>Core</strong>
-                    <span>Pure algorithm functions</span>
+                    <strong>Curriculum</strong>
+                    <span>55 lessons / 20 topics</span>
                   </li>
                   <li>
-                    <strong>Trace</strong>
-                    <span>Deterministic snapshots</span>
+                    <strong>Runtime</strong>
+                    <span>Deterministic traces + dynamic loading</span>
                   </li>
                   <li>
-                    <strong>Player</strong>
-                    <span>Reversible state machine</span>
+                    <strong>Learning</strong>
+                    <span>Playback, challenge, progress, sharing</span>
                   </li>
                   <li>
                     <strong>Views</strong>
-                    <span>Array and linked-list renderers</span>
+                    <span>Nine reusable renderer families</span>
                   </li>
                 </ol>
               </div>
@@ -387,10 +387,10 @@ export default function Home() {
                   <b aria-hidden="true" />
                 </div>
                 <ul className="evidence-list">
-                  <li>Unit and integration coverage</li>
-                  <li>Desktop and mobile browser flows</li>
-                  <li>Keyboard and accessibility checks</li>
-                  <li>Verified static release gate</li>
+                  <li>Enforced Node coverage floors</li>
+                  <li>Complete lesson-contract verification</li>
+                  <li>Desktop, mobile, keyboard, and accessibility flows</li>
+                  <li>Protected GitHub Pages release gate</li>
                 </ul>
               </div>
             </aside>

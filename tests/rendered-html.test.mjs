@@ -29,7 +29,10 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /PostgreSQL[\s\S]{0,80}relational runtime coverage/);
   assert.match(html, /https:\/\/github\.com\/everdein\/pay-period-planner/);
   assert.match(html, /DSA Dojo/);
-  assert.match(html, /Seven array and linked-list lessons/);
+  assert.match(html, /55 interactive[\s\S]{0,80}20 topics/);
+  assert.match(html, /active-recall challenges/);
+  assert.match(html, /side-by-side algorithm comparisons/);
+  assert.match(html, /Nine reusable renderer families/);
   assert.match(html, /https:\/\/everdein\.github\.io\/dsa-dojo\//);
   assert.match(html, /https:\/\/github\.com\/everdein\/dsa-dojo/);
   assert.match(
