@@ -66,18 +66,17 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /Evidence from production systems/);
   for (const [value, label] of [
     ["2", "Customer-facing applications"],
-    ["1,404", "Production submissions"],
-    ["2,197", "Passing TypeScript tests"],
-    ["~40", "Shared modules"],
+    ["3,335", "Automated test cases"],
+    ["6", "Enforceable quality gates"],
+    ["600+ MB", "Removed from production images"],
   ]) {
     assert.ok(html.includes(`<dt>${value}</dt><dd><strong>${label}</strong>`));
   }
-  assert.match(
-    html,
-    /131 test files in the primary application; capability built[\s\S]{0,40}from zero/,
-  );
-  assert.match(html, /a verified full-stack case study/);
+  assert.match(html, /3,327 passing, 0 failing, with 97\.08% coverage/);
+  assert.match(html, /other engineers independently extended and operated/);
+  assert.match(html, /durable team platforms/);
   assert.match(html, /How I lead the work/);
+  assert.match(html, /Create durable leverage/);
   assert.match(html, /Let&#x27;s talk about complex systems<\/h2>/);
   assert.match(html, /Switch to dark theme/);
   assert.match(html, /aria-pressed="false"/);

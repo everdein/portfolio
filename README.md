@@ -8,7 +8,10 @@ Pay Period Planner is the independently built flagship case study, and DSA Dojo
 adds a live, framework-free algorithm learning product. A compact
 professional-impact ledger, public resume, and career narrative connect that
 project evidence to professional scope without turning the homepage into a
-second resume or mixing employer work with portfolio-project evidence. The
+second resume or mixing private employer evidence with portfolio-project
+evidence. The professional narrative emphasizes application architecture,
+technical strategy, enforceable quality standards, and durable capabilities
+that other engineers can extend and operate. The
 internal `/work/pay-period-planner/` route turns the approved repository case
 study into a product-first walkthrough with qualified engineering evidence.
 
