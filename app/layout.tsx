@@ -21,7 +21,7 @@ const themeScript = `
 
 const title = "Matthew Clark | Lead Software Engineer";
 const description =
-  "Lead Software Engineer Matthew Clark's portfolio, featuring frontend architecture for complex customer-facing workflows, measurable production impact, and a verified full-stack case study.";
+  "Lead Software Engineer Matthew Clark's portfolio, featuring application architecture, technical strategy, engineering quality, durable team platforms, measurable production impact, and verified case studies.";
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   "https://everdein.github.io/portfolio";

@@ -61,9 +61,9 @@ export default function Home() {
             Lead Software Engineer
           </strong>
           <span>
-            Frontend architecture
+            Application architecture
             <br />
-            Technical leadership
+            Technical strategy
           </span>
         </div>
       </aside>
@@ -85,9 +85,9 @@ export default function Home() {
                 I build understandable systems for complex product behavior.
               </p>
               <p className="hero-detail">
-                I lead frontend architecture for complex customer-facing React
-                and TypeScript products, carrying product decisions across APIs,
-                testing, accessibility, security, and production delivery.
+                I turn ambiguous product and engineering problems into
+                understandable systems, enforceable standards, and reusable
+                capabilities that teams can extend and operate.
               </p>
               <div className="hero-actions">
                 <a className="primary-link" href={caseStudyHref}>
@@ -128,9 +128,10 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              Across my State Farm tenure, I&apos;ve architected and delivered
-              customer-facing life-insurance workflows that connect frontend
-              behavior, APIs, testing, security, and production delivery.
+              Across my State Farm tenure, I&apos;ve shaped application
+              architecture, technical strategy, and cross-team delivery for
+              customer-facing systems while building standards and shared
+              capabilities that create leverage beyond a single project.
             </p>
           </div>
 
@@ -146,36 +147,41 @@ export default function Home() {
               </dd>
             </div>
             <div>
-              <dt>1,404</dt>
+              <dt>3,335</dt>
               <dd>
-                <strong>Production submissions</strong>
+                <strong>Automated test cases</strong>
                 <span>
-                  Across 1,174 policies in a measured 30-day period
+                  3,327 passing, 0 failing, with 97.08% coverage
                 </span>
               </dd>
             </div>
             <div>
-              <dt>2,197</dt>
+              <dt>6</dt>
               <dd>
-                <strong>Passing TypeScript tests</strong>
+                <strong>Enforceable quality gates</strong>
                 <span>
-                  131 test files in the primary application; capability built
-                  from zero
+                  Formatting, spelling, linting, type safety, testing, and
+                  design-system compatibility
                 </span>
               </dd>
             </div>
             <div>
-              <dt>~40</dt>
+              <dt>600+ MB</dt>
               <dd>
-                <strong>Shared modules</strong>
-                <span>Supporting more than 90 source and test files</span>
+                <strong>Removed from production images</strong>
+                <span>
+                  Build-time frontend dependencies excluded across two applications
+                </span>
               </dd>
             </div>
           </dl>
 
           <p className="impact-note">
-            Additional work includes runtime-image optimization, vulnerability
-            remediation, deployment visibility, and mentoring engineers.
+            Additional work includes an enterprise reporting data path, a
+            45-page engineering enablement platform, deployment visibility for
+            six applications across four environments, remediation of 10
+            vulnerable items spanning five CVEs, and platform patterns that
+            other engineers independently extended and operated.
           </p>
         </section>
 
@@ -425,8 +431,16 @@ export default function Home() {
             <div className="approach-item">
               <strong>Build confidence</strong>
               <p>
-                Combine tests, accessibility, security, documentation, reviews,
-                and mentoring so the team can deliver reliably.
+                Encode tests, accessibility, security, documentation, and
+                delivery controls into the system so quality does not depend on
+                individual memory.
+              </p>
+            </div>
+            <div className="approach-item">
+              <strong>Create durable leverage</strong>
+              <p>
+                Turn exploration and one-off work into documented, tested
+                capabilities that other engineers can extend, operate, and own.
               </p>
             </div>
           </div>
@@ -471,9 +485,11 @@ export default function Home() {
                 outcomes.
               </p>
               <p>
-                Today I lead frontend architecture and full-stack delivery for
-                complex workflows, mentor engineers, and improve the systems and
-                practices that make change safer.
+                Today I lead application architecture, technical strategy, and
+                cross-team delivery for complex workflows. I use AI-assisted
+                engineering to accelerate exploration and implementation while
+                retaining human review, architectural ownership, and the judgment
+                to choose the simplest maintainable solution.
               </p>
               <ExternalLink className="text-link" href={resumeHref}>
                 Read the full resume
@@ -493,8 +509,9 @@ export default function Home() {
           </div>
           <div className="section-copy">
             <p>
-              Connect with me about frontend architecture, customer-facing
-              workflow products, technical leadership, and full-stack delivery.
+              Connect with me about application architecture, customer-facing
+              systems, technical strategy, engineering quality, and creating
+              platforms that help teams deliver independently.
             </p>
             <div className="contact-links">
               <ExternalLink
