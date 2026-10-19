@@ -37,6 +37,14 @@ The site uses the Dual Canvas visual system:
   containment, anchors, screenshots, and the public resume
 - ESLint and GitHub Actions verification
 
+The Next ESLint plugin's `fast-glob` dependency is scoped to `tinyglobby@0.2.17`
+to remove the unpatched `braces` dependency (GHSA-vfj7-8cjw-p6xm). The plugin
+only uses its `globSync` directory-discovery API. `npm run lint` first verifies
+that API through Next's own root-discovery utility, including directory-only
+matching, brace patterns, multiple roots, Windows separators, and missing paths.
+Remove the override when the upstream plugin no longer depends on the vulnerable
+chain; review this assertion when upgrading the plugin.
+
 The first version intentionally has no authentication, database, contact form,
 analytics, or chatbot. Those features should be added only when they serve a
 clear portfolio need.
