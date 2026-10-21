@@ -99,7 +99,7 @@ export default function Home() {
             <div className="hero-portrait">
               <Image
                 src={`${basePath}/images/matthew-clark.jpg`}
-                alt="Black-and-white portrait of Matthew Clark"
+                alt="Matthew Clark outdoors against a softly blurred green background"
                 fill
                 priority
                 sizes="(max-width: 1040px) 360px, 24vw"
