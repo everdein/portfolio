@@ -9,9 +9,9 @@ test("exports the portfolio content and metadata", async () => {
   const html = await readFile(new URL("index.html", outputRoot), "utf8");
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
-  assert.match(html, /<title>Matthew Clark \| Lead Software Engineer<\/title>/i);
+  assert.match(html, /<title>Matthew Clark \| Senior Software Engineer<\/title>/i);
   assert.match(html, /<h1[^>]*>Matthew Clark<\/h1>/i);
-  assert.match(html, /I build understandable systems for complex product behavior/);
+  assert.match(html, /I design and build systems people can rely on/);
   assert.match(html, /id="professional"/);
   assert.match(html, /id="projects"/);
   assert.match(html, /id="approach"/);
@@ -74,7 +74,12 @@ test("exports the portfolio content and metadata", async () => {
   }
   assert.match(html, /3,327 passing, 0 failing, with 97\.08% coverage/);
   assert.match(html, /other engineers independently extended and operated/);
-  assert.match(html, /durable team platforms/);
+  assert.match(html, /enterprise integrations/);
+  assert.match(html, /PBK \/ Sep 2026–present/);
+  assert.match(html, /State Farm \/ Sep 2023–Sep 2026/);
+  assert.match(html, /State Farm \/ Jun 2021–Sep 2023/);
+  assert.match(html, /intended to[\s\S]{0,40}cover 1,200\+ Deltek projects/);
+  assert.doesNotMatch(html, /State Farm \/ 2023-present/);
   assert.match(html, /How I lead the work/);
   assert.match(html, /Create durable leverage/);
   assert.match(html, /Let&#x27;s talk about complex systems<\/h2>/);

@@ -26,6 +26,9 @@ export default defineConfig({
   timeout: 30_000,
   use: {
     baseURL,
+    launchOptions: {
+      executablePath: process.env.PORTFOLIO_CHROMIUM_PATH || undefined,
+    },
     screenshot: "only-on-failure",
     trace: "on-first-retry",
   },

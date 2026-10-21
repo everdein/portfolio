@@ -58,12 +58,12 @@ export default function Home() {
         <div className="rail-status">
           <strong>
             <span className="status-dot" aria-hidden="true" />
-            Lead Software Engineer
+            Senior Software Engineer
           </strong>
           <span>
             Application architecture
             <br />
-            Technical strategy
+            System design
           </span>
         </div>
       </aside>
@@ -79,15 +79,15 @@ export default function Home() {
         <section className="hero" aria-labelledby="page-title">
           <div className="hero-main">
             <div className="hero-copy">
-              <p className="role">Lead Software Engineer</p>
+              <p className="role">Senior Software Engineer</p>
               <h1 id="page-title">Matthew Clark</h1>
               <p className="hero-line">
-                I build understandable systems for complex product behavior.
+                I design and build systems people can rely on.
               </p>
               <p className="hero-detail">
-                I turn ambiguous product and engineering problems into
-                understandable systems, enforceable standards, and reusable
-                capabilities that teams can extend and operate.
+                I combine system design, application architecture, full-stack
+                development, and technical leadership to connect business needs
+                with software teams can maintain and extend.
               </p>
               <div className="hero-actions">
                 <a className="primary-link" href={caseStudyHref}>
@@ -128,10 +128,10 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              Across my State Farm tenure, I&apos;ve shaped application
-              architecture, technical strategy, and cross-team delivery for
-              customer-facing systems while building standards and shared
-              capabilities that create leverage beyond a single project.
+              At PBK, I design across applications, services, storage, and data
+              platforms. Previously, at State Farm, I owned frontend architecture
+              and helped a six-engineer team deliver customer-facing systems.
+              The outcomes below come from my State Farm tenure.
             </p>
           </div>
 
@@ -456,26 +456,55 @@ export default function Home() {
               <div>
                 <dt>Current role</dt>
                 <dd>
+                  <strong>Senior Software Engineer</strong>
+                  <span>PBK / Sep 2026–present</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Previous role</dt>
+                <dd>
                   <strong>Lead Software Engineer</strong>
-                  <span>State Farm / 2023-present</span>
+                  <span>State Farm / Sep 2023–Sep 2026</span>
                 </dd>
               </div>
               <div>
-                <dt>Software engineering</dt>
+                <dt>Earlier role</dt>
                 <dd>
-                  <strong>5+ years</strong>
-                  <span>Customer-facing React and TypeScript systems</span>
-                </dd>
-              </div>
-              <div>
-                <dt>Foundation</dt>
-                <dd>
-                  <strong>10 years</strong>
-                  <span>Data and analytics at Microsoft</span>
+                  <strong>Software Engineer</strong>
+                  <span>State Farm / Jun 2021–Sep 2023</span>
                 </dd>
               </div>
             </dl>
             <div className="section-copy">
+              <p>
+                At PBK, I provide technical direction and hands-on engineering
+                across frontend applications, backend services, APIs, storage,
+                and data platforms. I work with business stakeholders, IT, and
+                external development teams to define boundaries, interfaces,
+                data flows, and dependencies across enterprise systems.
+              </p>
+              <p>
+                My work includes developing and evaluating solutions with
+                Microsoft Azure, Databricks, Microsoft Fabric, Next.js, and
+                Abacus.AI, with integration work involving Concur, Workday,
+                Deltek, Salesforce, and Autodesk. I review applications, guide
+                technical handoffs, and establish practices for maintainability
+                and ongoing ownership.
+              </p>
+              <p>
+                I&apos;m building an AI-assisted PDF review workflow intended to
+                cover 1,200+ Deltek projects, identifying missing project data
+                and developing green, yellow, and red completeness ratings to
+                prioritize follow-up.
+              </p>
+              <p>
+                At State Farm, I helped build two life insurance applications
+                from the ground up and progressed into a lead role. I owned
+                frontend architecture, guided modernization, and supported a
+                six-engineer team through design, mentoring, and production
+                delivery. Shared components, documentation, and tooling helped
+                other engineers build on that work.
+              </p>
               <p>
                 My background spans geospatial data quality for Google Maps, a
                 decade in data and analytics at Microsoft, open-source software
@@ -485,14 +514,16 @@ export default function Home() {
                 outcomes.
               </p>
               <p>
-                Today I lead application architecture, technical strategy, and
-                cross-team delivery for complex workflows. I use AI-assisted
-                engineering to accelerate exploration and implementation while
-                retaining human review, architectural ownership, and the judgment
-                to choose the simplest maintainable solution.
+                I value clear communication, sound engineering judgment, and
+                ownership beyond the initial release. I use AI-assisted
+                programming in professional and independent work for
+                implementation, refactoring, testing, and documentation while
+                retaining human review and architectural ownership. My independent projects
+                demonstrate engineering capabilities; AI assistance is
+                part of the development process.
               </p>
               <ExternalLink className="text-link" href={resumeHref}>
-                Read the full resume
+                Read the resume
               </ExternalLink>
             </div>
           </div>
