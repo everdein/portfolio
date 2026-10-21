@@ -9,9 +9,11 @@ adds a live, framework-free algorithm learning product. A compact
 professional-impact ledger, public resume, and career narrative connect that
 project evidence to professional scope without turning the homepage into a
 second resume or mixing private employer evidence with portfolio-project
-evidence. The professional narrative emphasizes application architecture,
-technical strategy, enforceable quality standards, and durable capabilities
-that other engineers can extend and operate. The
+evidence. The professional narrative emphasizes system design, application
+architecture, full-stack development, enterprise integrations, and technical
+leadership. PBK is the current role; the two State Farm roles remain distinct,
+with production metrics attributed to that tenure. Applied generative AI work
+is ongoing and distinguished from AI-assisted programming. The
 internal `/work/pay-period-planner/` route turns the approved repository case
 study into a product-first walkthrough with qualified engineering evidence.
 
@@ -79,6 +81,18 @@ push to `main` uploads the generated `out/` directory and deploys it to
 server process, runtime secrets, authentication, or persistence.
 
 ## Content Sources
+
+The public resume is built from `scripts/build-resume.py` using Python and
+ReportLab. Run it from the repository root, render and inspect both pages of
+`tmp/resume-review/matthew-clark-resume.pdf`, then copy the approved PDF to
+`public/matthew-clark-resume.pdf`. Original historical resume files are not
+overwritten. The public version omits private phone and email details.
+
+Run `node scripts/build-social-preview.mjs` to regenerate `public/og.png` with
+the repository's Playwright dependency. Inspect the image and update the cache
+version in `app/layout.tsx` when changing the published card.
+Set `PORTFOLIO_CHROMIUM_PATH` to an existing Chromium executable when using a
+locally managed browser; the preview builder and browser tests both accept it.
 
 - [Pay Period Planner](https://github.com/everdein/pay-period-planner)
 - [Pay Period Planner case study](https://github.com/everdein/pay-period-planner/blob/main/docs/portfolio-case-study.md)

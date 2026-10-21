@@ -95,7 +95,7 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
 }) => {
   await page.goto(homePath);
 
-  await expect(page).toHaveTitle("Matthew Clark | Lead Software Engineer");
+  await expect(page).toHaveTitle("Matthew Clark | Senior Software Engineer");
   await expect(
     page.getByRole("heading", { name: "Matthew Clark", level: 1 }),
   ).toBeVisible();
