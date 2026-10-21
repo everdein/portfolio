@@ -82,11 +82,13 @@ server process, runtime secrets, authentication, or persistence.
 
 ## Content Sources
 
-The public resume is built from `scripts/build-resume.py` using Python and
-ReportLab. Run it from the repository root, render and inspect both pages of
-`tmp/resume-review/matthew-clark-resume.pdf`, then copy the approved PDF to
-`public/matthew-clark-resume.pdf`. Original historical resume files are not
-overwritten. The public version omits private phone and email details.
+The public resume at `public/matthew-clark-resume.pdf` is the user-approved
+Google Docs PDF export. The portfolio and GitHub profile both link to this
+single file. Replace it with the approved export when the resume changes;
+preserve the exported typography, layout, links, and content rather than
+regenerating it from a separate resume builder. Inspect both PDF pages before
+publishing and verify that the deployed file matches the approved export.
+Original historical resume files are not overwritten.
 
 Run `node scripts/build-social-preview.mjs` to regenerate `public/og.png` with
 the repository's Playwright dependency. Inspect the image and update the cache
