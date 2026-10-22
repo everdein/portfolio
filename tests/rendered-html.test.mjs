@@ -50,7 +50,7 @@ test("exports the portfolio content and metadata", async () => {
     ),
   );
   assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/og\.png/);
-  assert.match(html, /Matthew Clark outdoors against a softly blurred green background/);
+  assert.match(html, /Matthew Clark wearing a light blue shirt against a softly blurred background/);
   assert.match(html, /Working principle/);
   assert.match(
     html,
