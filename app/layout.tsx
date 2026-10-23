@@ -22,7 +22,7 @@ const description =
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   "https://everdein.github.io/portfolio";
-const socialImage = `${siteUrl}/og-20261023.png`;
+const socialImage = `${siteUrl}/og-20261023-banner.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

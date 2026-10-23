@@ -49,7 +49,7 @@ test("exports the portfolio content and metadata", async () => {
       `href="${basePath}/matthew-clark-resume\\.pdf" target="_blank"`,
     ),
   );
-  assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/og-20261023\.png/);
+  assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/og-20261023-banner\.png/);
   assert.match(html, /Matthew Clark wearing a light blue shirt against a softly blurred neutral background/);
   assert.match(html, /Working principle/);
   assert.match(
@@ -100,7 +100,7 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, new RegExp(`${basePath}/icon\\.svg\\?`));
   await access(new URL(".nojekyll", outputRoot));
   await access(new URL("icon.svg", outputRoot));
-  await access(new URL("og-20261023.png", outputRoot));
+  await access(new URL("og-20261023-banner.png", outputRoot));
   await access(new URL("matthew-clark-resume.pdf", outputRoot));
   await access(new URL("images/matthew-clark-headshot.jpg", outputRoot));
   await access(new URL("images/dsa-dojo-overview.jpg", outputRoot));
