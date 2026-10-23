@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ExternalLink } from "../ExternalLink";
 import { ThemeToggle } from "../ThemeToggle";
 import { PrintResume } from "./PrintResume";
@@ -67,6 +68,14 @@ export default function Resume() {
         </header>
         <article className="resume-document" aria-labelledby="resume-title">
           <header className="resume-heading">
+            <Image
+              className="resume-portrait"
+              src={`${basePath}/images/matthew-clark-headshot.jpg`}
+              alt="Matthew Clark wearing a light blue shirt against a softly blurred neutral background"
+              width={220}
+              height={220}
+              priority
+            />
             <p className="role">Senior Software Engineer</p>
             <h1 id="resume-title">Matthew Clark</h1>
             <p className="resume-specialty">
