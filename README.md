@@ -23,9 +23,9 @@ The site uses the Dual Canvas visual system:
 
 - a compact navigation rail on larger screens
 - responsive top navigation on smaller screens
-- forest green and cobalt accents in the light theme
+- neutral surfaces and VS Code blue controls in the light theme
 - VS Code Dark Modern charcoal surfaces, blue actions, and syntax accents in the dark theme
-- complete light and dark themes with saved local preference
+- Dark Modern by default, with a light theme and saved local preference
 - real product imagery rather than decorative illustrations
 
 ## Technology

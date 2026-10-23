@@ -49,8 +49,8 @@ test("exports the portfolio content and metadata", async () => {
       `href="${basePath}/matthew-clark-resume\\.pdf" target="_blank"`,
     ),
   );
-  assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/og\.png/);
-  assert.match(html, /Matthew Clark wearing a light blue shirt against a charcoal background with subtle teal and magenta lighting/);
+  assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/og-20261023\.png/);
+  assert.match(html, /Matthew Clark wearing a light blue shirt against a softly blurred neutral background/);
   assert.match(html, /Working principle/);
   assert.match(
     html,
@@ -83,8 +83,8 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /How I lead the work/);
   assert.match(html, /Create durable leverage/);
   assert.match(html, /Let&#x27;s talk about complex systems<\/h2>/);
-  assert.match(html, /Switch to dark theme/);
-  assert.match(html, /aria-pressed="false"/);
+  assert.match(html, /Switch to light theme/);
+  assert.match(html, /aria-pressed="true"/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|Codex is building/i);
 
   assert.match(html, new RegExp(`${basePath}/images/pay-period-planner-overview\\.png`));
@@ -100,9 +100,9 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, new RegExp(`${basePath}/icon\\.svg\\?`));
   await access(new URL(".nojekyll", outputRoot));
   await access(new URL("icon.svg", outputRoot));
-  await access(new URL("og.png", outputRoot));
+  await access(new URL("og-20261023.png", outputRoot));
   await access(new URL("matthew-clark-resume.pdf", outputRoot));
-  await access(new URL("images/matthew-clark.jpg", outputRoot));
+  await access(new URL("images/matthew-clark-headshot.jpg", outputRoot));
   await access(new URL("images/dsa-dojo-overview.jpg", outputRoot));
 });
 
@@ -188,6 +188,6 @@ test("keeps the static site focused and free of server runtime", async () => {
   await assert.rejects(access(new URL(".openai", root)));
   await access(new URL("public/images/pay-period-planner-overview.png", root));
   await access(new URL("public/images/dsa-dojo-overview.jpg", root));
-  await access(new URL("public/images/matthew-clark.jpg", root));
+  await access(new URL("public/images/matthew-clark-headshot.jpg", root));
   await access(new URL("public/.nojekyll", root));
 });

@@ -73,7 +73,7 @@ export default function PayPeriodPlannerCaseStudy() {
         <a
           className="rail-mark"
           href={`${basePath}/`}
-          aria-label="Matthew Clark portfolio home"
+          aria-label="MC — Matthew Clark portfolio home"
         >
           MC
         </a>

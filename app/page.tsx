@@ -15,7 +15,7 @@ export default function Home() {
       </a>
 
       <aside className="rail" aria-label="Portfolio navigation">
-        <a className="rail-mark" href="#top" aria-label="Matthew Clark home">
+        <a className="rail-mark" href="#top" aria-label="MC — Matthew Clark home">
           MC
         </a>
         <p className="rail-edition">
@@ -98,8 +98,8 @@ export default function Home() {
             </div>
             <div className="hero-portrait">
               <Image
-                src={`${basePath}/images/matthew-clark.jpg`}
-                alt="Matthew Clark wearing a light blue shirt against a charcoal background with subtle teal and magenta lighting"
+                src={`${basePath}/images/matthew-clark-headshot.jpg`}
+                alt="Matthew Clark wearing a light blue shirt against a softly blurred neutral background"
                 fill
                 priority
                 sizes="(max-width: 1040px) 360px, 24vw"
