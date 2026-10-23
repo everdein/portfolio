@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ExternalLink } from "../ExternalLink";
 import { ThemeToggle } from "../ThemeToggle";
-import { PrintResume } from "./PrintResume";
 import content from "./content.json";
 import "./resume.css";
 
@@ -133,8 +132,13 @@ export default function Resume() {
               <ExternalLink href={`${basePath}/matthew-clark-resume.pdf`}>
                 Open light PDF
               </ExternalLink>
-              <PrintResume />
+              <ExternalLink href={`${basePath}/matthew-clark-resume-dark.pdf`}>
+                Open dark PDF
+              </ExternalLink>
             </div>
+            <p className="resume-pdf-note">
+              Open either PDF to view or print that version.
+            </p>
           </header>
           <section
             id="summary"

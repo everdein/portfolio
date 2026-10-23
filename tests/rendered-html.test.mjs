@@ -17,6 +17,9 @@ test("exports the resume with professional content and a downloadable PDF", asyn
   assert.match(html, /Bellevue College/);
   assert.ok(html.includes(`href="${basePath}/matthew-clark-resume.pdf" download=""`));
   assert.ok(html.includes(`href="${basePath}/matthew-clark-resume-dark.pdf" download=""`));
+  assert.ok(html.includes(`href="${basePath}/matthew-clark-resume.pdf" target="_blank"`));
+  assert.ok(html.includes(`href="${basePath}/matthew-clark-resume-dark.pdf" target="_blank"`));
+  assert.doesNotMatch(html, /Print \/ save as PDF/);
   assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/resume\//);
   assert.match(html, /og-resume-20261023\.png/);
 });
