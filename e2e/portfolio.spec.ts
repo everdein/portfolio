@@ -150,10 +150,10 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
   );
 
   const resumeLink = page.getByRole("link", {
-    name: "View resume (opens in a new tab)",
+    name: "View resume",
     exact: true,
   });
-  await expect(resumeLink).toHaveAttribute("target", "_blank");
+  await expect(resumeLink).toHaveAttribute("href", `${basePath}/resume/`);
 
   const goodreadsLink = page.getByRole("link", {
     name: "Goodreads (opens in a new tab)",

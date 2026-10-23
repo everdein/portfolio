@@ -1,0 +1,63 @@
+{
+  "summary": "Senior software engineer and technical leader with 5+ years of software engineering experience. Combine hands-on development with system design across frontend applications, backend services, APIs, storage, and enterprise integrations. At PBK, shape architecture and modernization across applications and data platforms. Previously owned frontend architecture for two customer-facing life insurance applications at State Farm, established shared engineering practices, and supported a six-engineer team through design and delivery.",
+  "pbk": [
+    "Provide technical direction and hands-on engineering across applications, backend services, APIs, storage, and data platforms. Define system boundaries, interfaces, data flows, and upstream and downstream dependencies.",
+    "Partner with business stakeholders, IT, and external development teams to evaluate systems, clarify requirements, sequence implementation, and guide integration and modernization.",
+    "Develop and evaluate solutions using Microsoft Azure, Databricks, Microsoft Fabric, Next.js, and Abacus.AI, with enterprise integration work involving Concur, Workday, Deltek, Salesforce, and Autodesk.",
+    "Build an AI-assisted PDF review workflow intended to cover 1,200+ Deltek projects, identifying missing project data and developing green, yellow, and red completeness ratings. Work is ongoing.",
+    "Review internally and externally developed applications, guide technical handoffs, and establish practices for code quality, documentation, maintainability, and ongoing ownership."
+  ],
+  "stateFarm": [
+    {
+      "title": "Architecture, modernization & product delivery",
+      "items": [
+        "Owned frontend architecture and technical direction for two customer-facing life insurance applications built with React, TypeScript, and Redux. Guided delivery across application, API, orchestration, and downstream-service boundaries.",
+        "Established reusable state-management and delivery patterns and a shared library of roughly 40 common modules spanning more than 90 source and test files, reducing duplicated state and logic.",
+        "Led migration from a retiring UI framework to the enterprise design system, coordinating TypeScript adoption, shared components, testing, and delivery sequencing while product development continued.",
+        "Coordinated transaction and reporting workflows across engineering, data, analytics, and business teams. Traced business-event flows and ACORD XML fields to resolve cross-system blockers."
+      ]
+    },
+    {
+      "title": "Quality, security & production readiness",
+      "items": [
+        "Expanded the primary application's automated suite to 3,335 test cases at 97.08% coverage. Established six CI quality gates with Playwright and Axe browser and accessibility validation.",
+        "Redesigned multistage Docker builds and nginx runtime packaging, excluding more than 600 MB of build-time dependencies from final images across both applications; delivered through Red Hat OpenShift on AWS.",
+        "Remediated 10 vulnerability findings spanning five CVEs, including seven Critical-severity findings, with eight closed within SLA.",
+        "Automated 15-minute deployment visibility for six applications across four shared test environments, completing 100 successful scheduled validation runs."
+      ]
+    },
+    {
+      "title": "Technical leadership & AI-assisted engineering",
+      "items": [
+        "Supported a six-engineer team through technical design, code reviews, pairing, documentation, stakeholder demos, and candidate interviews; mentored an engineer directly.",
+        "Created a 45-page engineering knowledge base covering onboarding, application inventory, testing, environments, and on-call support. Built reusable patterns that other engineers independently extended.",
+        "Used AI-assisted programming for implementation, refactoring, testing, documentation, and technical exploration while retaining human review and architectural ownership."
+      ]
+    }
+  ],
+  "planner": "Designed and built an authenticated household cash-flow application with workspace isolation, database-backed sessions, CSRF protection, Flyway migrations, and explicit version-checked saves. Verified with Vitest, Playwright, PostgreSQL integration tests, JaCoCo, and accessibility checks. Local-first; not production hosted.",
+  "dsa": "Designed and built a framework-free learning application with 55 lessons across 20 topics. Deterministic traces synchronize visualization, source highlighting, narration, and accessible playback. Includes algorithm comparisons, device-local progress, and Node.js, Playwright, and axe-core verification.",
+  "skills": [
+    {
+      "title": "Architecture & Leadership",
+      "detail": "System design, application and solution architecture, full-stack development, system integration, modernization, technical direction, mentoring"
+    },
+    {
+      "title": "Development",
+      "detail": "TypeScript, JavaScript, React, Redux Toolkit, Next.js, Java, Spring Boot, Spring JDBC, PostgreSQL, Flyway"
+    },
+    {
+      "title": "Cloud & Data",
+      "detail": "Microsoft Azure, Microsoft Fabric, Databricks, enterprise integrations"
+    },
+    {
+      "title": "Quality & Delivery",
+      "detail": "GitLab CI/CD, GitHub Actions, Vitest, Playwright, Axe, accessibility, Docker, nginx, vulnerability remediation"
+    },
+    {
+      "title": "AI Engineering",
+      "detail": "Generative AI for document analysis; AI-assisted programming, Claude, ChatGPT, Codex, GitHub Copilot, MCP tooling"
+    }
+  ],
+  "education": "Bachelor of Science in Computer Science | Bellevue College — Bellevue, Washington"
+}
