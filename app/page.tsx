@@ -251,7 +251,7 @@ export default function Home() {
               </div>
               <div className="project-image">
                 <Image
-                  src={`${basePath}/images/pay-period-planner-overview.png?v=20261023-type`}
+                  src={`${basePath}/images/pay-period-planner-overview.png?v=20261023-balanced`}
                   alt="Pay Period Planner household overview with projection, balances, cash flow, and calendar summaries"
                   fill
                   priority
@@ -351,7 +351,7 @@ export default function Home() {
               </div>
               <div className="project-image project-image--contain">
                 <Image
-                  src={`${basePath}/images/dsa-dojo-overview.jpg?v=20261023-type`}
+                  src={`${basePath}/images/dsa-dojo-overview.jpg?v=20261023-balanced`}
                   alt="DSA Dojo dark lesson studio with its lesson catalog and Sensei Pip guide"
                   fill
                   sizes="(max-width: 760px) 100vw, (max-width: 1200px) 62vw, 52vw"
