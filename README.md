@@ -17,6 +17,12 @@ is ongoing and distinguished from AI-assisted programming. The
 internal `/work/pay-period-planner/` route turns the approved repository case
 study into a product-first walkthrough with qualified engineering evidence.
 
+The `/resume/` route presents the published resume in the same light and dark
+themes, with section navigation, an unchanged PDF download, and a print-friendly
+layout. `app/resume/content.json` contains the professional text extracted from
+`public/matthew-clark-resume.pdf`; update both when the approved resume changes.
+The web page omits the phone number and uses email and professional profile links.
+
 ## Design Direction
 
 The site uses the Dual Canvas visual system:

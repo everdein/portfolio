@@ -5,6 +5,20 @@ import test from "node:test";
 const root = new URL("../", import.meta.url);
 const outputRoot = new URL("../out/", import.meta.url);
 
+test("exports the resume with professional content and a downloadable PDF", async () => {
+  const html = await readFile(new URL("resume/index.html", outputRoot), "utf8");
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  assert.match(html, /<title>Resume \| Matthew Clark<\/title>/);
+  for (const heading of ["Professional summary", "Professional experience", "Selected independent projects", "Technical skills", "Education"]) assert.ok(html.includes(heading));
+  assert.match(html, /September 2026–Present/);
+  assert.match(html, /September 2023–September 2026/);
+  assert.match(html, /3,335 test cases at 97\.08% coverage/);
+  assert.match(html, /Local-first; not production hosted/);
+  assert.match(html, /Bellevue College/);
+  assert.ok(html.includes(`href="${basePath}/matthew-clark-resume.pdf" download=""`));
+  assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/resume\//);
+});
+
 test("exports the portfolio content and metadata", async () => {
   const html = await readFile(new URL("index.html", outputRoot), "utf8");
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -46,7 +60,7 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(
     html,
     new RegExp(
-      `href="${basePath}/matthew-clark-resume\\.pdf" target="_blank"`,
+      `href="${basePath}/resume/"`,
     ),
   );
   assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/og-20261023-banner\.png/);
@@ -96,7 +110,7 @@ test("exports the portfolio content and metadata", async () => {
       `href="${basePath}/work/pay-period-planner/"[^>]*>Explore the case study</a>`,
     ),
   );
-  assert.match(html, new RegExp(`${basePath}/matthew-clark-resume\\.pdf`));
+  assert.match(html, new RegExp(`${basePath}/resume/`));
   assert.match(html, new RegExp(`${basePath}/icon\\.svg\\?`));
   await access(new URL(".nojekyll", outputRoot));
   await access(new URL("icon.svg", outputRoot));

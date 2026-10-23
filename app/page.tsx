@@ -5,7 +5,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const caseStudyHref = `${basePath}/work/pay-period-planner/`;
-const resumeHref = `${basePath}/matthew-clark-resume.pdf`;
+const resumeHref = `${basePath}/resume/`;
 
 export default function Home() {
   return (
@@ -93,7 +93,7 @@ export default function Home() {
                 <a className="primary-link" href={caseStudyHref}>
                   Explore the case study
                 </a>
-                <ExternalLink href={resumeHref}>View resume</ExternalLink>
+                <a href={resumeHref}>View resume</a>
               </div>
             </div>
             <div className="hero-portrait">
@@ -522,9 +522,9 @@ export default function Home() {
                 demonstrate engineering capabilities; AI assistance is
                 part of the development process.
               </p>
-              <ExternalLink className="text-link" href={resumeHref}>
+              <a className="text-link" href={resumeHref}>
                 Read the resume
-              </ExternalLink>
+              </a>
             </div>
           </div>
         </section>
@@ -555,7 +555,7 @@ export default function Home() {
               <ExternalLink href="https://github.com/everdein">
                 GitHub
               </ExternalLink>
-              <ExternalLink href={resumeHref}>Resume</ExternalLink>
+              <a href={resumeHref}>Resume</a>
             </div>
           </div>
         </section>
