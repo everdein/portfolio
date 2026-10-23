@@ -239,6 +239,7 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
 });
 
 test("persists the selected color theme", async ({ page }) => {
+  await page.addInitScript(() => { if (!localStorage.getItem("matthew-clark-portfolio-theme")) localStorage.setItem("matthew-clark-portfolio-theme", "light"); });
   await page.emulateMedia({ colorScheme: "light" });
   await page.goto(homePath);
 
@@ -279,7 +280,7 @@ test("keeps primary action text readable on hover", async ({ page }) => {
   await caseStudyLink.hover();
 
   await expect(caseStudyLink).toHaveCSS("color", "rgb(255, 255, 255)");
-  await expect(caseStudyLink).toHaveCSS("background-color", "rgb(16, 72, 51)");
+  await expect(caseStudyLink).toHaveCSS("background-color", "rgb(0, 105, 185)");
 });
 
 test("contains both routes across supported portfolio widths", async ({ page }) => {
@@ -312,6 +313,7 @@ test("contains both routes across supported portfolio widths", async ({ page }) 
 
 // Both theme palettes must keep primary action text readable, including hover.
 test("primary actions retain accessible contrast in both themes", async ({ page }) => {
+  await page.addInitScript(() => { if (!localStorage.getItem("matthew-clark-portfolio-theme")) localStorage.setItem("matthew-clark-portfolio-theme", "light"); });
   await page.emulateMedia({ colorScheme: "light" });
   await page.goto(homePath);
   for (const theme of ["light", "dark"]) {
@@ -336,4 +338,16 @@ test("primary actions retain accessible contrast in both themes", async ({ page 
       expect(ratio, theme + (hover ? " hovered" : " normal")).toBeGreaterThanOrEqual(4.5);
     }
   }
+});
+
+test("defaults to Dark Modern even with a light operating-system preference", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "light" });
+  await page.goto(homePath);
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  await expect(page.locator("body")).toHaveCSS("background-color", "rgb(31, 31, 31)");
+  await expect(page.locator(".role")).toHaveCSS("color", "rgb(197, 134, 192)");
+  await page.getByRole("button", { name: "Switch to light theme", exact: true }).click();
+  await page.reload();
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+  await expect(page.getByRole("link", { name: "Read case study", exact: true })).toHaveCSS("background-color", "rgb(0, 120, 212)");
 });

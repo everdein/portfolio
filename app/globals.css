@@ -1,21 +1,21 @@
 :root {
   color-scheme: light;
   --paper: #ffffff;
-  --paper-soft: #f3f6f4;
-  --ink: #101412;
-  --ink-soft: #4d5751;
-  --rule: #d5dcd7;
-  --rail: #111613;
-  --rail-ink: #f7faf7;
-  --rail-soft: #aeb8b1;
-  --rail-accent: #8fd9b7;
-  --forest: #176146;
-  --forest-text: #176146;
-  --forest-strong: #104833;
-  --forest-soft: #e2f0e8;
-  --cobalt: #2456d8;
-  --cobalt-strong: #193ea1;
-  --cobalt-soft: #e7edff;
+  --paper-soft: #F3F3F3;
+  --ink: #1F1F1F;
+  --ink-soft: #505050;
+  --rule: #D4D4D4;
+  --rail: #181818;
+  --rail-ink: #CCCCCC;
+  --rail-soft: #C8C8C8;
+  --rail-accent: #9CDCFE;
+  --action: #0078D4;
+  --accent-text: #0069B9;
+  --action-hover: #0069B9;
+  --accent-surface: #E8F2FA;
+  --link: #0069B9;
+  --link-hover: #0069B9;
+  --link-surface: #E8F2FA;
   --focus: #0078D4;
   --syntax-variable: #9CDCFE;
   --syntax-function: #DCDCAA;
@@ -37,14 +37,14 @@ html[data-theme="dark"] {
   --rail: #181818;
   --rail-ink: #CCCCCC;
   --rail-soft: #C8C8C8;
-  --rail-accent: #4EC9B0;
-  --forest: #0078D4;
-  --forest-text: #4EC9B0;
-  --forest-strong: #0069B9;
-  --forest-soft: #20352F;
-  --cobalt: #9CDCFE;
-  --cobalt-strong: #4FC1FF;
-  --cobalt-soft: #203448;
+  --rail-accent: #9CDCFE;
+  --action: #0078D4;
+  --accent-text: #9CDCFE;
+  --action-hover: #0069B9;
+  --accent-surface: #203448;
+  --link: #9CDCFE;
+  --link-hover: #4FC1FF;
+  --link-surface: #203448;
   --focus: #0078D4;
 }
 
@@ -200,7 +200,7 @@ p {
   height: 8px;
   margin-right: 8px;
   border-radius: 50%;
-  background: var(--forest);
+  background: var(--action);
 }
 
 .rail-status strong {
@@ -257,8 +257,8 @@ main {
 }
 
 .theme-control:hover {
-  border-color: var(--cobalt);
-  color: var(--cobalt);
+  border-color: var(--link);
+  color: var(--link);
 }
 
 .theme-icon {
@@ -295,7 +295,7 @@ html[data-theme="dark"] .theme-icon-sun {
   display: flex;
   align-items: center;
   margin-bottom: 16px;
-  color: var(--forest-text);
+  color: var(--accent-text);
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
@@ -340,8 +340,8 @@ h1 {
   overflow: hidden;
   width: 100%;
   aspect-ratio: 1;
-  border-top: 3px solid var(--forest);
-  background: #050606;
+  border-top: 3px solid var(--action);
+  background: #181818;
 }
 
 .hero-portrait img {
@@ -355,13 +355,13 @@ h1 {
   align-items: start;
   margin-top: 22px;
   padding-top: 18px;
-  border-top: 3px solid var(--cobalt);
+  border-top: 3px solid var(--link);
 }
 
 .note-label {
   display: block;
   margin-bottom: 12px;
-  color: var(--cobalt);
+  color: var(--link);
   font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;
@@ -406,7 +406,7 @@ h1 {
 
 .project-number {
   margin-bottom: 18px;
-  color: var(--forest-text);
+  color: var(--accent-text);
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
@@ -476,16 +476,16 @@ h1 {
 .case-study-actions a:hover,
 .project-links a:hover,
 .contact-links a:hover {
-  border-color: var(--cobalt);
-  color: var(--cobalt);
+  border-color: var(--link);
+  color: var(--link);
 }
 
 .hero-actions .primary-link,
 .case-study-actions .primary-link,
 .project-links .primary-link,
 .contact-links .primary-link {
-  border-color: var(--forest-text);
-  background: var(--forest);
+  border-color: var(--accent-text);
+  background: var(--action);
   color: #ffffff;
 }
 
@@ -493,8 +493,8 @@ h1 {
 .case-study-actions .primary-link:hover,
 .project-links .primary-link:hover,
 .contact-links .primary-link:hover {
-  border-color: var(--forest-strong);
-  background: var(--forest-strong);
+  border-color: var(--action-hover);
+  background: var(--action-hover);
   color: #ffffff;
 }
 
@@ -593,11 +593,11 @@ h1 {
 .signal-label b {
   width: 28px;
   height: 3px;
-  background: var(--forest);
+  background: var(--action);
 }
 
 .signal-group.testing .signal-label b {
-  background: var(--cobalt);
+  background: var(--link);
 }
 
 .architecture-map,
@@ -617,7 +617,7 @@ h1 {
 }
 
 .architecture-map strong {
-  color: var(--forest-text);
+  color: var(--accent-text);
   font-size: 9px;
   text-transform: uppercase;
 }
@@ -635,7 +635,7 @@ h1 {
   left: 0;
   width: 7px;
   height: 7px;
-  background: var(--cobalt);
+  background: var(--link);
   content: "";
 }
 
@@ -697,7 +697,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0;
-  border-top: 3px solid var(--forest);
+  border-top: 3px solid var(--action);
   border-bottom: 1px solid var(--rule);
 }
 
@@ -713,7 +713,7 @@ h1 {
 
 .impact-facts dt {
   margin-bottom: 14px;
-  color: var(--forest-text);
+  color: var(--accent-text);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 36px;
   font-weight: 500;
@@ -764,12 +764,12 @@ h1 {
 
 .approach-item {
   padding-top: 14px;
-  border-top: 3px solid var(--forest);
+  border-top: 3px solid var(--action);
 }
 
 .approach-item:nth-child(3),
 .approach-item:nth-child(5) {
-  border-top-color: var(--cobalt);
+  border-top-color: var(--link);
 }
 
 .approach-item strong {
@@ -798,7 +798,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 0 0 28px;
-  border-top: 3px solid var(--forest);
+  border-top: 3px solid var(--action);
   border-bottom: 1px solid var(--rule);
 }
 
@@ -814,7 +814,7 @@ h1 {
 
 .experience-facts dt {
   margin-bottom: 10px;
-  color: var(--cobalt);
+  color: var(--link);
   font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;
@@ -848,7 +848,7 @@ h1 {
 .text-link {
   display: inline-block;
   margin-top: 20px;
-  color: var(--cobalt);
+  color: var(--link);
   font-size: 13px;
   font-weight: 800;
   text-underline-offset: 4px;
@@ -871,7 +871,7 @@ footer {
 }
 
 footer a {
-  color: var(--cobalt);
+  color: var(--link);
   font-weight: 800;
   text-underline-offset: 4px;
 }
@@ -1447,7 +1447,10 @@ footer a {
 }
 
 /* Dark Modern syntax accents organize the work without competing with actions. */
-html[data-theme="dark"] .note-label { color: var(--syntax-type); }
+html[data-theme="dark"] .note-label { color: var(--syntax-keyword); }
 html[data-theme="dark"] .stack-list span:nth-child(3n + 1) { color: var(--syntax-variable); }
 html[data-theme="dark"] .stack-list span:nth-child(3n + 2) { color: var(--syntax-keyword); }
 html[data-theme="dark"] .stack-list span:nth-child(3n) { color: var(--syntax-function); }
+
+html[data-theme="dark"] .role { color: var(--syntax-keyword); }
+html[data-theme="dark"] .stack-list span:nth-child(4n) { color: var(--syntax-string); }
