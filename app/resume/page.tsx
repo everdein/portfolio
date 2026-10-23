@@ -107,10 +107,13 @@ export default function Resume() {
                 href={`${basePath}/matthew-clark-resume.pdf`}
                 download
               >
-                Download PDF
+                Download light PDF
+              </a>
+              <a href={`${basePath}/matthew-clark-resume-dark.pdf`} download>
+                Download dark PDF
               </a>
               <ExternalLink href={`${basePath}/matthew-clark-resume.pdf`}>
-                Open PDF
+                Open light PDF
               </ExternalLink>
               <PrintResume />
             </div>

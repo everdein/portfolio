@@ -15,13 +15,20 @@ test("resume supports themes, narrow screens, PDF access and printing", async ({
     "Matthew Clark",
   );
   const download = page.getByRole("link", {
-    name: "Download PDF",
+    name: "Download light PDF",
     exact: true,
   });
   await expect(download).toHaveAttribute("download", "");
   const pdf = await request.get((await download.getAttribute("href"))!);
   expect(pdf.ok()).toBe(true);
   expect(pdf.headers()["content-type"]).toContain("application/pdf");
+  const darkPdf = await request.get(
+    (await page
+      .getByRole("link", { name: "Download dark PDF", exact: true })
+      .getAttribute("href"))!,
+  );
+  expect(darkPdf.ok()).toBe(true);
+  expect(darkPdf.headers()["content-type"]).toContain("application/pdf");
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await page.getByRole("button", { name: /switch to light/i }).click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
