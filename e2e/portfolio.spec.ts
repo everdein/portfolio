@@ -145,7 +145,7 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
 
   await expectImageLoaded(
     page.getByRole("img", {
-      name: "DSA Dojo curriculum map showing lesson prerequisites across the 55-lesson learning path",
+      name: "DSA Dojo dark lesson studio with its lesson catalog and Sensei Pip guide",
     }),
   );
 
@@ -306,6 +306,34 @@ test("contains both routes across supported portfolio widths", async ({ page }) 
 
       await page.goto(caseStudyPath);
       await expectAnchorBelowRail(page, "Evidence", "#evidence");
+    }
+  }
+});
+
+// Both theme palettes must keep primary action text readable, including hover.
+test("primary actions retain accessible contrast in both themes", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "light" });
+  await page.goto(homePath);
+  for (const theme of ["light", "dark"]) {
+    if (theme === "dark") await page.getByRole("button", { name: "Switch to dark theme", exact: true }).click();
+    const link = page.getByRole("link", { name: "Read case study", exact: true });
+    for (const hover of [false, true]) {
+      if (hover) await link.hover();
+      else await page.mouse.move(0, 0);
+      const ratio = await link.evaluate((element) => {
+        const style = getComputedStyle(element);
+        const luminance = (color: string) => {
+          const channels = color.match(/[\d.]+/g)!.slice(0, 3).map(Number).map((value) => {
+            const channel = value / 255;
+            return channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4;
+          });
+          return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+        };
+        const text = luminance(style.color);
+        const background = luminance(style.backgroundColor);
+        return (Math.max(text, background) + 0.05) / (Math.min(text, background) + 0.05);
+      });
+      expect(ratio, theme + (hover ? " hovered" : " normal")).toBeGreaterThanOrEqual(4.5);
     }
   }
 });
