@@ -18,9 +18,12 @@ internal `/work/pay-period-planner/` route turns the approved repository case
 study into a product-first walkthrough with qualified engineering evidence.
 
 The `/resume/` route presents the published resume in the same light and dark
-themes, with section navigation, an unchanged PDF download, and a print-friendly
+themes, with section navigation, light and Dark Modern PDF downloads, and a print-friendly
 layout. `app/resume/content.json` contains the professional text extracted from
 `public/matthew-clark-resume.pdf`; update both when the approved resume changes.
+The light PDF uses print-safe versions of the syntax accent colors; the dark PDF
+uses the exact Dark Modern palette. Both are exported from the same Google Doc
+without changing its wording or two-page layout.
 The web page omits the phone number and uses email and professional profile links.
 
 ## Design Direction
@@ -89,8 +92,9 @@ server process, runtime secrets, authentication, or persistence.
 ## Content Sources
 
 The public resume at `public/matthew-clark-resume.pdf` is the user-approved
-Google Docs PDF export. The portfolio and GitHub profile both link to this
-single file. Replace it with the approved export when the resume changes;
+Google Docs PDF export. The portfolio and GitHub profile link to the resume
+page, which offers this light PDF and `public/matthew-clark-resume-dark.pdf`.
+Replace both with approved exports when the resume changes;
 preserve the exported typography, layout, links, and content rather than
 regenerating it from a separate resume builder. Inspect both PDF pages before
 publishing and verify that the deployed file matches the approved export.

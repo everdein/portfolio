@@ -94,11 +94,11 @@
   position: relative;
   overflow: hidden;
   border: 1px solid var(--rule);
-  background: #ffffff;
+  background: var(--paper);
 }
 
 .case-study-overview-image {
-  aspect-ratio: 8 / 5;
+  aspect-ratio: 1440 / 1358;
 }
 
 .case-study-overview-image img,
@@ -235,7 +235,7 @@
 }
 
 .case-study-projection-image {
-  aspect-ratio: 1440 / 1474;
+  aspect-ratio: 1440 / 1509;
 }
 
 .case-study-mobile-image {

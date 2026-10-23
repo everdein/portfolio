@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ExternalLink } from "../ExternalLink";
 import { ThemeToggle } from "../ThemeToggle";
 import { PrintResume } from "./PrintResume";
@@ -15,8 +16,26 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: `${siteUrl}/resume/` },
-  openGraph: { title, description, url: `${siteUrl}/resume/`, type: "profile" },
-  twitter: { title, description, card: "summary_large_image" },
+  openGraph: {
+    title,
+    description,
+    url: `${siteUrl}/resume/`,
+    type: "profile",
+    images: [
+      {
+        url: `${siteUrl}/og-resume-20261023.png`,
+        alt: "Matthew Clark software engineering resume",
+        width: 1731,
+        height: 909,
+      },
+    ],
+  },
+  twitter: {
+    title,
+    description,
+    card: "summary_large_image",
+    images: [`${siteUrl}/og-resume-20261023.png`],
+  },
 };
 
 export default function Resume() {
@@ -67,11 +86,19 @@ export default function Resume() {
         </header>
         <article className="resume-document" aria-labelledby="resume-title">
           <header className="resume-heading">
+            <Image
+              className="resume-portrait"
+              src={`${basePath}/images/matthew-clark-headshot.jpg`}
+              alt="Matthew Clark wearing a light blue shirt against a softly blurred neutral background"
+              width={220}
+              height={220}
+              priority
+            />
             <p className="role">Senior Software Engineer</p>
             <h1 id="resume-title">Matthew Clark</h1>
             <p className="resume-specialty">
-              Application architecture <span aria-hidden="true">/</span> System
-              design
+              Senior Software Engineer | Application Architecture &amp; System
+              Design | Technical Leadership
             </p>
             <ul
               className="resume-contact"
@@ -98,10 +125,13 @@ export default function Resume() {
                 href={`${basePath}/matthew-clark-resume.pdf`}
                 download
               >
-                Download PDF
+                Download light PDF
+              </a>
+              <a href={`${basePath}/matthew-clark-resume-dark.pdf`} download>
+                Download dark PDF
               </a>
               <ExternalLink href={`${basePath}/matthew-clark-resume.pdf`}>
-                Open PDF
+                Open light PDF
               </ExternalLink>
               <PrintResume />
             </div>
