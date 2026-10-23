@@ -23,10 +23,6 @@
   font-weight: 700;
   line-height: 1.5;
 }
-.resume-specialty span {
-  color: var(--ink-soft);
-  margin: 0 8px;
-}
 .resume-contact {
   display: flex;
   flex-wrap: wrap;

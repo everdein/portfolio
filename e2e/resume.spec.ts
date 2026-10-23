@@ -6,7 +6,11 @@ test("resume supports themes, narrow screens, PDF access and printing", async ({
 }) => {
   await page.goto("./resume/");
   await expect(page.locator(".resume-portrait")).toBeVisible();
-  expect(await page.locator(".resume-portrait").evaluate((image) => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  expect(
+    await page
+      .locator(".resume-portrait")
+      .evaluate((image) => (image as HTMLImageElement).naturalWidth),
+  ).toBeGreaterThan(0);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Matthew Clark",
   );

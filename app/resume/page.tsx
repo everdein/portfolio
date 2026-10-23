@@ -79,8 +79,8 @@ export default function Resume() {
             <p className="role">Senior Software Engineer</p>
             <h1 id="resume-title">Matthew Clark</h1>
             <p className="resume-specialty">
-              Application architecture <span aria-hidden="true">/</span> System
-              design
+              Senior Software Engineer | Application Architecture &amp; System
+              Design | Technical Leadership
             </p>
             <ul
               className="resume-contact"
