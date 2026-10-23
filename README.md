@@ -108,3 +108,7 @@ locally managed browser; the preview builder and browser tests both accept it.
 ## Dark theme preview
 
 ![Portfolio homepage in the Dark Modern theme](docs/images/portfolio-dark.png)
+
+## Visual identity
+
+See [the shared visual system](docs/visual-system.md) for the font pairing, Dark Modern palette and screenshot policy.

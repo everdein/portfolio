@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: `${siteUrl}/images/pay-period-planner-overview.png?v=20261023-blue`,
+        url: `${siteUrl}/images/pay-period-planner-overview.png?v=20261023-type`,
         width: 1440,
         height: 900,
         alt: "Pay Period Planner household overview populated with synthetic data",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: [`${siteUrl}/images/pay-period-planner-overview.png?v=20261023-blue`],
+    images: [`${siteUrl}/images/pay-period-planner-overview.png?v=20261023-type`],
   },
 };
 
@@ -170,7 +170,7 @@ export default function PayPeriodPlannerCaseStudy() {
             </div>
             <div className="case-study-overview-image">
               <Image
-                src={`${basePath}/images/pay-period-planner-overview.png?v=20261023-blue`}
+                src={`${basePath}/images/pay-period-planner-overview.png?v=20261023-type`}
                 alt="Pay Period Planner household overview with projection, balances, cash flow, and calendar summaries"
                 fill
                 priority
@@ -245,7 +245,7 @@ export default function PayPeriodPlannerCaseStudy() {
                 </div>
                 <div className="case-study-projection-image">
                   <Image
-                    src={`${basePath}/images/pay-period-planner-projection.png?v=20261023-blue`}
+                    src={`${basePath}/images/pay-period-planner-projection.png?v=20261023-type`}
                     alt="Pay Period Planner next-paycheck projection with planning schedule, selected inputs, and possible allocations"
                     fill
                     sizes="(max-width: 760px) 100vw, (max-width: 1200px) 58vw, 760px"
@@ -264,7 +264,7 @@ export default function PayPeriodPlannerCaseStudy() {
                 </div>
                 <div className="case-study-mobile-image">
                   <Image
-                    src={`${basePath}/images/pay-period-planner-mobile.png?v=20261023-blue`}
+                    src={`${basePath}/images/pay-period-planner-mobile.png?v=20261023-type`}
                     alt="Pay Period Planner monthly withdrawals workflow at a 390 pixel mobile viewport"
                     fill
                     sizes="(max-width: 760px) 88vw, 300px"
