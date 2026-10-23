@@ -23,8 +23,8 @@ The site uses the Dual Canvas visual system:
 
 - a compact navigation rail on larger screens
 - responsive top navigation on smaller screens
-- forest green for architecture and product signals
-- cobalt for verification and navigation signals
+- forest green and cobalt accents in the light theme
+- VS Code Dark Modern charcoal surfaces, blue actions, and syntax accents in the dark theme
 - complete light and dark themes with saved local preference
 - real product imagery rather than decorative illustrations
 
@@ -104,3 +104,7 @@ locally managed browser; the preview builder and browser tests both accept it.
 - [DSA Dojo architecture](https://github.com/everdein/dsa-dojo/blob/main/docs/studio-architecture.md)
 - [GitHub profile](https://github.com/everdein)
 - [Goodreads](https://www.goodreads.com/everdein)
+
+## Dark theme preview
+
+![Portfolio homepage in the Dark Modern theme](docs/images/portfolio-dark.png)

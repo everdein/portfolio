@@ -99,7 +99,7 @@ export default function Home() {
             <div className="hero-portrait">
               <Image
                 src={`${basePath}/images/matthew-clark.jpg`}
-                alt="Matthew Clark wearing a light blue shirt against a softly blurred background"
+                alt="Matthew Clark wearing a light blue shirt against a charcoal background with subtle teal and magenta lighting"
                 fill
                 priority
                 sizes="(max-width: 1040px) 360px, 24vw"
@@ -352,7 +352,7 @@ export default function Home() {
               <div className="project-image project-image--contain">
                 <Image
                   src={`${basePath}/images/dsa-dojo-overview.jpg`}
-                  alt="DSA Dojo curriculum map showing lesson prerequisites across the 55-lesson learning path"
+                  alt="DSA Dojo dark lesson studio with its lesson catalog and Sensei Pip guide"
                   fill
                   sizes="(max-width: 760px) 100vw, (max-width: 1200px) 62vw, 52vw"
                 />
