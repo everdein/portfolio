@@ -16,8 +16,26 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: `${siteUrl}/resume/` },
-  openGraph: { title, description, url: `${siteUrl}/resume/`, type: "profile" },
-  twitter: { title, description, card: "summary_large_image" },
+  openGraph: {
+    title,
+    description,
+    url: `${siteUrl}/resume/`,
+    type: "profile",
+    images: [
+      {
+        url: `${siteUrl}/og-resume-20261023.png`,
+        alt: "Matthew Clark software engineering resume",
+        width: 1731,
+        height: 909,
+      },
+    ],
+  },
+  twitter: {
+    title,
+    description,
+    card: "summary_large_image",
+    images: [`${siteUrl}/og-resume-20261023.png`],
+  },
 };
 
 export default function Resume() {
