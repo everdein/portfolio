@@ -25,5 +25,9 @@ flattening the native structure. Export each version, compare extracted text
 with the source export, and render and inspect every page before replacing files.
 The editable source currently retains the charcoal treatment.
 
+Each PDF has an explicit Download link and an Open link. Open links launch the
+same exported PDF in a new tab, where the browser PDF viewer provides printing.
+There is no webpage-print button that could create a third resume variant.
+
 Keep the stable light-PDF filename for existing links. Public resume navigation
 and profile cards should link to `/resume/` so both downloads stay discoverable.

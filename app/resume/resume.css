@@ -65,6 +65,12 @@
 .resume-actions > :hover {
   border-color: var(--focus);
 }
+.resume-pdf-note {
+  margin: 12px 0 0;
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.5;
+}
 .resume-section {
   padding-top: 32px;
   margin-top: 36px;
@@ -215,6 +221,7 @@ html[data-theme="dark"] .resume-experience-group:nth-of-type(4) h4 {
   .resume-canvas .rail,
   .resume-canvas .topbar,
   .resume-actions,
+  .resume-pdf-note,
   .resume-canvas footer,
   .skip-link {
     display: none !important;
