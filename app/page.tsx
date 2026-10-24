@@ -1,3 +1,4 @@
+import { BrandMark } from "./BrandMark";
 import Image from "next/image";
 import { ExternalLink } from "./ExternalLink";
 import { payPeriodPlannerEvidenceHighlights } from "./payPeriodPlannerEvidence";
@@ -15,8 +16,12 @@ export default function Home() {
       </a>
 
       <aside className="rail" aria-label="Portfolio navigation">
-        <a className="rail-mark" href="#top" aria-label="MC — Matthew Clark home">
-          MC
+        <a
+          className="rail-mark"
+          href="#top"
+          aria-label="MC — Matthew Clark home"
+        >
+          <BrandMark />
         </a>
         <p className="rail-edition">
           Engineering portfolio
@@ -129,9 +134,10 @@ export default function Home() {
             </div>
             <p>
               At PBK, I design across applications, services, storage, and data
-              platforms. Previously, at State Farm, I owned frontend architecture
-              and helped a six-engineer team deliver customer-facing systems.
-              The outcomes below come from my State Farm tenure.
+              platforms. Previously, at State Farm, I owned frontend
+              architecture and helped a six-engineer team deliver
+              customer-facing systems. The outcomes below come from my State
+              Farm tenure.
             </p>
           </div>
 
@@ -150,9 +156,7 @@ export default function Home() {
               <dt>3,335</dt>
               <dd>
                 <strong>Automated test cases</strong>
-                <span>
-                  3,327 passing, 0 failing, with 97.08% coverage
-                </span>
+                <span>3,327 passing, 0 failing, with 97.08% coverage</span>
               </dd>
             </div>
             <div>
@@ -170,7 +174,8 @@ export default function Home() {
               <dd>
                 <strong>Removed from production images</strong>
                 <span>
-                  Build-time frontend dependencies excluded across two applications
+                  Build-time frontend dependencies excluded across two
+                  applications
                 </span>
               </dd>
             </div>
@@ -207,25 +212,22 @@ export default function Home() {
               <h3>Pay Period Planner</h3>
               <p>
                 An independently built household cash-flow product that turns
-                income, bills, savings, and debt into a clear next-paycheck plan.
-                Its accessible React workflows connect to an authenticated Spring
-                Boot API, versioned PostgreSQL data, and cross-layer verification.
+                income, bills, savings, and debt into a clear next-paycheck
+                plan. Its accessible React workflows connect to an authenticated
+                Spring Boot API, versioned PostgreSQL data, and cross-layer
+                verification.
               </p>
-              <div className="project-links" aria-label="Pay Period Planner links">
-                <a
-                  className="primary-link"
-                  href={caseStudyHref}
-                >
+              <div
+                className="project-links"
+                aria-label="Pay Period Planner links"
+              >
+                <a className="primary-link" href={caseStudyHref}>
                   Read case study
                 </a>
-                <ExternalLink
-                  href="https://github.com/everdein/pay-period-planner"
-                >
+                <ExternalLink href="https://github.com/everdein/pay-period-planner">
                   View source
                 </ExternalLink>
-                <ExternalLink
-                  href="https://github.com/everdein/pay-period-planner/blob/main/docs/engineering-evidence.md"
-                >
+                <ExternalLink href="https://github.com/everdein/pay-period-planner/blob/main/docs/engineering-evidence.md">
                   Evidence
                 </ExternalLink>
               </div>
@@ -311,11 +313,17 @@ export default function Home() {
               <h3>DSA Dojo</h3>
               <p>
                 A framework-free algorithm learning system with 55 interactive
-                lessons across 20 topics. Reversible traces power guided playback,
-                active-recall challenges, side-by-side algorithm comparisons, and
-                a searchable prerequisite map.
+                lessons across 20 topics. Reversible traces power guided
+                playback, active-recall challenges, side-by-side algorithm
+                comparisons, and a searchable prerequisite map.
               </p>
               <div className="project-links" aria-label="DSA Dojo links">
+                <a
+                  href={`${basePath}/work/dsa-dojo/`}
+                  aria-label="Read DSA Dojo case study"
+                >
+                  Read case study
+                </a>
                 <ExternalLink
                   className="primary-link"
                   href="https://everdein.github.io/dsa-dojo/"
@@ -424,8 +432,8 @@ export default function Home() {
             <div className="approach-item">
               <strong>Design the boundaries</strong>
               <p>
-                Keep state, domain rules, API contracts, and data ownership clear
-                across the stack.
+                Keep state, domain rules, API contracts, and data ownership
+                clear across the stack.
               </p>
             </div>
             <div className="approach-item">
@@ -452,7 +460,10 @@ export default function Home() {
             <h2 id="about-heading">About</h2>
           </div>
           <div className="about-content">
-            <dl className="experience-facts" aria-label="Professional experience">
+            <dl
+              className="experience-facts"
+              aria-label="Professional experience"
+            >
               <div>
                 <dt>Current role</dt>
                 <dd>
@@ -518,9 +529,9 @@ export default function Home() {
                 ownership beyond the initial release. I use AI-assisted
                 programming in professional and independent work for
                 implementation, refactoring, testing, and documentation while
-                retaining human review and architectural ownership. My independent projects
-                demonstrate engineering capabilities; AI assistance is
-                part of the development process.
+                retaining human review and architectural ownership. My
+                independent projects demonstrate engineering capabilities; AI
+                assistance is part of the development process.
               </p>
               <a className="text-link" href={resumeHref}>
                 Read the resume

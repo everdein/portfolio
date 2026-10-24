@@ -140,7 +140,7 @@ p {
   width: 42px;
   height: 42px;
   place-items: center;
-  border: 1px solid currentcolor;
+  border: 1px solid transparent;
   color: inherit;
   font-size: 14px;
   font-weight: 800;

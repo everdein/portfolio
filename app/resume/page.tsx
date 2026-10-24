@@ -1,3 +1,4 @@
+import { BrandMark } from "../BrandMark";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ExternalLink } from "../ExternalLink";
@@ -22,10 +23,10 @@ export const metadata: Metadata = {
     type: "profile",
     images: [
       {
-        url: `${siteUrl}/og-resume-20261023.png`,
+        url: `${siteUrl}/og-resume-20261024-syntax-accent.png`,
         alt: "Matthew Clark software engineering resume",
-        width: 1731,
-        height: 909,
+        width: 1200,
+        height: 630,
       },
     ],
   },
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     title,
     description,
     card: "summary_large_image",
-    images: [`${siteUrl}/og-resume-20261023.png`],
+    images: [`${siteUrl}/og-resume-20261024-syntax-accent.png`],
   },
 };
 
@@ -49,7 +50,7 @@ export default function Resume() {
           href={`${basePath}/`}
           aria-label="MC — Matthew Clark portfolio home"
         >
-          MC
+          <BrandMark />
         </a>
         <p className="rail-edition">
           Professional profile
@@ -129,15 +130,21 @@ export default function Resume() {
               <a href={`${basePath}/matthew-clark-resume-dark.pdf`} download>
                 Download dark PDF
               </a>
+              <a href={`${basePath}/matthew-clark-resume-regular.pdf`} download>
+                Download regular PDF
+              </a>
               <ExternalLink href={`${basePath}/matthew-clark-resume.pdf`}>
                 Open light PDF
               </ExternalLink>
               <ExternalLink href={`${basePath}/matthew-clark-resume-dark.pdf`}>
                 Open dark PDF
               </ExternalLink>
+              <ExternalLink href={`${basePath}/matthew-clark-resume-regular.pdf`}>
+                Open regular PDF
+              </ExternalLink>
             </div>
             <p className="resume-pdf-note">
-              Open either PDF to view or print that version.
+              Choose light, dark, or regular to download, view, or print.
             </p>
           </header>
           <section

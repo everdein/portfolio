@@ -14,7 +14,7 @@ test("resume supports themes, narrow screens, PDF access and printing", async ({
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Matthew Clark",
   );
-  for (const theme of ["light", "dark"]) {
+  for (const theme of ["light", "dark", "regular"]) {
     const download = page.getByRole("link", {
       name: `Download ${theme} PDF`,
       exact: true,
@@ -37,7 +37,7 @@ test("resume supports themes, narrow screens, PDF access and printing", async ({
     expect((await result).suggestedFilename()).toBe(
       theme === "light"
         ? "matthew-clark-resume.pdf"
-        : "matthew-clark-resume-dark.pdf",
+        : `matthew-clark-resume-${theme}.pdf`,
     );
   }
   await expect(
