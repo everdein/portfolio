@@ -5,6 +5,26 @@ import test from "node:test";
 const root = new URL("../", import.meta.url);
 const outputRoot = new URL("../out/", import.meta.url);
 
+test("exports the Dojo case study with working local navigation and qualified claims", async () => {
+  const html = await readFile(new URL("work/dsa-dojo/index.html", outputRoot), "utf8");
+  const home = await readFile(new URL("index.html", outputRoot), "utf8");
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  assert.ok(home.includes(`href="${basePath}/work/dsa-dojo/"`));
+  assert.match(html, /DSA Dojo Engineering Case Study/);
+  assert.match(html, /Engineering case study/);
+  for (const section of ["product", "decisions", "system", "evidence"]) {
+    assert.ok(html.includes(`id="${section}"`));
+    assert.ok(html.includes(`href="#${section}"`));
+  }
+  assert.match(html, /Learning gains, retention, and adoption have not been established/);
+  assert.match(html, /independent solver/);
+  assert.match(html, /retaining|Retaining/);
+  assert.ok(html.includes(`href="${basePath}/work/pay-period-planner/"`));
+  assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/work\/dsa-dojo\//);
+  assert.match(html, /images\/dsa-dojo-lesson\.png/);
+  await access(new URL("images/dsa-dojo-lesson.png", outputRoot));
+});
+
 test("exports the resume with professional content and a downloadable PDF", async () => {
   const html = await readFile(new URL("resume/index.html", outputRoot), "utf8");
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -17,11 +37,13 @@ test("exports the resume with professional content and a downloadable PDF", asyn
   assert.match(html, /Bellevue College/);
   assert.ok(html.includes(`href="${basePath}/matthew-clark-resume.pdf" download=""`));
   assert.ok(html.includes(`href="${basePath}/matthew-clark-resume-dark.pdf" download=""`));
+  assert.ok(html.includes(`href="${basePath}/matthew-clark-resume-regular.pdf" download=""`));
+  assert.ok(html.includes(`href="${basePath}/matthew-clark-resume-regular.pdf" target="_blank"`));
   assert.ok(html.includes(`href="${basePath}/matthew-clark-resume.pdf" target="_blank"`));
   assert.ok(html.includes(`href="${basePath}/matthew-clark-resume-dark.pdf" target="_blank"`));
   assert.doesNotMatch(html, /Print \/ save as PDF/);
   assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/resume\//);
-  assert.match(html, /og-resume-20261023\.png/);
+  assert.match(html, /og-resume-20261024-syntax-accent\.png/);
 });
 
 test("exports the portfolio content and metadata", async () => {
@@ -68,7 +90,7 @@ test("exports the portfolio content and metadata", async () => {
       `href="${basePath}/resume/"`,
     ),
   );
-  assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/og-20261023-banner\.png/);
+  assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/og-20261024-syntax-accent\.png/);
   assert.match(html, /Matthew Clark wearing a light blue shirt against a softly blurred neutral background/);
   assert.match(html, /Working principle/);
   assert.match(
@@ -119,7 +141,7 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, new RegExp(`${basePath}/icon\\.svg\\?`));
   await access(new URL(".nojekyll", outputRoot));
   await access(new URL("icon.svg", outputRoot));
-  await access(new URL("og-20261023-banner.png", outputRoot));
+  await access(new URL("og-20261024-syntax-accent.png", outputRoot));
   await access(new URL("matthew-clark-resume.pdf", outputRoot));
   await access(new URL("images/matthew-clark-headshot.jpg", outputRoot));
   await access(new URL("images/dsa-dojo-overview.jpg", outputRoot));
@@ -131,14 +153,14 @@ test("exports the Pay Period Planner case study and approved evidence", async ()
     "utf8",
   );
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-  assert.match(html, /<title>Pay Period Planner Case Study \| Matthew Clark<\/title>/i);
+  assert.match(html, /<title>Pay Period Planner Engineering Case Study \| Matthew Clark<\/title>/i);
   assert.match(html, /<h1[^>]*>Pay Period Planner<\/h1>/i);
   assert.match(html, /id="product"/);
   assert.match(html, /id="journey"/);
   assert.match(html, /id="architecture"/);
   assert.match(html, /id="evidence"/);
   assert.match(html, /Situation/);
-  assert.match(html, /Independent product case study/);
+  assert.match(html, /Engineering case study/);
   assert.match(html, /Product design and end-to-end engineering/);
   assert.match(html, /no employer code, data, or implementation details appear here/);
   assert.match(html, /Claims with scope and limits/);

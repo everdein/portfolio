@@ -16,6 +16,10 @@ with production metrics attributed to that tenure. Applied generative AI work
 is ongoing and distinguished from AI-assisted programming. The
 internal `/work/pay-period-planner/` route turns the approved repository case
 study into a product-first walkthrough with qualified engineering evidence.
+Both project pages use the label "Engineering case study." The
+`/work/dsa-dojo/` route explains deterministic traces, reusable renderer
+contracts, source mapping, and release verification, grounded in Dojo's
+repository case study. Learning outcomes remain explicitly unmeasured.
 
 The `/resume/` route presents the published resume in the same light and dark
 themes, with section navigation, light and Dark Modern PDF downloads, and a print-friendly
@@ -93,7 +97,7 @@ server process, runtime secrets, authentication, or persistence.
 
 The public resume at `public/matthew-clark-resume.pdf` is the user-approved
 Google Docs PDF export. The portfolio and GitHub profile link to the resume
-page, which offers this light PDF and `public/matthew-clark-resume-dark.pdf`.
+page, which offers light, dark, and regular PDFs.
 Replace both with approved exports when the resume changes;
 preserve the exported typography, layout, links, and content rather than
 regenerating it from a separate resume builder. Inspect both PDF pages before
