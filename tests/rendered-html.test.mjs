@@ -251,3 +251,17 @@ test("all internal page links and section anchors resolve", async () => {
     }
   }
 });
+
+test("case studies export diagram views and editable sources", async () => {
+  for (const project of ["pay-period-planner", "dsa-dojo"]) {
+    const html = await readFile(new URL(`work/${project}/index.html`, outputRoot), "utf8");
+    assert.match(html, /aria-label="Architecture diagrams"/);
+    assert.match(html, /Download Mermaid/);
+    const matches = [...html.matchAll(/href="([^"]+\/diagrams\/[^"?#]+\.(?:svg|mmd))"/g)];
+    assert.ok(matches.length >= 6);
+    for (const [, href] of matches) {
+      const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+      await access(new URL(href.slice(basePath.length).replace(/^\//, ""), outputRoot));
+    }
+  }
+});

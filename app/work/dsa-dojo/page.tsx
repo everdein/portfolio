@@ -1,3 +1,4 @@
+import { ArchitectureDiagrams } from "../../ArchitectureDiagrams";
 import { BrandMark } from "../../BrandMark";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -267,6 +268,8 @@ export default function DsaDojoCaseStudy() {
                 </p>
               </div>
             </div>
+            <ArchitectureDiagrams project="dsa-dojo" />
+
             <ol
               className="case-study-architecture"
               aria-label="System architecture"

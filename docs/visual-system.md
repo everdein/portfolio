@@ -34,3 +34,10 @@ Refresh the appropriate live-product or source-repository variant, preserving
 its destination. Do not replace application evidence screenshots with artwork.
 
 Project cards prioritize blue case-study links equally. The hero directs visitors to Projects. Resume PDF formats receive equal blue buttons in separate Download PDF and View PDF groups.
+
+## Architecture evidence
+
+Case-study System sections include a reviewed architecture preview and local
+full-size SVG and Mermaid downloads. Detailed sequences open separately to
+preserve readable labels. Diagrams retain an explicit dark background in both
+site themes; surrounding text and resource links follow the active theme.

@@ -1,0 +1,62 @@
+[
+  {
+    "repo": "pay-period-planner",
+    "stem": "01-local-topology",
+    "title": "Local development topology",
+    "scope": "Runtime topology / local environment",
+    "decision": "The browser reaches the API through the Vite proxy. PostgreSQL persists workspace data.",
+    "limit": "Ports 3000 and 8080 are development defaults; no cloud deployment is asserted.",
+    "width": 1842,
+    "height": 521
+  },
+  {
+    "repo": "pay-period-planner",
+    "stem": "02-application-architecture",
+    "title": "Application architecture",
+    "scope": "Responsibilities / application boundaries",
+    "decision": "Local draft ownership is separate from server state; the server enforces workspace access.",
+    "limit": "Arrows summarize selected dependencies and flows; this is not a complete class diagram.",
+    "width": 1867,
+    "height": 931
+  },
+  {
+    "repo": "pay-period-planner",
+    "stem": "03-save-conflict-sequence",
+    "title": "Save conflict and deliberate recovery",
+    "scope": "Behavior / two tabs, one workspace",
+    "decision": "A stale save is rejected without losing the visible draft. Reload requires a user decision.",
+    "limit": "Illustrative versions n and n+1; assumes no new edits during the successful save.",
+    "width": 1136,
+    "height": 2137
+  },
+  {
+    "repo": "dsa-dojo",
+    "stem": "01-release-and-runtime-topology",
+    "title": "Release and browser runtime topology",
+    "scope": "Deployment configuration / learner device",
+    "decision": "Release gates protect static publication; algorithms and progress execute on the learner device.",
+    "limit": "Describes repository workflow configuration, not a fresh audit of hosting settings.",
+    "width": 1727,
+    "height": 604
+  },
+  {
+    "repo": "dsa-dojo",
+    "stem": "02-execution-architecture",
+    "title": "Execution and visualization architecture",
+    "scope": "Responsibilities / browser execution",
+    "decision": "The pure player selects stored steps; controllers own timing, presentation and persistence.",
+    "limit": "Dotted edge is test/build verification; solid arrows describe selected runtime flows.",
+    "width": 1100,
+    "height": 1180
+  },
+  {
+    "repo": "dsa-dojo",
+    "stem": "03-learner-interaction-sequence",
+    "title": "Predict, reveal, rewind and resume",
+    "scope": "Behavior / Challenge Mode and guided playback",
+    "decision": "Prediction feedback precedes movement. Rewind selects stored state; toggling Challenge resets playback.",
+    "limit": "Invalid input is rejected; device-local persistence is best-effort, not account synchronization.",
+    "width": 1544,
+    "height": 1993
+  }
+]
