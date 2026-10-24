@@ -663,7 +663,7 @@ h1 {
 .projects-heading,
 .impact-heading {
   display: grid;
-  grid-template-columns: 220px minmax(0, 720px);
+  grid-template-columns: minmax(0, 300px) minmax(0, 720px);
   gap: 34px;
   align-items: start;
 }
@@ -678,6 +678,7 @@ h1 {
 
 .projects h2,
 .impact h2 {
+  overflow-wrap: anywhere;
   margin-bottom: 14px;
   font-size: 44px;
   line-height: 1.08;
@@ -1458,3 +1459,12 @@ html[data-theme="dark"] .role { color: var(--syntax-keyword); }
 html[data-theme="dark"] .stack-list span:nth-child(4n) { color: var(--syntax-string); }
 
 pre, code, kbd, samp { font-family: var(--font-code); }
+
+/* Syntax teal identifies live products; blue identifies case studies. */
+.project-links .live-link, .case-study-actions .live-link { background: var(--syntax-type); border-color: var(--syntax-type); color: #181818; }
+.project-links .live-link:hover, .case-study-actions .live-link:hover { background: #3AB49D; border-color: #3AB49D; color: #181818; }
+/* Keep the name clear of the portrait before the single-column mobile layout. */
+@media (min-width: 761px) and (max-width: 1000px) {
+  .hero-main { grid-template-columns: minmax(0, 1fr) 160px; gap: 24px; }
+  .hero h1 { font-size: clamp(40px, 6vw, 60px); }
+}

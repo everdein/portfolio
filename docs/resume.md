@@ -26,9 +26,9 @@ flattening the native structure. Export each version, compare extracted text
 with the source export, and render and inspect every page before replacing files.
 The native Dark, Light, and Regular documents are maintained in the Drive Brand Library. Each uses Arial and an MC header mark; Regular uses a monochrome mark. The initially empty Light document was populated with the same approved career content.
 
-Each PDF has an explicit Download link and an Open link. Open links launch the
+Each PDF has an explicit Download link and a View link. View links launch the
 same exported PDF in a new tab, where the browser PDF viewer provides printing.
-The Regular monochrome variant also has explicit Download and Open actions.
+The Regular monochrome variant also has explicit Download and View actions.
 
 Keep the stable light-PDF filename for existing links. Public resume navigation
-and profile cards should link to `/resume/` so both downloads stay discoverable.
+and profile cards should link to `/resume/` so all three formats stay discoverable.

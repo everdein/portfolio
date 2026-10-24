@@ -107,13 +107,10 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
   ).toHaveAttribute("href", "#projects");
 
   const heroCaseStudyLink = page.getByRole("link", {
-    name: "Explore the case study",
+    name: "Explore projects",
     exact: true,
   });
-  await expect(heroCaseStudyLink).toHaveAttribute(
-    "href",
-    `${basePath}/work/pay-period-planner/`,
-  );
+  await expect(heroCaseStudyLink).toHaveAttribute("href", "#projects");
 
   const caseStudyLink = page.getByRole("link", {
     name: "Read case study",
@@ -350,4 +347,74 @@ test("defaults to Dark Modern even with a light operating-system preference", as
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await expect(page.getByRole("link", { name: "Read case study", exact: true })).toHaveCSS("background-color", "rgb(0, 120, 212)");
+});
+
+test("project actions share a hierarchy and both case studies stay contained", async ({ page }) => {
+  await page.goto(homePath);
+  for (const theme of ["dark", "light"]) {
+    if (theme === "light") await page.getByRole("button", { name: "Switch to light theme", exact: true }).click();
+    for (const project of ["Pay Period Planner", "DSA Dojo"]) {
+      const actions = page.getByLabel(`${project} links`, { exact: true });
+      await expect(actions.locator("a").filter({ hasText: "Read case study" })).toHaveCSS("background-color", "rgb(0, 120, 212)");
+    }
+    await expect(page.getByRole("link", { name: "Open DSA Dojo (opens in a new tab)", exact: true })).toHaveCSS("background-color", "rgb(78, 201, 176)");
+  }
+  for (const width of [320, 390, 768, 1024, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("./work/dsa-dojo/");
+    await expectNoHorizontalOverflow(page);
+  }
+  await page.goto(homePath);
+  await page.locator("#projects").scrollIntoViewIfNeeded();
+  await page.screenshot({ path: "../output/brand-rollout/portfolio-projects-cleanup.png" });
+  await page.goto("./resume/");
+  await expect(page.getByRole("link", { name: "DSA Dojo", exact: true })).toHaveAttribute("href", `${basePath}/work/dsa-dojo/`);
+  await page.screenshot({ path: "../output/brand-rollout/portfolio-resume-cleanup.png" });
+});
+
+test("paired headings and content columns never overlap", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  const routes = [homePath, "./resume/", caseStudyPath, "./work/dsa-dojo/"];
+  for (const theme of ["dark", "light"]) {
+    await page.goto(homePath);
+    const toggle = page.getByRole("button", { name: `Switch to ${theme} theme`, exact: true });
+    if (await toggle.isVisible()) await toggle.click();
+    for (const width of [320, 390, 760, 768, 880, 1024, 1280, 1440]) {
+      await page.setViewportSize({ width, height: 1000 });
+      for (const route of routes) {
+        await page.goto(route);
+        const collisions = await page.evaluate(() => {
+          const groups = document.querySelectorAll(".projects-heading, .impact-heading, .intro-note, .hero-main, .feature-project, .case-study-section-heading, .case-study-result, .resume-job-heading, .resume-heading");
+          const textRects = (element: Element) => {
+            const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+            const rects: DOMRect[] = Array.from(element.matches("img") ? [element] : element.querySelectorAll("img")).map(image => image.getBoundingClientRect()).filter(r => r.width > 0 && r.height > 0);
+            let node: Node | null;
+            while ((node = walker.nextNode())) {
+              if (!node.textContent?.trim() || node.parentElement?.closest(".sr-only")) continue;
+              const range = document.createRange();
+              range.selectNodeContents(node);
+              rects.push(...Array.from(range.getClientRects()).filter(r => r.width > 0 && r.height > 0));
+            }
+            return rects;
+          };
+          const overlaps = (a: DOMRect, b: DOMRect) => Math.min(a.right, b.right) - Math.max(a.left, b.left) > 1 && Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > 1;
+          return Array.from(groups).flatMap(group => {
+            const columns = Array.from(group.children).map(textRects);
+            const failures: string[] = [];
+            for (let i = 0; i < columns.length; i++) {
+              for (let j = i + 1; j < columns.length; j++) {
+                if (columns[i].some(a => columns[j].some(b => overlaps(a, b)))) failures.push(`${group.className}: columns ${i + 1}/${j + 1}`);
+              }
+            }
+            return failures;
+          });
+        });
+        expect(collisions, `${theme} ${width}px ${route}`).toEqual([]);
+      }
+    }
+  }
+  await page.setViewportSize({ width: 1024, height: 900 });
+  await page.goto(homePath);
+  await page.locator(".projects-heading").scrollIntoViewIfNeeded();
+  await page.screenshot({ path: "../output/brand-rollout/portfolio-overlap-fixed.png" });
 });

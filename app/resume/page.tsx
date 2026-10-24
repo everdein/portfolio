@@ -120,28 +120,22 @@ export default function Resume() {
               </li>
             </ul>
             <div className="resume-actions">
-              <a
-                className="primary-link"
-                href={`${basePath}/matthew-clark-resume.pdf`}
-                download
-              >
-                Download light PDF
-              </a>
-              <a href={`${basePath}/matthew-clark-resume-dark.pdf`} download>
-                Download dark PDF
-              </a>
-              <a href={`${basePath}/matthew-clark-resume-regular.pdf`} download>
-                Download regular PDF
-              </a>
-              <ExternalLink href={`${basePath}/matthew-clark-resume.pdf`}>
-                Open light PDF
-              </ExternalLink>
-              <ExternalLink href={`${basePath}/matthew-clark-resume-dark.pdf`}>
-                Open dark PDF
-              </ExternalLink>
-              <ExternalLink href={`${basePath}/matthew-clark-resume-regular.pdf`}>
-                Open regular PDF
-              </ExternalLink>
+              {(["download", "view"] as const).map((action) => (
+                <div className="resume-action-group" role="group" aria-label={action === "download" ? "Download PDF" : "View PDF"} key={action}>
+                  <p>{action === "download" ? "Download PDF" : "View PDF"}</p>
+                  <div className="resume-format-links">
+                    {(["light", "dark", "regular"] as const).map((format) => {
+                      const href = `${basePath}/matthew-clark-resume${format === "light" ? "" : `-${format}`}.pdf`;
+                      const label = format.charAt(0).toUpperCase() + format.slice(1);
+                      return action === "download" ? (
+                        <a className="primary-link" href={href} download aria-label={`Download ${format} PDF`} key={format}>{label}</a>
+                      ) : (
+                        <ExternalLink className="primary-link" href={href} aria-label={`View ${format} PDF (opens in a new tab)`} key={format}>{label}</ExternalLink>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
             </div>
             <p className="resume-pdf-note">
               Choose light, dark, or regular to download, view, or print.
@@ -227,9 +221,7 @@ export default function Resume() {
             </div>
             <div className="resume-project">
               <h3>
-                <ExternalLink href="https://everdein.github.io/dsa-dojo/">
-                  DSA Dojo — Interactive Algorithm Studio
-                </ExternalLink>
+                <a href={`${basePath}/work/dsa-dojo/`}>DSA Dojo</a>
               </h3>
               <p className="resume-stack">JavaScript / Node.js / Playwright</p>
               <p>{content.dsa}</p>

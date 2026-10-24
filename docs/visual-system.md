@@ -8,7 +8,7 @@ The portfolio, Pay Period Planner and DSA Dojo share a system-font pairing:
 
 Fonts are supplied by the device; no font service or remote font request is required.
 
-Dark Modern uses #1F1F1F for the canvas, #181818 for side panels, #CCCCCC for body text, #0078D4 for actions and focus, and #9CDCFE for readable blue accents. Yellow #DCDCAA, magenta #C586C0 and salmon #CE9178 distinguish supporting details. Error states use #F85149. Interface actions remain blue; the personal MC mark includes a small teal #4EC9B0 terminal. Light mode, where supported, keeps neutral surfaces and blue interactions.
+Dark Modern uses #1F1F1F for the canvas, #181818 for side panels, #CCCCCC for body text, #0078D4 for actions and focus, and #9CDCFE for readable blue accents. Yellow #DCDCAA, magenta #C586C0 and salmon #CE9178 distinguish supporting details. Error states use #F85149. Primary navigation and case-study actions use blue; live-product actions use syntax teal with dark text; the personal MC mark includes a small teal #4EC9B0 terminal. Light mode, where supported, keeps neutral surfaces and blue interactions.
 
 Application screenshots are real browser captures. Planner captures use an isolated synthetic workspace. Marketing thumbnails are illustrative and are refreshed when the visible design changes.
 
@@ -32,3 +32,5 @@ The approved masters, exports, and usage guide are in the
 [Brand Library](https://drive.google.com/drive/folders/124_uxAkQmThnHkAbvG4J7vz3TeCKAD9i).
 Refresh the appropriate live-product or source-repository variant, preserving
 its destination. Do not replace application evidence screenshots with artwork.
+
+Project cards prioritize blue case-study links equally. The hero directs visitors to Projects. Resume PDF formats receive equal blue buttons in separate Download PDF and View PDF groups.
