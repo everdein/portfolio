@@ -62,7 +62,7 @@ clear portfolio need.
 
 ## Local Development
 
-Requires Node.js `>=22.13.0`.
+Requires Node.js 24.22.1 LTS or 26.12.1 (Current). `.node-version` selects the recommended LTS release.
 
 ```bash
 npm ci
@@ -122,3 +122,7 @@ locally managed browser; the preview builder and browser tests both accept it.
 ## Visual identity
 
 See [the shared visual system](docs/visual-system.md) for the font pairing, Dark Modern palette and screenshot policy.
+
+## Dependency maintenance
+
+See [dependency and runtime maintenance](docs/dependency-maintenance.md) for the current package versions, runtime baseline, upgrade constraints, and verification procedure. Last reviewed October 24, 2026.
