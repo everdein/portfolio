@@ -38,9 +38,9 @@ test("exports the resume with professional content and a downloadable PDF", asyn
   assert.ok(html.includes(`href="${basePath}/matthew-clark-resume.pdf" download=""`));
   assert.ok(html.includes(`href="${basePath}/matthew-clark-resume-dark.pdf" download=""`));
   assert.ok(html.includes(`href="${basePath}/matthew-clark-resume-regular.pdf" download=""`));
-  assert.ok(html.includes(`href="${basePath}/matthew-clark-resume-regular.pdf" target="_blank"`));
-  assert.ok(html.includes(`href="${basePath}/matthew-clark-resume.pdf" target="_blank"`));
-  assert.ok(html.includes(`href="${basePath}/matthew-clark-resume-dark.pdf" target="_blank"`));
+  assert.match(html, new RegExp(`href="${basePath}/matthew-clark-resume-regular.pdf"[^>]*target="_blank"`));
+  assert.match(html, new RegExp(`href="${basePath}/matthew-clark-resume.pdf"[^>]*target="_blank"`));
+  assert.match(html, new RegExp(`href="${basePath}/matthew-clark-resume-dark.pdf"[^>]*target="_blank"`));
   assert.doesNotMatch(html, /Print \/ save as PDF/);
   assert.match(html, /https:\/\/everdein\.github\.io\/portfolio\/resume\//);
   assert.match(html, /og-resume-20261024-syntax-accent\.png/);
@@ -134,7 +134,7 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(
     html,
     new RegExp(
-      `href="${basePath}/work/pay-period-planner/"[^>]*>Explore the case study</a>`,
+      `href="#projects"[^>]*>Explore projects</a>`,
     ),
   );
   assert.match(html, new RegExp(`${basePath}/resume/`));
@@ -231,4 +231,23 @@ test("keeps the static site focused and free of server runtime", async () => {
   await access(new URL("public/images/dsa-dojo-overview.jpg", root));
   await access(new URL("public/images/matthew-clark-headshot.jpg", root));
   await access(new URL("public/.nojekyll", root));
+});
+
+test("all internal page links and section anchors resolve", async () => {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const pages = ["", "resume/", "work/pay-period-planner/", "work/dsa-dojo/"];
+  for (const page of pages) {
+    const html = await readFile(new URL(`${page}index.html`, outputRoot), "utf8");
+    for (const [, href] of html.matchAll(/<a\b[^>]*href="([^"]+)"/g)) {
+      if (/^(https?:|mailto:)/.test(href)) continue;
+      const [path, anchor] = href.split("#");
+      const relative = path ? path.slice(basePath.length).replace(/^\//, "") : page;
+      const target = relative.endsWith("/") || !relative ? `${relative}index.html` : relative;
+      await access(new URL(target, outputRoot));
+      if (anchor) {
+        const destination = await readFile(new URL(target, outputRoot), "utf8");
+        assert.ok(destination.includes(`id="${anchor}"`), `${page}: ${href}`);
+      }
+    }
+  }
 });

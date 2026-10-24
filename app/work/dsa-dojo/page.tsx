@@ -126,7 +126,7 @@ export default function DsaDojoCaseStudy() {
               JavaScript.
             </p>
             <div className="case-study-actions">
-              <ExternalLink className="primary-link" href={liveUrl}>
+              <ExternalLink className="live-link" href={liveUrl}>
                 Open DSA Dojo
               </ExternalLink>
               <ExternalLink href={repositoryUrl}>View source</ExternalLink>
@@ -346,8 +346,8 @@ export default function DsaDojoCaseStudy() {
                   establish educational impact.
                 </p>
                 <div className="case-study-actions">
-                  <ExternalLink className="primary-link" href={liveUrl}>
-                    Explore the live product
+                  <ExternalLink className="live-link" href={liveUrl}>
+                    Open DSA Dojo
                   </ExternalLink>
                   <a href={`${basePath}/work/pay-period-planner/`}>
                     Read Pay Period Planner case study
@@ -360,6 +360,7 @@ export default function DsaDojoCaseStudy() {
         <footer>
           <span>Matthew Clark / DSA Dojo case study</span>
           <a href="#case-study-top">Back to top</a>
+          <a href={`${basePath}/`}>Portfolio home</a>
         </footer>
       </main>
     </div>

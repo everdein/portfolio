@@ -20,7 +20,7 @@ test("resume supports themes, narrow screens, PDF access and printing", async ({
       exact: true,
     });
     const open = page.getByRole("link", {
-      name: `Open ${theme} PDF (opens in a new tab)`,
+      name: `View ${theme} PDF (opens in a new tab)`,
       exact: true,
     });
     const href = (await download.getAttribute("href"))!;

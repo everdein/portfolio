@@ -95,8 +95,8 @@ export default function Home() {
                 with software teams can maintain and extend.
               </p>
               <div className="hero-actions">
-                <a className="primary-link" href={caseStudyHref}>
-                  Explore the case study
+                <a className="primary-link" href="#projects">
+                  Explore projects
                 </a>
                 <a href={resumeHref}>View resume</a>
               </div>
@@ -319,13 +319,14 @@ export default function Home() {
               </p>
               <div className="project-links" aria-label="DSA Dojo links">
                 <a
+                  className="primary-link"
                   href={`${basePath}/work/dsa-dojo/`}
                   aria-label="Read DSA Dojo case study"
                 >
                   Read case study
                 </a>
                 <ExternalLink
-                  className="primary-link"
+                  className="live-link"
                   href="https://everdein.github.io/dsa-dojo/"
                 >
                   Open DSA Dojo

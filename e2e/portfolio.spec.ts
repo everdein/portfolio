@@ -107,13 +107,10 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
   ).toHaveAttribute("href", "#projects");
 
   const heroCaseStudyLink = page.getByRole("link", {
-    name: "Explore the case study",
+    name: "Explore projects",
     exact: true,
   });
-  await expect(heroCaseStudyLink).toHaveAttribute(
-    "href",
-    `${basePath}/work/pay-period-planner/`,
-  );
+  await expect(heroCaseStudyLink).toHaveAttribute("href", "#projects");
 
   const caseStudyLink = page.getByRole("link", {
     name: "Read case study",
@@ -350,4 +347,27 @@ test("defaults to Dark Modern even with a light operating-system preference", as
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await expect(page.getByRole("link", { name: "Read case study", exact: true })).toHaveCSS("background-color", "rgb(0, 120, 212)");
+});
+
+test("project actions share a hierarchy and both case studies stay contained", async ({ page }) => {
+  await page.goto(homePath);
+  for (const theme of ["dark", "light"]) {
+    if (theme === "light") await page.getByRole("button", { name: "Switch to light theme", exact: true }).click();
+    for (const project of ["Pay Period Planner", "DSA Dojo"]) {
+      const actions = page.getByLabel(`${project} links`, { exact: true });
+      await expect(actions.locator("a").filter({ hasText: "Read case study" })).toHaveCSS("background-color", "rgb(0, 120, 212)");
+    }
+    await expect(page.getByRole("link", { name: "Open DSA Dojo (opens in a new tab)", exact: true })).toHaveCSS("background-color", "rgb(78, 201, 176)");
+  }
+  for (const width of [320, 390, 768, 1024, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("./work/dsa-dojo/");
+    await expectNoHorizontalOverflow(page);
+  }
+  await page.goto(homePath);
+  await page.locator("#projects").scrollIntoViewIfNeeded();
+  await page.screenshot({ path: "../output/brand-rollout/portfolio-projects-cleanup.png" });
+  await page.goto("./resume/");
+  await expect(page.getByRole("link", { name: "DSA Dojo", exact: true })).toHaveAttribute("href", `${basePath}/work/dsa-dojo/`);
+  await page.screenshot({ path: "../output/brand-rollout/portfolio-resume-cleanup.png" });
 });
