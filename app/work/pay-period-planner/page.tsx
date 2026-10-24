@@ -1,3 +1,4 @@
+import { ArchitectureDiagrams } from "../../ArchitectureDiagrams";
 import { BrandMark } from "../../BrandMark";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -439,6 +440,8 @@ export default function PayPeriodPlannerCaseStudy() {
                 </p>
               </div>
             </div>
+
+            <ArchitectureDiagrams project="pay-period-planner" />
 
             <ol
               className="case-study-architecture"
