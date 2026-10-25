@@ -1,10 +1,9 @@
 import { ArchitectureDiagrams } from "../../ArchitectureDiagrams";
-import { BrandMark } from "../../BrandMark";
+import { CaseStudyNavigation } from "../../CaseStudyNavigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ExternalLink } from "../../ExternalLink";
 import { payPeriodPlannerEvidence } from "../../payPeriodPlannerEvidence";
-import { ThemeToggle } from "../../ThemeToggle";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const siteUrl =
@@ -77,62 +76,8 @@ export default function PayPeriodPlannerCaseStudy() {
         Skip to case study
       </a>
 
-      <aside
-        className="rail case-study-rail"
-        aria-label="Case study navigation"
-      >
-        <a
-          className="rail-mark"
-          href={`${basePath}/`}
-          aria-label="MC — Matthew Clark portfolio home"
-        >
-          <BrandMark />
-        </a>
-        <p className="rail-edition">
-          Flagship case study
-          <br />
-          Pay Period Planner
-        </p>
-        <nav aria-label="Case study sections">
-          <a href="#product">
-            <span className="nav-index" aria-hidden="true">
-              01
-            </span>
-            <span className="nav-label">Product</span>
-          </a>
-          <a href="#journey">
-            <span className="nav-index" aria-hidden="true">
-              02
-            </span>
-            <span className="nav-label">Journey</span>
-          </a>
-          <a href="#architecture">
-            <span className="nav-index" aria-hidden="true">
-              03
-            </span>
-            <span className="nav-label">System</span>
-          </a>
-          <a href="#evidence">
-            <span className="nav-index" aria-hidden="true">
-              04
-            </span>
-            <span className="nav-label">Evidence</span>
-          </a>
-        </nav>
-        <div className="rail-status case-study-rail-status">
-          <a href={`${basePath}/#projects`}>Back to projects</a>
-          <span>React / Spring Boot / PostgreSQL</span>
-        </div>
-      </aside>
-
+      <CaseStudyNavigation project="Pay Period Planner" />
       <main className="case-study-main" id="case-study-content">
-        <header className="topbar" id="case-study-top">
-          <p className="topbar-id">
-            Pay Period Planner <span>Product / Architecture / Evidence</span>
-          </p>
-          <ThemeToggle />
-        </header>
-
         <article>
           <header
             className="case-study-hero"
@@ -152,7 +97,6 @@ export default function PayPeriodPlannerCaseStudy() {
               <ExternalLink href={evidenceUrl}>
                 Engineering evidence
               </ExternalLink>
-              <a href={`${basePath}/#projects`}>Back to portfolio</a>
             </div>
 
             <dl className="case-study-facts" aria-label="Project summary">
@@ -299,14 +243,14 @@ export default function PayPeriodPlannerCaseStudy() {
           </section>
 
           <section
-            className="case-study-section case-study-journey"
-            id="journey"
-            aria-labelledby="journey-heading"
+            className="case-study-section"
+            id="decisions"
+            aria-labelledby="decisions-heading"
           >
             <div className="case-study-section-heading">
               <div>
-                <span className="note-label">02 / Journey</span>
-                <h2 id="journey-heading">
+                <span className="note-label">02 / Decisions</span>
+                <h2 id="decisions-heading">
                   From useful prototype to coherent system
                 </h2>
               </div>
@@ -318,41 +262,6 @@ export default function PayPeriodPlannerCaseStudy() {
                   file-write risk, and no safe path for multiple users, I chose
                   relational workspaces, versioned saves, and independent data
                   re-entry.
-                </p>
-              </div>
-            </div>
-
-            <div className="star-ledger" aria-label="STAR interview narrative">
-              <div>
-                <span>Situation</span>
-                <p>
-                  A working financial tool had real value, but its prototype
-                  storage and authentication boundaries would multiply
-                  complexity with every new feature.
-                </p>
-              </div>
-              <div>
-                <span>Task</span>
-                <p>
-                  Create one coherent runtime without silently moving personal
-                  data or losing the pay-period workflow that made the product
-                  useful.
-                </p>
-              </div>
-              <div>
-                <span>Action</span>
-                <p>
-                  Introduce workspace ownership, sessions, relational records,
-                  optimistic versions, and additive migrations; verify the new
-                  path; then remove the obsolete runtime and transition layers.
-                </p>
-              </div>
-              <div>
-                <span>Result</span>
-                <p>
-                  One PostgreSQL startup path, one authenticated mutation
-                  boundary, cross-user isolation, conflict protection, and a
-                  smaller mental model despite substantially richer behavior.
                 </p>
               </div>
             </div>
@@ -421,13 +330,13 @@ export default function PayPeriodPlannerCaseStudy() {
 
           <section
             className="case-study-section"
-            id="architecture"
-            aria-labelledby="architecture-heading"
+            id="system"
+            aria-labelledby="system-heading"
           >
             <div className="case-study-section-heading">
               <div>
                 <span className="note-label">03 / System</span>
-                <h2 id="architecture-heading">
+                <h2 id="system-heading">
                   A visible path from UI to ownership
                 </h2>
               </div>

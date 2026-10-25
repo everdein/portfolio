@@ -69,12 +69,14 @@ async function expectAnchorBelowRail(
   linkName: string,
   targetSelector: string,
 ) {
+  const menu = page.getByRole("button", { name: "Menu", exact: true });
+  if (!await page.getByRole("link", { name: linkName, exact: true }).isVisible() && await menu.isVisible()) await menu.click();
   await page.getByRole("link", { name: linkName, exact: true }).click();
   await expect
     .poll(() =>
       page.evaluate((selector) => {
         const target = document.querySelector(selector);
-        const rail = document.querySelector(".rail");
+        const rail = document.querySelector(".case-navigation, .site-header");
 
         if (!(target instanceof HTMLElement) || !(rail instanceof HTMLElement)) {
           return false;
@@ -100,7 +102,7 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
     page.getByRole("heading", { name: "Matthew Clark", level: 1 }),
   ).toBeVisible();
   await expect(
-    page.getByRole("link", { name: "Professional", exact: true }),
+    page.getByRole("link", { name: "Experience", exact: true }),
   ).toHaveAttribute("href", "#professional");
   await expect(
     page.getByRole("link", { name: "Projects", exact: true }),
@@ -199,7 +201,7 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
   await expect
     .poll(() =>
       page.evaluate(() => {
-        const ledger = document.querySelector(".star-ledger");
+        const ledger = document.querySelector(".case-study-section-heading");
         const actions = document.querySelector(".case-study-action-list");
 
         if (

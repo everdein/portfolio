@@ -1,9 +1,8 @@
 import { ArchitectureDiagrams } from "../../ArchitectureDiagrams";
-import { BrandMark } from "../../BrandMark";
+import { CaseStudyNavigation } from "../../CaseStudyNavigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ExternalLink } from "../../ExternalLink";
-import { ThemeToggle } from "../../ThemeToggle";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const siteUrl =
@@ -73,46 +72,8 @@ export default function DsaDojoCaseStudy() {
       <a className="skip-link" href="#case-study-content">
         Skip to case study
       </a>
-      <aside
-        className="rail case-study-rail"
-        aria-label="Case study navigation"
-      >
-        <a
-          className="rail-mark"
-          href={`${basePath}/`}
-          aria-label="MC — Matthew Clark portfolio home"
-        >
-          <BrandMark />
-        </a>
-        <p className="rail-edition">
-          Engineering case study
-          <br />
-          DSA Dojo
-        </p>
-        <nav aria-label="Case study sections">
-          {["Product", "Decisions", "System", "Evidence"].map(
-            (label, index) => (
-              <a href={`#${label.toLowerCase()}`} key={label}>
-                <span className="nav-index" aria-hidden="true">
-                  0{index + 1}
-                </span>
-                <span className="nav-label">{label}</span>
-              </a>
-            ),
-          )}
-        </nav>
-        <div className="rail-status case-study-rail-status">
-          <a href={`${basePath}/#projects`}>Back to projects</a>
-          <span>JavaScript / Static web / Verification</span>
-        </div>
-      </aside>
+      <CaseStudyNavigation project="DSA Dojo" />
       <main className="case-study-main" id="case-study-content">
-        <header className="topbar" id="case-study-top">
-          <p className="topbar-id">
-            DSA Dojo <span>Product / Architecture / Evidence</span>
-          </p>
-          <ThemeToggle />
-        </header>
         <article>
           <header
             className="case-study-hero"

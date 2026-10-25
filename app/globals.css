@@ -1469,17 +1469,73 @@ pre, code, kbd, samp { font-family: var(--font-code); }
   .hero h1 { font-size: clamp(40px, 6vw, 60px); }
 }
 
-.architecture-diagrams { margin: 0 0 40px; }
-.architecture-diagrams > h3 { margin-bottom: 12px; font-size: 24px; }
-.architecture-diagrams > p { max-width: 850px; line-height: 1.65; margin-bottom: 20px; }
-.architecture-diagrams figure { margin: 0 0 24px; }
-.architecture-diagrams figure > a { display: block; background: #1f1f1f; }
-.architecture-diagrams img { display: block; width: 100%; height: auto; }
-.architecture-diagrams figcaption { color: var(--ink-soft); font-size: 13px; line-height: 1.6; margin-top: 10px; }
-.diagram-resources { list-style: none; padding: 0; margin: 0; }
-.diagram-resources > li { display: flex; justify-content: space-between; align-items: start; gap: 20px; padding: 18px 0; border-top: 1px solid var(--rule); }
-.diagram-resources h4 { font-size: 16px; margin: 0 0 8px; }
-.diagram-resources p { max-width: 680px; font-size: 14px; line-height: 1.6; margin: 0; color: var(--ink-soft); }
-.diagram-resource-links { display: flex; flex-wrap: wrap; gap: 10px 18px; flex-shrink: 0; }
-.diagram-resource-links a { color: var(--link); font-size: 14px; text-underline-offset: 3px; }
-@media (max-width: 1040px) { .diagram-resources > li { flex-direction: column; gap: 12px; } }
+
+.canvas.case-study-canvas { display: block; }
+.case-study-main { max-width: 1320px; margin: 0 auto; }
+.case-navigation { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 2px solid var(--action); }
+.case-navigation-heading, .case-navigation-sections { display: flex; align-items: center; gap: 24px; max-width: 1320px; margin: 0 auto; padding: 14px 52px; }
+.case-navigation-heading { border-bottom: 1px solid var(--rule); }
+.case-home { display: block; width: 38px; flex-shrink: 0; }
+.case-navigation-heading nav { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; flex: 1; font-size: 14px; }
+.case-navigation a { color: var(--link); text-underline-offset: 4px; }
+.case-navigation [aria-current] { color: var(--ink); font-weight: 700; }
+.case-navigation-sections { justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.case-navigation-sections nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.case-navigation-sections nav a { padding: 6px 0; font-size: 14px; font-weight: 700; }
+.case-other { font-size: 12px; }
+.case-study-section { scroll-margin-top: 155px; }
+.architecture-diagrams { margin-bottom: 56px; }
+.architecture-diagrams figure { margin: 0 0 48px; padding-top: 24px; border-top: 1px solid var(--rule); }
+.architecture-diagrams h3 { font-size: 24px; margin-bottom: 12px; }
+.architecture-diagrams p, .architecture-diagrams figcaption { color: var(--ink-soft); line-height: 1.6; font-size: 14px; }
+.diagram-viewport { overflow-x: auto; background: #1f1f1f; border: 1px solid var(--rule); }
+.diagram-viewport img { display: block; width: 100%; height: auto; }
+.architecture-diagrams figcaption { margin-top: 12px; }
+@media (max-width: 760px) {
+ .case-navigation-heading, .case-navigation-sections { padding: 12px 20px; gap: 12px; }
+ .case-navigation-heading nav { font-size: 12px; }
+ .case-navigation-sections nav { gap: 8px 18px; }
+ .case-other { width: 100%; }
+ .case-study-section { scroll-margin-top: 210px; }
+}
+
+.diagram-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+.diagram-controls button { border: 1px solid var(--link); background: var(--paper); color: var(--link); padding: 8px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+.diagram-controls span { color: var(--ink-soft); font-size: 12px; }
+
+/* Shared page navigation retains the portfolio's alternating content surfaces. */
+.canvas.site-canvas { display: block; }
+.site-canvas > main { max-width: 1320px; margin: 0 auto; }
+.site-header { position: sticky; top: 0; z-index: 30; background: var(--paper); border-bottom: 2px solid var(--action); }
+.site-navigation { display: flex; align-items: center; gap: 24px; max-width: 1320px; margin: 0 auto; padding: 14px 52px; }
+.site-brand { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 800; margin-right: auto; }
+.site-brand img { width: 36px; height: 36px; }
+.site-links { display: flex; gap: 24px; }
+.site-links a { color: var(--ink-soft); text-decoration: none; padding: 10px 0; font-size: 14px; border-bottom: 2px solid transparent; }
+.site-links a:hover, .site-links a[aria-current] { color: var(--link); border-bottom-color: var(--link); }
+.site-menu-toggle { display: none; }
+.resume-page-context { display: flex; justify-content: space-between; gap: 16px; max-width: 1320px; margin: auto; padding: 10px 52px; border-top: 1px solid var(--rule); font-size: 13px; }
+.resume-page-context span { font-weight: 800; }
+.resume-page-context a { color: var(--link); }
+.site-canvas section[id], #main-content, #resume-content { scroll-margin-top: 140px; }
+.case-navigation .case-navigation-heading { padding-top: 10px; padding-bottom: 10px; }
+.case-study-section { scroll-margin-top: 220px; }
+@media (max-width: 760px) {
+ .site-navigation { padding: 12px 20px; gap: 14px; flex-wrap: wrap; }
+ .site-brand { font-size: 13px; gap: 8px; }
+ .site-brand img { width: 30px; height: 30px; }
+ .site-menu-toggle { display: block; background: var(--paper); color: var(--link); border: 1px solid var(--rule); padding: 8px 10px; font: inherit; font-size: 13px; }
+ .site-links { display: none; order: 4; width: 100%; flex-wrap: wrap; gap: 10px 24px; border-top: 1px solid var(--rule); padding-top: 8px; }
+ .site-links.is-open { display: flex; }
+ .resume-page-context { padding: 10px 20px; }
+ .case-study-section { scroll-margin-top: 260px; }
+}
+@media print { .site-header, .case-navigation { display: none !important; } }
+
+@media (max-width: 760px) {
+ .case-other { display: none; }
+ .case-study-hero { padding-top: 24px; }
+ .case-study-facts { margin-top: 24px; }
+ .case-study-facts > div { padding-top: 12px; padding-bottom: 12px; }
+ .case-study-section { scroll-margin-top: 240px; }
+}

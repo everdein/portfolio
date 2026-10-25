@@ -58,7 +58,7 @@ test("resume supports themes, narrow screens, PDF access and printing", async ({
   }
   await page.emulateMedia({ media: "print" });
   await expect(page.locator(".resume-actions")).toBeHidden();
-  await expect(page.locator(".resume-canvas .rail")).toBeHidden();
+  await expect(page.locator(".site-header")).toBeHidden();
   await expect(
     page.getByRole("heading", { name: "Education", exact: true }),
   ).toBeVisible();
