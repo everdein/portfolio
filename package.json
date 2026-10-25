@@ -8,12 +8,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs",
+    "test": "npm run build && node --test tests/rendered-html.test.mjs tests/presence.test.mjs && npm run check:presence",
     "test:browser": "playwright test",
     "test:browser:install": "playwright install chromium",
     "verify": "npm run lint && npm test && npm run test:browser",
     "lint": "npm run check:dependency-compat && eslint .",
-    "check:dependency-compat": "node --test tests/dependency-compat.test.mjs"
+    "check:dependency-compat": "node --test tests/dependency-compat.test.mjs",
+    "check:presence": "node scripts/check-presence.mjs"
   },
   "dependencies": {
     "next": "^16.4.3",
