@@ -1,0 +1,64 @@
+name: Engineering task
+description: Scope a portfolio change, maintenance task, or investigation.
+title: '[task]: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Identify the affected route, approved content, or engineering outcome.
+        Use public professional information and synthetic imagery only. Do not add
+        unpublished resume content, private employer details, or personal financial data.
+        Keep the site static; new services require an explicit product decision.
+  - type: dropdown
+    id: work_type
+    attributes:
+      label: Work type
+      options:
+        - Implementation
+        - Maintenance
+        - Investigation
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective and context
+      description: What visitor or engineering outcome matters? Link current source or canonical docs.
+      placeholder: Identify the route and approved source for any content, resume, or technical claim.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and non-goals
+      description: State what may change and what should remain outside this task.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List observable results; for an investigation, define its evidence and output.
+      placeholder: Include relevant themes, keyboard behavior, responsive layout, links, or resume actions.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification
+      description: Select applicable checks from AGENTS.md and record actual results before Done.
+      placeholder: |
+        npm run lint
+        npm test
+        npm run test:browser for browser-visible changes.
+        Verify main CI, applicable Pages deployment, and affected live routes after merge.
+        Local asset checks do not replace visual or PDF-content review.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies_owner
+    attributes:
+      label: Dependencies and owner
+      description: Name one owner, linked prerequisites, and any blocker or required content decision.
+    validations:
+      required: true
