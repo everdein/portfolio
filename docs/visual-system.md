@@ -37,7 +37,23 @@ Project cards prioritize blue case-study links equally. The hero directs visitor
 
 ## Architecture evidence
 
-Case-study System sections include a reviewed architecture preview and local
-full-size SVG and Mermaid downloads. Detailed sequences open separately to
-preserve readable labels. Diagrams retain an explicit dark background in both
-site themes; surrounding text and resource links follow the active theme.
+Case-study System sections display all three reviewed SVG diagrams inline.
+Enlarge/Fit controls let readers inspect labels within a horizontally scrollable,
+keyboard-focusable diagram viewport. Diagrams keep an explicit dark background
+in both themes; surrounding controls and captions follow the active theme.
+
+## Navigation
+
+All pages use the same sticky top navigation: Matthew Clark, Projects,
+Experience, About, and Resume. A mobile Menu button exposes the same links;
+Escape closes it and returns focus to its toggle. Active pages and homepage
+sections are indicated in blue. Case studies show the current project and a
+visible Back to projects link, with local section navigation below.
+
+## Destination-specific artwork
+
+The live DSA Dojo thumbnail uses Pip. Its GitHub repository thumbnail uses a
+seven-node binary tree and an array, with “DSA Dojo / Engineering” copy. Keep
+their actual destinations attached when publishing on LinkedIn or GitHub.
+The personal profile banner reads “There’s sophistication in simplicity.”;
+only “simplicity.” is light blue. Approved files live in the Brand Library.

@@ -21,21 +21,20 @@ Both project pages use the label "Engineering case study." The
 contracts, source mapping, and release verification, grounded in Dojo's
 repository case study. Learning outcomes remain explicitly unmeasured.
 
-The `/resume/` route presents the published resume in the same light and dark
-themes, with section navigation, light and Dark Modern PDF downloads, and a print-friendly
-layout. `app/resume/content.json` contains the professional text extracted from
-`public/matthew-clark-resume.pdf`; update both when the approved resume changes.
-The light PDF uses print-safe versions of the syntax accent colors; the dark PDF
-uses the exact Dark Modern palette. Both are exported from the same Google Doc
-without changing its wording or two-page layout.
-The web page omits the phone number and uses email and professional profile links.
+The `/resume/` route presents the approved resume in light and dark themes.
+Light, Dark Modern, and Regular monochrome PDF versions each have equal Download
+and View controls. `app/resume/content.json` holds the approved professional text.
+The three PDF exports come from their corresponding native Google Docs with
+Arial, the MC header, native links, and a two-page layout. The web page omits the
+phone number and uses email and professional profile links.
 
 ## Design Direction
 
 The site uses the Dual Canvas visual system:
 
-- a compact navigation rail on larger screens
-- responsive top navigation on smaller screens
+- shared sticky top navigation across the homepage, resume, and case studies
+- a compact keyboard-accessible mobile menu and visible active links
+- case-study breadcrumbs and Product / Decisions / System / Evidence links
 - neutral surfaces and VS Code blue controls in the light theme
 - VS Code Dark Modern charcoal surfaces, blue actions, and syntax accents in the dark theme
 - Dark Modern by default, with a light theme and saved local preference
