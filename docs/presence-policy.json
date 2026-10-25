@@ -1,0 +1,26 @@
+{
+  "siteUrl": "https://everdein.github.io/portfolio",
+  "currentTitle": "Senior Software Engineer",
+  "currentEmployer": "PBK",
+  "historicalImpactEmployer": "State Farm",
+  "resumeFormats": {
+    "light": "matthew-clark-resume.pdf",
+    "dark": "matthew-clark-resume-dark.pdf",
+    "regular": "matthew-clark-resume-regular.pdf"
+  },
+  "projects": [
+    {
+      "name": "Pay Period Planner",
+      "slug": "pay-period-planner",
+      "source": "https://github.com/everdein/pay-period-planner",
+      "evidenceImage": "images/pay-period-planner-overview.png"
+    },
+    {
+      "name": "DSA Dojo",
+      "slug": "dsa-dojo",
+      "source": "https://github.com/everdein/dsa-dojo",
+      "live": "https://everdein.github.io/dsa-dojo/",
+      "evidenceImage": "images/dsa-dojo-overview.jpg"
+    }
+  ]
+}

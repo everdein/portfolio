@@ -85,6 +85,15 @@ metadata, public links, theme support, GitHub Pages asset paths, and absence of
 server-only runtime surfaces. `npm run test:browser` starts the site on an
 isolated local port and exercises the portfolio-critical Chromium workflows.
 
+`npm test` also runs presence regressions and `npm run check:presence` against
+the exported HTML. The checker resolves local images, PDFs, page links, and
+social-preview references; verifies the three resume Download/View pairs; and
+checks project destinations and current/historical attribution against
+`docs/presence-policy.json`. That policy records approved public decisions.
+Update it when a decision changes, with its source, rather than weakening it
+to hide drift. File checks validate existence and basic format signatures;
+they do not replace visual inspection, PDF text review, or live URL checks.
+
 ## Deployment
 
 Pull requests run the same static export checks without publishing. A passing

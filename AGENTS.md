@@ -36,6 +36,10 @@ npm test
 Update rendered HTML tests when public content or metadata changes.
 Run `npm run test:browser` for navigation, layout, theme, download, or other
 browser-visible changes. `npm run verify` runs all three verification stages.
+`npm test` also runs presence regressions and checks exported local assets,
+resume Download/View parity, project destinations, and role attribution against
+`docs/presence-policy.json`. Policy changes need an approved public-source
+decision, not a test adjustment made just to remove a failure.
 
 ## Documentation
 
