@@ -1,8 +1,7 @@
-import { BrandMark } from "./BrandMark";
+import { SiteNavigation } from "./SiteNavigation";
 import Image from "next/image";
 import { ExternalLink } from "./ExternalLink";
 import { payPeriodPlannerEvidenceHighlights } from "./payPeriodPlannerEvidence";
-import { ThemeToggle } from "./ThemeToggle";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const caseStudyHref = `${basePath}/work/pay-period-planner/`;
@@ -10,77 +9,13 @@ const resumeHref = `${basePath}/resume/`;
 
 export default function Home() {
   return (
-    <div className="canvas">
+    <div className="canvas site-canvas" id="top">
       <a className="skip-link" href="#main-content">
         Skip to main content
       </a>
 
-      <aside className="rail" aria-label="Portfolio navigation">
-        <a
-          className="rail-mark"
-          href="#top"
-          aria-label="MC — Matthew Clark home"
-        >
-          <BrandMark />
-        </a>
-        <p className="rail-edition">
-          Engineering portfolio
-          <br />
-          Selected work
-        </p>
-        <nav aria-label="Primary navigation">
-          <a href="#professional">
-            <span className="nav-index" aria-hidden="true">
-              01
-            </span>
-            <span className="nav-label">Professional</span>
-          </a>
-          <a href="#projects">
-            <span className="nav-index" aria-hidden="true">
-              02
-            </span>
-            <span className="nav-label">Projects</span>
-          </a>
-          <a href="#approach">
-            <span className="nav-index" aria-hidden="true">
-              03
-            </span>
-            <span className="nav-label">Approach</span>
-          </a>
-          <a href="#about">
-            <span className="nav-index" aria-hidden="true">
-              04
-            </span>
-            <span className="nav-label">About</span>
-          </a>
-          <a href="#contact">
-            <span className="nav-index" aria-hidden="true">
-              05
-            </span>
-            <span className="nav-label">Contact</span>
-          </a>
-        </nav>
-        <div className="rail-status">
-          <strong>
-            <span className="status-dot" aria-hidden="true" />
-            Senior Software Engineer
-          </strong>
-          <span>
-            Application architecture
-            <br />
-            System design
-          </span>
-        </div>
-      </aside>
-
+      <header className="site-header"><SiteNavigation page="home" /></header>
       <main id="main-content">
-        <header className="topbar" id="top">
-          <p className="topbar-id">
-            Matthew Clark <span>Systems / Product / Evidence</span>
-          </p>
-          <ThemeToggle />
-        </header>
-
         <section className="hero" aria-labelledby="page-title">
           <div className="hero-main">
             <div className="hero-copy">

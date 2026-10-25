@@ -156,10 +156,10 @@ test("exports the Pay Period Planner case study and approved evidence", async ()
   assert.match(html, /<title>Pay Period Planner Engineering Case Study \| Matthew Clark<\/title>/i);
   assert.match(html, /<h1[^>]*>Pay Period Planner<\/h1>/i);
   assert.match(html, /id="product"/);
-  assert.match(html, /id="journey"/);
-  assert.match(html, /id="architecture"/);
+  assert.match(html, /id="decisions"/);
+  assert.match(html, /id="system"/);
   assert.match(html, /id="evidence"/);
-  assert.match(html, /Situation/);
+  assert.doesNotMatch(html, /STAR interview narrative/);
   assert.match(html, /Engineering case study/);
   assert.match(html, /Product design and end-to-end engineering/);
   assert.match(html, /no employer code, data, or implementation details appear here/);
@@ -252,16 +252,18 @@ test("all internal page links and section anchors resolve", async () => {
   }
 });
 
-test("case studies export diagram views and editable sources", async () => {
-  for (const project of ["pay-period-planner", "dsa-dojo"]) {
-    const html = await readFile(new URL(`work/${project}/index.html`, outputRoot), "utf8");
-    assert.match(html, /aria-label="Architecture diagrams"/);
-    assert.match(html, /Download Mermaid/);
-    const matches = [...html.matchAll(/href="([^"]+\/diagrams\/[^"?#]+\.(?:svg|mmd))"/g)];
-    assert.ok(matches.length >= 6);
-    for (const [, href] of matches) {
-      const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-      await access(new URL(href.slice(basePath.length).replace(/^\//, ""), outputRoot));
-    }
+test("case studies display all diagrams inline with route context", async () => {
+ for (const project of ["pay-period-planner", "dsa-dojo"]) {
+  const html = await readFile(new URL(`work/${project}/index.html`, outputRoot), "utf8");
+  assert.match(html, /aria-label="Architecture diagrams"/);
+  assert.match(html, /aria-label="Breadcrumb"/);
+  assert.match(html, /aria-current="page"/);
+  assert.doesNotMatch(html, /Download Mermaid|View diagram|case-study-rail/);
+  const images = [...html.matchAll(/src="([^"]*\/diagrams\/[^"?#]+\.svg)"/g)];
+  assert.equal(images.length, 3);
+  for (const [, src] of images) {
+   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+   await access(new URL(src.slice(basePath.length).replace(/^\//, ""), outputRoot));
   }
+ }
 });

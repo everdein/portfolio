@@ -1,8 +1,7 @@
-import { BrandMark } from "../BrandMark";
+import { SiteNavigation } from "../SiteNavigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ExternalLink } from "../ExternalLink";
-import { ThemeToggle } from "../ThemeToggle";
 import content from "./content.json";
 import "./resume.css";
 
@@ -40,50 +39,15 @@ export const metadata: Metadata = {
 
 export default function Resume() {
   return (
-    <div className="canvas resume-canvas">
+    <div className="canvas resume-canvas site-canvas">
       <a className="skip-link" href="#resume-content">
         Skip to resume
       </a>
-      <aside className="rail" aria-label="Resume navigation">
-        <a
-          className="rail-mark"
-          href={`${basePath}/`}
-          aria-label="MC — Matthew Clark portfolio home"
-        >
-          <BrandMark />
-        </a>
-        <p className="rail-edition">
-          Professional profile
-          <br />
-          Resume
-        </p>
-        <nav aria-label="Resume sections">
-          {[
-            ["summary", "Summary"],
-            ["experience", "Experience"],
-            ["independent-projects", "Projects"],
-            ["skills", "Skills"],
-            ["education", "Education"],
-          ].map(([id, label], i) => (
-            <a href={`#${id}`} key={id}>
-              <span className="nav-index" aria-hidden="true">
-                0{i + 1}
-              </span>
-              <span className="nav-label">{label}</span>
-            </a>
-          ))}
-        </nav>
-        <div className="rail-status">
-          <a href={`${basePath}/`}>Back to portfolio</a>
-        </div>
-      </aside>
+      <header className="site-header">
+        <SiteNavigation page="resume" />
+        <div className="resume-page-context"><span>Resume</span><a href={`${basePath}/#projects`}>Back to projects</a></div>
+      </header>
       <main id="resume-content">
-        <header className="topbar">
-          <p className="topbar-id">
-            Matthew Clark <span>Experience / Skills / Education</span>
-          </p>
-          <ThemeToggle />
-        </header>
         <article className="resume-document" aria-labelledby="resume-title">
           <header className="resume-heading">
             <Image
