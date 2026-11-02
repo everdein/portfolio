@@ -66,7 +66,7 @@ clear portfolio need.
 
 ## Local Development
 
-Requires Node.js 24.22.1 LTS or 26.12.1 (Current). `.node-version` selects the recommended LTS release.
+Requires Node.js 24.22.2 LTS or 26.13.0 (Current). `.node-version` selects the recommended LTS release.
 
 ```bash
 npm ci

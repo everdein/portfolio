@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "^24.22.1 || ^26.12.1"
+    "node": "^24.22.2 || ^26.13.0"
   },
   "scripts": {
     "dev": "next dev",
@@ -17,17 +17,17 @@
     "check:presence": "node scripts/check-presence.mjs"
   },
   "dependencies": {
-    "next": "^16.4.3",
+    "next": "^16.4.4",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.1",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.4.3",
+    "eslint-config-next": "^16.4.4",
     "typescript": "^6.0.3"
   },
   "overrides": {
