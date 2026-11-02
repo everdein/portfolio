@@ -1,22 +1,22 @@
 # Dependency and runtime maintenance
 
-Checked against the npm registry and official release metadata on October 24, 2026.
+Checked against the npm registry and official release metadata on November 2, 2026.
 
-Use Node.js **24.22.1 LTS** (selected by `.node-version`) with its bundled npm 11.19.1. Node 26.12.1 is also supported. CI reads the version file; algorithm projects additionally verify Node 26.12.1. These are patched releases; older 24.x/26.x versions are outside the declared engine range.
+Use Node.js **24.22.2 LTS** (selected by `.node-version`) with its bundled npm 11.19.1. Node 26.13.0 is also supported. CI reads the version file; algorithm projects additionally verify Node 26.13.0. These are patched releases; older 24.x/26.x versions are outside the declared engine range.
 
 ## Declared dependency baseline
 
 | Package            | Version |
 | ------------------ | ------- |
-| next               | 16.4.3  |
+| next               | 16.4.4  |
 | react              | 19.3.1  |
 | react-dom          | 19.3.1  |
 | @playwright/test   | 1.64.1  |
-| @types/node        | 26.6.5  |
+| @types/node        | 26.6.6  |
 | @types/react       | 19.3.0  |
 | @types/react-dom   | 19.3.0  |
 | eslint             | 9.39.5  |
-| eslint-config-next | 16.4.3  |
+| eslint-config-next | 16.4.4  |
 | typescript         | 6.0.3   |
 
 ## Compatibility constraints
@@ -27,14 +27,14 @@ React/React DOM 19.3.1, Vitest/coverage 5.0.5, Playwright 1.64.1, and axe-core P
 
 ## Scoped override ownership and removal
 
-Reviewed October 25, 2026 against the manifest, lockfile, installed tree and
+Reviewed November 2, 2026 against the manifest, lockfile, installed tree and
 published npm declarations. Maintainer owner for both overrides: Matthew Clark.
 An implementation agent may gather evidence and prepare a change; removal is a
-separate verified dependency change, not a consequence of this documentation.
+separate verified dependency change. This update retains both overrides.
 
 ### Next ESLint plugin: fast-glob replacement
 
-`eslint-config-next@16.4.3` owns `@next/eslint-plugin-next@16.4.3`, whose
+`eslint-config-next@16.4.4` owns `@next/eslint-plugin-next@16.4.4`, whose
 published declaration requests `fast-glob@3.3.1`. The scoped override resolves
 that package name to `tinyglobby@0.2.17`. It applies to that declaring owner,
 not every glob dependency. Next's root-discovery utility uses `globSync` with
@@ -60,7 +60,7 @@ to the selected upstream implementation when a removal is actually verified.
 
 ### Next: PostCSS pin
 
-The scoped `next` override pins `postcss@8.5.23`; current `next@16.4.3` already
+The scoped `next` override pins `postcss@8.5.23`; current `next@16.4.4` already
 declares exactly `8.5.23`, and the lockfile/installed tree resolves that version.
 The pin is retained pending a clean redundancy review. Repository history shows
 an earlier pin being advanced to this version; it does not establish a specific
@@ -72,8 +72,12 @@ requires a clean no-override resolution of the selected Next version, comparison
 of the actual tree/lockfile, current audit evidence, lint, production export and
 rendered/browser verification. If the new tree still needs a pin, document its
 current reason and version constraint. Matching declarations make this a
-candidate for review, not a removal already proved by this docs-only change.
+candidate for review, not a removal proved by this update.
 
 ## Update procedure
 
 Check current stable releases and peer/runtime requirements, update manifests and lockfiles together, run a clean install, audit dependencies, and run the project verification gate plus applicable browser checks. Keep historical ADRs unchanged and update current requirements when the runtime baseline changes. Record any intentional version constraint here rather than reporting an incompatible major as installed.
+
+## November 2 audit
+
+Updated Next and its ESLint configuration together to 16.4.4 and Node types to 26.6.6. npm audit reports 16 moderate findings propagated from minimatch GHSA-g3hv-75wg-m249; no high or critical findings. The patched minimatch 11 line is outside its declaring owners' current ranges. Do not force a major override or accept npm's suggested incompatible ESLint downgrade. Revisit when those owners publish compatible dependency updates. Existing scoped overrides remain unchanged.
