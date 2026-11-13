@@ -243,7 +243,7 @@ test("persists the selected color theme", async ({ page }) => {
   await page.goto(homePath);
 
   const themeToggle = page.getByRole("button", {
-    name: "Switch to dark theme",
+    name: "Dark theme",
     exact: true,
   });
   await expect(themeToggle).toHaveAttribute("aria-pressed", "false");
@@ -254,7 +254,7 @@ test("persists the selected color theme", async ({ page }) => {
   await expectAlternatingSectionSurfaces(page);
   await expect(
     page.getByRole("button", {
-      name: "Switch to light theme",
+      name: "Dark theme",
       exact: true,
     }),
   ).toHaveAttribute("aria-pressed", "true");
@@ -263,7 +263,7 @@ test("persists the selected color theme", async ({ page }) => {
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await expect(
     page.getByRole("button", {
-      name: "Switch to light theme",
+      name: "Dark theme",
       exact: true,
     }),
   ).toHaveAttribute("aria-pressed", "true");
@@ -316,7 +316,7 @@ test("primary actions retain accessible contrast in both themes", async ({ page 
   await page.emulateMedia({ colorScheme: "light" });
   await page.goto(homePath);
   for (const theme of ["light", "dark"]) {
-    if (theme === "dark") await page.getByRole("button", { name: "Switch to dark theme", exact: true }).click();
+    if (theme === "dark") await page.getByRole("button", { name: "Dark theme", exact: true }).click();
     const link = page.getByRole("link", { name: "Read case study", exact: true });
     for (const hover of [false, true]) {
       if (hover) await link.hover();
@@ -345,7 +345,7 @@ test("defaults to Dark Modern even with a light operating-system preference", as
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await expect(page.locator("body")).toHaveCSS("background-color", "rgb(31, 31, 31)");
   await expect(page.locator(".role")).toHaveCSS("color", "rgb(197, 134, 192)");
-  await page.getByRole("button", { name: "Switch to light theme", exact: true }).click();
+  await page.getByRole("button", { name: "Dark theme", exact: true }).click();
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await expect(page.getByRole("link", { name: "Read case study", exact: true })).toHaveCSS("background-color", "rgb(0, 120, 212)");
@@ -354,7 +354,7 @@ test("defaults to Dark Modern even with a light operating-system preference", as
 test("project actions share a hierarchy and both case studies stay contained", async ({ page }) => {
   await page.goto(homePath);
   for (const theme of ["dark", "light"]) {
-    if (theme === "light") await page.getByRole("button", { name: "Switch to light theme", exact: true }).click();
+    if (theme === "light") await page.getByRole("button", { name: "Dark theme", exact: true }).click();
     for (const project of ["Pay Period Planner", "DSA Dojo"]) {
       const actions = page.getByLabel(`${project} links`, { exact: true });
       await expect(actions.locator("a").filter({ hasText: "Read case study" })).toHaveCSS("background-color", "rgb(0, 120, 212)");
@@ -379,7 +379,7 @@ test("paired headings and content columns never overlap", async ({ page }) => {
   const routes = [homePath, "./resume/", caseStudyPath, "./work/dsa-dojo/"];
   for (const theme of ["dark", "light"]) {
     await page.goto(homePath);
-    const toggle = page.getByRole("button", { name: `Switch to ${theme} theme`, exact: true });
+    const toggle = page.getByRole("button", { name: "Dark theme", exact: true });
     if (await toggle.isVisible()) await toggle.click();
     for (const width of [320, 390, 760, 768, 880, 1024, 1280, 1440]) {
       await page.setViewportSize({ width, height: 1000 });
