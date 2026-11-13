@@ -44,7 +44,7 @@ test("resume supports themes, narrow screens, PDF access and printing", async ({
     page.getByRole("button", { name: "Print / save as PDF", exact: true }),
   ).toHaveCount(0);
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
-  await page.getByRole("button", { name: /switch to light/i }).click();
+  await page.getByRole("button", { name: "Dark theme" }).click();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
