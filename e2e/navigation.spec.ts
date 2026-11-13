@@ -61,7 +61,7 @@ test("shared navigation identifies pages and supports the mobile keyboard menu",
       (image as HTMLImageElement).naturalHeight,
   );
   expect(ratio).toBeCloseTo(intrinsicRatio, 2);
-  const theme = page.getByRole("button", { name: /Switch to .* theme/ });
+  const theme = page.getByRole("button", { name: "Dark theme" });
   await theme.focus();
   await page.keyboard.press("Escape");
   await expect(theme).toBeFocused();
