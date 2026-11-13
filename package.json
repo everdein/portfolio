@@ -17,17 +17,17 @@
     "check:presence": "node scripts/check-presence.mjs"
   },
   "dependencies": {
-    "next": "^16.4.4",
+    "next": "^16.4.5",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
-    "@playwright/test": "^1.64.1",
+    "@playwright/test": "^1.65.0",
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.4.4",
+    "eslint-config-next": "^16.4.5",
     "typescript": "^6.0.3"
   },
   "overrides": {
