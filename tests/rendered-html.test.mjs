@@ -5,6 +5,23 @@ import test from "node:test";
 const root = new URL("../", import.meta.url);
 const outputRoot = new URL("../out/", import.meta.url);
 
+test("enterprise architecture preserves anonymous sources, team attribution, and qualified downstream uses", async () => {
+  const html = await readFile(new URL("work/enterprise-data/index.html", outputRoot), "utf8");
+  const svg = await readFile(new URL("diagrams/enterprise-data/architecture.svg", outputRoot), "utf8");
+  assert.match(html, /Senior Software Engineer within an engineering team/);
+  assert.match(html, /Back to experience/);
+  assert.doesNotMatch(html, /Review draft|noindex/);
+  assert.match(html, /rel="canonical" href="https:\/\/everdein\.github\.io\/portfolio\/work\/enterprise-data\//);
+  assert.match(html, /Possible downstream consumers are not presented as delivered capabilities/);
+  assert.match(svg, /Potential downstream consumers/);
+  assert.match(svg, /Microsoft Fabric pipelines/);
+  assert.doesNotMatch(html + svg, /Deltek|Salesforce|Burbio|Concur|Workday|Autodesk|1,200\+|independently designed/i);
+  for (const section of ["context", "approach", "operations", "tradeoffs"]) {
+    assert.ok(html.includes(`id="${section}"`));
+    assert.ok(html.includes(`href="#${section}"`));
+  }
+});
+
 test("exports the Dojo case study with working local navigation and qualified claims", async () => {
   const html = await readFile(new URL("work/dsa-dojo/index.html", outputRoot), "utf8");
   const home = await readFile(new URL("index.html", outputRoot), "utf8");
@@ -102,10 +119,10 @@ test("exports the portfolio content and metadata", async () => {
     /Make the product decision clear, keep system boundaries explicit,[\s\S]{0,40}leave evidence that the result works/,
   );
   assert.doesNotMatch(html, /Working principle \/ 01/);
-  assert.match(html, /Independent systems/);
+  assert.match(html, /Independent projects/);
   assert.match(
     html,
-    /Selected product work where the problem, architecture, tradeoffs,[\s\S]{0,80}verification are available for inspection/,
+    /Independently built products with system boundaries, trade-offs,[\s\S]{0,80}implementation evidence available for inspection/,
   );
   assert.match(html, /02 \/ Projects/);
   assert.match(html, /Evidence from production systems/);
@@ -140,7 +157,7 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(
     html,
     new RegExp(
-      `href="#projects"[^>]*>Explore projects</a>`,
+      `href="#professional"[^>]*>Explore experience</a>`,
     ),
   );
   assert.match(html, new RegExp(`${basePath}/resume/`));

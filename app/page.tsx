@@ -30,10 +30,11 @@ export default function Home() {
                 with software teams can maintain and extend.
               </p>
               <div className="hero-actions">
-                <a className="primary-link" href="#projects">
-                  Explore projects
+                <a className="primary-link" href="#professional">
+                  Explore experience
                 </a>
                 <a href={resumeHref}>View resume</a>
+                <a href={`${basePath}/work/enterprise-data/`}>Enterprise architecture case study</a>
               </div>
             </div>
             <div className="hero-portrait">
@@ -62,23 +63,65 @@ export default function Home() {
         >
           <div className="impact-heading">
             <div>
-              <span className="note-label">01 / Professional impact</span>
+              <span className="note-label">01 / Experience</span>
               <h2 id="professional-heading">
-                Evidence from production systems
+                Professional experience
               </h2>
             </div>
-            <p>
-              At PBK, I design across applications, services, storage, and data
-              platforms. Previously, at State Farm, I owned frontend
-              architecture and helped a six-engineer team deliver
-              customer-facing systems. The outcomes below come from my State
-              Farm tenure.
-            </p>
+            <div className="impact-intro">
+              <p>
+                Enterprise integration and data architecture at PBK, built on
+                a foundation of application architecture and technical leadership
+                at State Farm.
+              </p>
+            </div>
           </div>
 
+          <article className="experience-employer" aria-labelledby="pbk-heading" id="pbk-experience">
+            <header className="experience-heading">
+              <h3 id="pbk-heading">PBK</h3>
+              <p>Senior Software Engineer <span>September 2026–Present</span></p>
+            </header>
+            <p className="experience-summary">
+              Working within an engineering team, I contribute to enterprise
+              integration, data architecture, and application design. My work
+              includes Microsoft Fabric ingestion pipelines, layered data
+              transformation, and pipeline monitoring, logging, and notifications.
+            </p>
+            <div className="enterprise-feature" aria-labelledby="enterprise-feature-heading">
+              <div>
+                <span className="project-number">Architecture approach</span>
+                <h4 id="enterprise-feature-heading">A shared foundation for enterprise data</h4>
+                <p>
+                  An anonymized look at ingestion, Bronze/Silver/Gold data layers,
+                  and operational visibility—the responsibilities and trade-offs
+                  behind the approach, with potential downstream uses clearly identified.
+                </p>
+              </div>
+              <div className="project-links">
+                <a className="primary-link" href={`${basePath}/work/enterprise-data/`}>
+                  Read enterprise architecture case study
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article className="experience-employer" aria-labelledby="state-farm-heading" id="state-farm-experience">
+            <header className="experience-heading">
+              <h3 id="state-farm-heading">State Farm</h3>
+              <p>Lead Software Engineer <span>September 2023–September 2026</span></p>
+              <p>Software Engineer <span>June 2021–September 2023</span></p>
+            </header>
+            <p className="experience-summary">
+              I owned frontend architecture and helped a six-engineer team deliver
+              customer-facing systems, with shared engineering standards and
+              patterns that other engineers could maintain and extend.
+            </p>
+            <h4 className="experience-evidence-heading">Evidence from production systems</h4>
+            <p className="experience-summary">The outcomes below come from my State Farm tenure.</p>
           <dl
             className="impact-facts"
-            aria-label="Selected professional impact"
+            aria-label="State Farm production evidence"
           >
             <div>
               <dt>2</dt>
@@ -123,6 +166,7 @@ export default function Home() {
             vulnerable items spanning five CVEs, and platform patterns that
             other engineers independently extended and operated.
           </p>
+          </article>
         </section>
 
         <section
@@ -133,11 +177,11 @@ export default function Home() {
           <div className="projects-heading">
             <div>
               <span className="note-label">02 / Projects</span>
-              <h2 id="projects-heading">Independent systems</h2>
+              <h2 id="projects-heading">Independent projects</h2>
             </div>
             <p>
-              Selected product work where the problem, architecture, tradeoffs,
-              and verification are available for inspection.
+              Independently built products with system boundaries, trade-offs,
+              and implementation evidence available for inspection.
             </p>
           </div>
 

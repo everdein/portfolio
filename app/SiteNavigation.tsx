@@ -6,16 +6,18 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const links = [
-  ["projects", "Projects"],
   ["professional", "Experience"],
+  ["projects", "Projects"],
   ["about", "About"],
   ["resume", "Resume"],
 ];
 
 export function SiteNavigation({
   page,
+  caseStudySection = "projects",
 }: {
   page: "home" | "resume" | "case-study";
+  caseStudySection?: "projects" | "professional";
 }) {
   const [open, setOpen] = useState(false);
   const [section, setSection] = useState("");
@@ -69,7 +71,7 @@ export function SiteNavigation({
             id === "resume"
               ? page === "resume"
               : page === "case-study"
-                ? id === "projects"
+                ? id === caseStudySection
                 : section === id;
           const href =
             id === "resume"
