@@ -2,8 +2,10 @@ import { SiteNavigation } from "./SiteNavigation";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export function CaseStudyNavigation({
   project,
+  sections = ["Product", "Decisions", "System", "Evidence"],
 }: {
-  project: "DSA Dojo" | "Pay Period Planner";
+  project: "DSA Dojo" | "Pay Period Planner" | "Enterprise data architecture";
+  sections?: string[];
 }) {
   const other =
     project === "DSA Dojo"
@@ -21,7 +23,7 @@ export function CaseStudyNavigation({
       </div>
       <div className="case-navigation-sections">
         <nav aria-label="Case study sections">
-          {["Product", "Decisions", "System", "Evidence"].map((label) => (
+          {sections.map((label) => (
             <a key={label} href={`#${label.toLowerCase()}`}>
               {label}
             </a>

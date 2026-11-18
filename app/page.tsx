@@ -439,6 +439,11 @@ export default function Home() {
                 notifications provide visibility into ongoing operations.
               </p>
               <p>
+                <a className="primary-link" href={`${basePath}/work/enterprise-data/`}>
+                  Explore the enterprise data architecture approach
+                </a>
+              </p>
+              <p>
                 I&apos;m developing an AI-assisted document review workflow to
                 identify missing project data and produce completeness ratings
                 that help prioritize follow-up. This work is ongoing. I also
