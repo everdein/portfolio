@@ -109,10 +109,10 @@ test("connects the portfolio, case study, screenshots, and resume", async ({
   ).toHaveAttribute("href", "#projects");
 
   const heroCaseStudyLink = page.getByRole("link", {
-    name: "Explore projects",
+    name: "Explore experience",
     exact: true,
   });
-  await expect(heroCaseStudyLink).toHaveAttribute("href", "#projects");
+  await expect(heroCaseStudyLink).toHaveAttribute("href", "#professional");
 
   const caseStudyLink = page.getByRole("link", {
     name: "Read case study",

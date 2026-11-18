@@ -13,10 +13,12 @@ export function CaseStudyNavigation({
       : ["dsa-dojo", "DSA Dojo"];
   return (
     <header className="case-navigation" id="case-study-top">
-      <SiteNavigation page="case-study" />
+      <SiteNavigation page="case-study" caseStudySection={project === "Enterprise data architecture" ? "professional" : "projects"} />
       <div className="case-navigation-heading">
         <nav aria-label="Breadcrumb">
-          <a href={`${basePath}/#projects`}>Back to projects</a>
+          <a href={`${basePath}/#${project === "Enterprise data architecture" ? "professional" : "projects"}`}>
+            {project === "Enterprise data architecture" ? "Back to experience" : "Back to projects"}
+          </a>
           <span aria-hidden="true">/</span>
           <span aria-current="page">{project}</span>
         </nav>

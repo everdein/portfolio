@@ -672,6 +672,31 @@ h1 {
   margin-bottom: 42px;
 }
 
+.enterprise-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  padding: 32px 0;
+  margin-bottom: 42px;
+  border-top: 3px solid var(--action);
+  border-bottom: 1px solid var(--rule);
+}
+.enterprise-feature h4 { margin: 12px 0; font-size: 30px; line-height: 1.2; }
+.enterprise-feature p { color: var(--ink-soft); line-height: 1.65; margin: 0; }
+.experience-employer { padding-top: 28px; border-top: 1px solid var(--rule); }
+.experience-employer + .experience-employer { margin-top: 48px; }
+.experience-heading h3 { margin: 0 0 12px; font-size: 32px; }
+.experience-heading p { margin: 8px 0; font-weight: 700; line-height: 1.6; }
+.experience-heading span { display: block; color: var(--ink-soft); font-size: 14px; font-weight: 400; }
+.experience-summary { max-width: 850px; color: var(--ink-soft); line-height: 1.65; margin: 20px 0 28px; }
+.experience-evidence-heading { font-size: 22px; margin: 32px 0 0; }
+.experience-employer .enterprise-feature { margin-bottom: 0; }
+.enterprise-feature .project-links { order: 0; }
+@media (max-width: 760px) {
+  .enterprise-feature { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+}
+
 .impact-heading {
   margin-bottom: 34px;
 }
@@ -686,6 +711,7 @@ h1 {
 
 .projects-heading > p,
 .impact-heading > p,
+.impact-intro,
 .impact-note {
   color: var(--ink-soft);
   line-height: 1.65;
@@ -695,6 +721,8 @@ h1 {
 .impact-heading > p {
   margin: 0;
 }
+.impact-intro p { margin: 0; }
+.impact-intro p + p { margin-top: 16px; }
 
 .impact-facts {
   display: grid;
@@ -1490,6 +1518,7 @@ pre, code, kbd, samp { font-family: var(--font-code); }
 .architecture-diagrams p, .architecture-diagrams figcaption { color: var(--ink-soft); line-height: 1.6; font-size: 14px; }
 .diagram-viewport { overflow-x: auto; background: #1f1f1f; border: 1px solid var(--rule); }
 .diagram-viewport img { display: block; width: 100%; height: auto; }
+.enterprise-data-diagram { max-width: 700px; margin-inline: auto; }
 .architecture-diagrams figcaption { margin-top: 12px; }
 @media (max-width: 760px) {
  .case-navigation-heading, .case-navigation-sections { padding: 12px 20px; gap: 12px; }

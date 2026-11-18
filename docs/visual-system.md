@@ -33,7 +33,7 @@ The approved masters, exports, and usage guide are in the
 Refresh the appropriate live-product or source-repository variant, preserving
 its destination. Do not replace application evidence screenshots with artwork.
 
-Project cards prioritize blue case-study links equally. The hero directs visitors to Projects. Resume PDF formats receive equal blue buttons in separate Download PDF and View PDF groups.
+Project cards prioritize blue case-study links equally. The hero directs visitors to Experience. Resume PDF formats receive equal blue buttons in separate Download PDF and View PDF groups.
 
 ## Architecture evidence
 
@@ -44,11 +44,17 @@ in both themes; surrounding controls and captions follow the active theme.
 
 ## Navigation
 
-All pages use the same sticky top navigation: Matthew Clark, Projects,
-Experience, About, and Resume. A mobile Menu button exposes the same links;
+All pages use the same sticky top navigation: Matthew Clark, Experience,
+Projects, About, and Resume. A mobile Menu button exposes the same links;
 Escape closes it and returns focus to its toggle. Active pages and homepage
 sections are indicated in blue. Case studies show the current project and a
-visible Back to projects link, with local section navigation below.
+visible Back to projects link, with local section navigation below. The enterprise
+data architecture approach has a direct hero link and a prominent feature within
+PBK's Experience entry. State Farm has a separate entry containing its production
+evidence. Independent Projects follows Experience and contains the personal
+products. The architecture approach returns to
+Experience. Its portrait diagram fits a 700px reading width and enlarges within
+the same scrollable viewport.
 
 ## Destination-specific artwork
 

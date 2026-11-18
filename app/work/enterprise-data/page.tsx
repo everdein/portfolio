@@ -3,19 +3,30 @@ import { CaseStudyNavigation } from "../../CaseStudyNavigation";
 import { DiagramView } from "../../DiagramView";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://everdein.github.io/portfolio";
+const title = "Enterprise Data Architecture | Matthew Clark";
+const description = "An anonymized architectural approach to enterprise ingestion, layered data transformation, and pipeline operations in Microsoft Fabric.";
 
 export const metadata: Metadata = {
-  title: "Enterprise Data Architecture | Matthew Clark",
-  description:
-    "An anonymized architectural approach to enterprise ingestion, layered data transformation, and pipeline operations in Microsoft Fabric.",
-  robots: { index: false, follow: false },
+  title,
+  description,
+  alternates: { canonical: `${siteUrl}/work/enterprise-data/` },
+  openGraph: {
+    type: "article", title, description,
+    url: `${siteUrl}/work/enterprise-data/`,
+    images: [`${siteUrl}/og-20261024-syntax-accent.png`],
+  },
+  twitter: {
+    card: "summary_large_image", title, description,
+    images: [`${siteUrl}/og-20261024-syntax-accent.png`],
+  },
 };
 
 const sections = [
   {
     id: "context",
     label: "01 / Context",
-    title: "Bring business data together with clear boundaries",
+    title: "Connect business data",
     paragraphs: [
       "Enterprise systems represent different parts of a business, each with its own interfaces and data structures. Bringing that information together requires decisions about where source-specific integration ends, where transformation belongs, and how the resulting data is prepared for use.",
       "As a Senior Software Engineer working within an engineering team, I contributed to this foundation through Microsoft Fabric ingestion pipelines, a Bronze/Silver/Gold medallion architecture, and pipeline monitoring and notifications.",
@@ -24,7 +35,7 @@ const sections = [
   {
     id: "approach",
     label: "02 / Approach",
-    title: "Separate ingestion, transformation, and consumption",
+    title: "Separate data responsibilities",
     paragraphs: [
       "API and ODBC connections bring enterprise data into a centralized environment. Source-specific connectivity belongs at the ingestion boundary; the layered architecture gives raw source representation, shared transformations, and business-oriented data distinct responsibilities.",
       "Bronze holds raw source data. Silver handles cleansing, transformation, and standardization. Gold contains curated business data prepared for consumption. The design intent is to support reuse and maintainability as integration and consumption needs evolve.",
@@ -36,16 +47,16 @@ const sections = [
     title: "Make pipeline execution visible",
     paragraphs: [
       "Implementation included pipeline monitoring, execution logging, operational reporting, and automated success and failure email notifications. These provide visibility into execution status and failures and support ownership beyond initial delivery.",
-      "Execution visibility is one part of operating a data platform. A successful run does not by itself establish that business data is correct or complete. Recovery behavior and data-quality controls require separate evidence; they are not claimed here.",
+      "Execution status and data quality answer different questions. A successful run shows that a pipeline completed; correctness and completeness require separate validation. The operational capabilities described here cover execution visibility.",
     ],
   },
   {
     id: "tradeoffs",
     label: "04 / Trade-offs",
-    title: "Shared foundations bring shared responsibilities",
+    title: "Manage shared dependencies",
     paragraphs: [
       "A layered foundation offers explicit boundaries between source representation and business consumption. It also introduces work: maintaining transformations, understanding dependencies, and managing the movement of data between layers.",
-      "For a narrowly scoped integration, a direct connection may involve less initial effort. A shared layered foundation becomes useful when multiple needs justify reusable transformations and curated data. This is an analysis of the approach, rather than a reconstruction of a historical alternatives review.",
+      "For a narrowly scoped integration, a direct connection may involve less initial effort. A shared layered foundation becomes useful when multiple needs justify reusable transformations and curated data. These are trade-offs inherent in the approach.",
       "Centralization makes shared ownership important. Changes in upstream structures or shared transformations can affect multiple consumers. Layer names alone do not prevent those effects; contracts, validation, and change practices determine how well the boundaries hold over time.",
     ],
   },
@@ -62,7 +73,7 @@ export default function EnterpriseDataCaseStudy() {
       <main className="case-study-main" id="case-study-content">
         <article>
           <header className="case-study-hero" aria-labelledby="case-study-title">
-            <p className="role">Architecture approach / Review draft</p>
+            <p className="role">Architecture approach</p>
             <h1 id="case-study-title">A shared foundation for enterprise data</h1>
             <p className="case-study-deck">
               Connecting enterprise ingestion, layered transformation, and
@@ -90,11 +101,11 @@ export default function EnterpriseDataCaseStudy() {
                 </div>
               </div>
               {section.id === "approach" && (
-                <figure className="architecture-diagrams">
+                <figure className="architecture-diagrams enterprise-data-diagram">
                   <DiagramView
                     src={`${basePath}/diagrams/enterprise-data/architecture.svg`}
-                    width={350}
-                    height={580}
+                    width={1400}
+                    height={2320}
                     title="Conceptual enterprise data foundation"
                     description="Generic API and ODBC source groups feed ingestion, Bronze/Silver/Gold layers, and curated datasets. Operations are shown schematically; downstream consumers are potential uses, not verified deployments."
                   />
