@@ -1,5 +1,20 @@
 # Dependency and runtime maintenance
 
+## Temporary release exception — November 18, 2026
+
+The owner authorized separating the dependency audit from required CI to release
+the approved resume update (PR #66). The manually dispatched `Dependency audit`
+workflow runs `npm ci` and `npm audit --audit-level=high` and still reports failures.
+The required `verify` job continues to enforce lint, build, content checks, and
+browser tests. No vulnerability has been fixed or dismissed by this separation.
+
+The blocking advisory is GHSA-fc5q-39xc-vjpf in picomatch 4.0.7, pulled through
+the lint tooling's tinyglobby/fdir chain. At review, the advisory listed no patched
+release and the registry's latest was 4.0.7. Restore the audit step to required CI
+when a compatible patched dependency is available and the audit passes. Run the
+standalone workflow when changing dependencies and recheck the advisory before
+the next release.
+
 Checked against the npm registry and official release metadata on November 2, 2026.
 
 Use Node.js **24.22.2 LTS** (selected by `.node-version`) with its bundled npm 11.19.1. Node 26.13.0 is also supported. CI reads the version file; algorithm projects additionally verify Node 26.13.0. These are patched releases; older 24.x/26.x versions are outside the declared engine range.

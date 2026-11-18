@@ -18,7 +18,7 @@ const themeScript = `
 
 const title = "Matthew Clark | Senior Software Engineer";
 const description =
-  "Senior Software Engineer Matthew Clark's portfolio: system design, application architecture, full-stack development, enterprise integrations, and technical leadership, supported by engineering evidence and independent projects.";
+  "Senior Software Engineer Matthew Clark's portfolio: system design, application architecture, full-stack development, enterprise integration, data engineering, and technical leadership, supported by engineering evidence and independent projects.";
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   "https://everdein.github.io/portfolio";

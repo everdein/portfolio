@@ -1,11 +1,12 @@
 {
-  "summary": "Senior software engineer and technical leader with 5+ years of software engineering experience. Combine hands-on development with system design across frontend applications, backend services, APIs, storage, and enterprise integrations. At PBK, shape architecture and modernization across applications and data platforms. Previously owned frontend architecture for two customer-facing life insurance applications at State Farm, established shared engineering practices, and supported a six-engineer team through design and delivery.",
+  "summary": "Senior Software Engineer and technical leader with 5+ years of software engineering experience spanning application architecture, full-stack development, enterprise integration, and data engineering. At PBK, contribute to application and data-platform architecture, Microsoft Fabric pipelines, and operational monitoring. Previously owned frontend architecture for two customer-facing life insurance applications at State Farm and supported a six-engineer team through design and delivery.",
   "pbk": [
-    "Provide technical direction and hands-on engineering across applications, backend services, APIs, storage, and data platforms. Define system boundaries, interfaces, data flows, and upstream and downstream dependencies.",
-    "Partner with business stakeholders, IT, and external development teams to evaluate systems, clarify requirements, sequence implementation, and guide integration and modernization.",
-    "Develop and evaluate solutions using Microsoft Azure, Databricks, Microsoft Fabric, Next.js, and Abacus.AI, with enterprise integration work involving Concur, Workday, Deltek, Salesforce, and Autodesk.",
-    "Build an AI-assisted PDF review workflow intended to cover 1,200+ Deltek projects, identifying missing project data and developing green, yellow, and red completeness ratings. Work is ongoing.",
-    "Review internally and externally developed applications, guide technical handoffs, and establish practices for code quality, documentation, maintainability, and ongoing ownership."
+    "Designed and implemented Microsoft Fabric ingestion pipelines integrating enterprise systems through APIs and ODBC connections, bringing disparate business data into a centralized environment.",
+    "Designed and implemented a Bronze/Silver/Gold medallion architecture separating raw ingestion, cleansing and transformation, and curated business data to support reuse and maintainability.",
+    "Implemented pipeline monitoring, execution logging, operational reporting, and automated success and failure email notifications to provide visibility into pipeline health.",
+    "Design across applications, services, APIs, storage, and data platforms. Partner with business stakeholders, IT, and development teams to define boundaries, data flows, and dependencies.",
+    "Develop an AI-assisted document review workflow to identify missing project data and produce completeness ratings that help prioritize follow-up. Work is ongoing.",
+    "Review applications, guide technical handoffs, and establish shared practices for code quality, documentation, maintainability, and ongoing ownership."
   ],
   "stateFarm": [
     {
@@ -48,7 +49,7 @@
     },
     {
       "title": "Cloud & Data",
-      "detail": "Microsoft Azure, Microsoft Fabric, Databricks, enterprise integrations"
+      "detail": "Microsoft Azure, Microsoft Fabric, Databricks, data ingestion, medallion architecture, API and ODBC integration, pipeline monitoring"
     },
     {
       "title": "Quality & Delivery",
