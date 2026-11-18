@@ -26,7 +26,7 @@ export default function Home() {
               </p>
               <p className="hero-detail">
                 I combine system design, application architecture, full-stack
-                development, and technical leadership to connect business needs
+                development, enterprise integration, and technical leadership to connect business needs
                 with software teams can maintain and extend.
               </p>
               <div className="hero-actions">
@@ -431,18 +431,20 @@ export default function Home() {
                 data flows, and dependencies across enterprise systems.
               </p>
               <p>
-                My work includes developing and evaluating solutions with
-                Microsoft Azure, Databricks, Microsoft Fabric, Next.js, and
-                Abacus.AI, with integration work involving Concur, Workday,
-                Deltek, Salesforce, and Autodesk. I review applications, guide
-                technical handoffs, and establish practices for maintainability
-                and ongoing ownership.
+                I have designed and implemented Microsoft Fabric ingestion
+                pipelines connecting enterprise systems through APIs and ODBC,
+                along with a Bronze/Silver/Gold medallion architecture separating
+                raw ingestion, transformation, and curated business data. Pipeline
+                monitoring, execution logging, and automated success and failure
+                notifications provide visibility into ongoing operations.
               </p>
               <p>
-                I&apos;m building an AI-assisted PDF review workflow intended to
-                cover 1,200+ Deltek projects, identifying missing project data
-                and developing green, yellow, and red completeness ratings to
-                prioritize follow-up.
+                I&apos;m developing an AI-assisted document review workflow to
+                identify missing project data and produce completeness ratings
+                that help prioritize follow-up. This work is ongoing. I also
+                review applications, guide technical handoffs, and establish
+                shared practices for code quality, documentation, and ongoing
+                ownership.
               </p>
               <p>
                 At State Farm, I helped build two life insurance applications

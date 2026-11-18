@@ -31,6 +31,10 @@ test("exports the resume with professional content and a downloadable PDF", asyn
   assert.match(html, /<title>Resume \| Matthew Clark<\/title>/);
   for (const heading of ["Professional summary", "Professional experience", "Selected independent projects", "Technical skills", "Education"]) assert.ok(html.includes(heading));
   assert.match(html, /September 2026–Present/);
+  assert.match(html, /Microsoft Fabric ingestion pipelines/);
+  assert.match(html, /Bronze\/Silver\/Gold medallion architecture/);
+  assert.match(html, /Work is ongoing/);
+  assert.doesNotMatch(html, /Deltek|Salesforce|Burbio|Concur|Workday|Autodesk|1,200\+/);
   assert.match(html, /September 2023–September 2026/);
   assert.match(html, /3,335 test cases at 97\.08% coverage/);
   assert.match(html, /Local-first; not production hosted/);
@@ -115,11 +119,13 @@ test("exports the portfolio content and metadata", async () => {
   }
   assert.match(html, /3,327 passing, 0 failing, with 97\.08% coverage/);
   assert.match(html, /other engineers independently extended and operated/);
-  assert.match(html, /enterprise integrations/);
+  assert.match(html, /enterprise integration/);
   assert.match(html, /PBK \/ Sep 2026–present/);
   assert.match(html, /State Farm \/ Sep 2023–Sep 2026/);
   assert.match(html, /State Farm \/ Jun 2021–Sep 2023/);
-  assert.match(html, /intended to[\s\S]{0,40}cover 1,200\+ Deltek projects/);
+  assert.match(html, /Bronze\/Silver\/Gold medallion architecture/);
+  assert.match(html, /This work is ongoing/);
+  assert.doesNotMatch(html, /Deltek|Salesforce|Burbio|Concur|Workday|Autodesk|1,200\+/);
   assert.doesNotMatch(html, /State Farm \/ 2023-present/);
   assert.match(html, /How I lead the work/);
   assert.match(html, /Create durable leverage/);

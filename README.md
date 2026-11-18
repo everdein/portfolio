@@ -10,7 +10,7 @@ professional-impact ledger, public resume, and career narrative connect that
 project evidence to professional scope without turning the homepage into a
 second resume or mixing private employer evidence with portfolio-project
 evidence. The professional narrative emphasizes system design, application
-architecture, full-stack development, enterprise integrations, and technical
+architecture, full-stack development, enterprise integrations, data engineering, and technical
 leadership. PBK is the current role; the two State Farm roles remain distinct,
 with production metrics attributed to that tenure. Applied generative AI work
 is ongoing and distinguished from AI-assisted programming. The
@@ -22,10 +22,13 @@ contracts, source mapping, and release verification, grounded in Dojo's
 repository case study. Learning outcomes remain explicitly unmeasured.
 
 The `/resume/` route presents the approved resume in light and dark themes.
-Light, Dark Modern, and Regular monochrome PDF versions each have equal Download
+Light, Dark, and Regular PDF versions each have equal Download
 and View controls. `app/resume/content.json` holds the approved professional text.
 The three PDF exports come from their corresponding native Google Docs with
-Arial, the MC header, native links, and a two-page layout. The web page omits the
+Calibri, a text header, native links, and a two-page layout. The November 18, 2026
+approved resumes omit PBK source-system names and keep AI document review
+explicitly ongoing. Light and Regular currently share white paper and blue
+accents; Dark retains its charcoal background and syntax colors. The web page omits the
 phone number and uses email and professional profile links.
 
 ## Design Direction
@@ -107,9 +110,9 @@ server process, runtime secrets, authentication, or persistence.
 The public resume at `public/matthew-clark-resume.pdf` is the user-approved
 Google Docs PDF export. The portfolio and GitHub profile link to the resume
 page, which offers light, dark, and regular PDFs.
-Replace both with approved exports when the resume changes;
+Replace all three with approved exports when the resume changes;
 preserve the exported typography, layout, links, and content rather than
-regenerating it from a separate resume builder. Inspect both PDF pages before
+regenerating it from a separate resume builder. Inspect both pages of each PDF before
 publishing and verify that the deployed file matches the approved export.
 Original historical resume files are not overwritten.
 

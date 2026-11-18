@@ -10,7 +10,7 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://everdein.github.io/portfolio";
 const title = "Resume | Matthew Clark";
 const description =
-  "Matthew Clark's resume: senior software engineering, application architecture, system design, technical leadership, and independent projects.";
+  "Matthew Clark's resume: senior software engineering, application architecture, enterprise integration, data engineering, technical leadership, and independent projects.";
 export const metadata: Metadata = {
   title,
   description,
@@ -131,7 +131,7 @@ export default function Resume() {
                   Orlando, FL · Remote
                 </p>
               </div>
-              <h4>System design, enterprise integration &amp; applied AI</h4>
+              <h4>System design, enterprise integration &amp; data engineering</h4>
               <ul>
                 {content.pbk.map((item) => (
                   <li key={item}>{item}</li>
