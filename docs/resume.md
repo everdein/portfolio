@@ -30,7 +30,15 @@ The initially empty Light document was populated using Regular's formatting;
 both currently use white paper and blue accents. The approved content adds
 Fabric ingestion, medallion architecture, and pipeline monitoring, omits PBK
 source-system names, and identifies AI document review as ongoing. State Farm
-accomplishments remain unchanged. `app/resume/content.json` mirrors this copy.
+accomplishments remain unchanged.
+
+The web copy in `app/resume/content.json` additionally incorporates the owner's
+November 18, 2026 corrections: independent design and implementation of the initial
+Fabric foundation, the longstanding consolidation problem, and implemented
+validation, reconciliation, ingestion, and recovery capabilities. The approved
+PDFs and Drive source documents have not been revised for those corrections.
+Their PBK content therefore differs from the web resume; reconciliation requires
+a separately authorized source-document update and reviewed native PDF exports.
 
 Each PDF has an explicit Download link and a View link. View links launch the
 same exported PDF in a new tab, where the browser PDF viewer provides printing.

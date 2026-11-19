@@ -25,11 +25,11 @@ export default function Home() {
                 From application behavior to the systems behind it.
               </p>
               <p className="hero-detail">
-                I&apos;m a hands-on software engineer working across applications,
-                enterprise integration, and data platforms. At PBK, I help establish
-                shared data capabilities; at State Farm, I led frontend architecture
-                for customer-facing systems. I care about the decisions that make
-                that work useful, operable, and understandable to the next engineer.
+                I independently designed and implemented PBK&apos;s initial
+                centralized enterprise data foundation in Microsoft Fabric.
+                Previously, I owned frontend architecture for two customer-facing
+                applications at State Farm. My work connects application behavior,
+                data correctness, and recovery when systems fail.
               </p>
               <div className="hero-actions">
                 <a className="primary-link" href="#professional">
@@ -58,19 +58,19 @@ export default function Home() {
           </div>
           <nav className="engineering-evidence" aria-label="Explore engineering evidence">
             <a href={`${basePath}/work/enterprise-data/`}>
-              <span className="note-label">Engineering judgment</span>
+              <span className="note-label">Professional systems work</span>
               <strong>Establish a shared data foundation</strong>
-              <span>Integration boundaries, reusable datasets, and operational responsibilities at PBK.</span>
+              <span>Independent architecture and implementation, from source ingestion to validation and recovery.</span>
               <b>Explore the architecture <span aria-hidden="true">↗</span></b>
             </a>
             <a href="#state-farm-experience">
-              <span className="note-label">Organizational impact</span>
+              <span className="note-label">Production applications</span>
               <strong>Leave systems others can extend</strong>
               <span>Application architecture, shared patterns, and production evidence from State Farm.</span>
               <b>See the experience <span aria-hidden="true">↓</span></b>
             </a>
             <a href="#projects">
-              <span className="note-label">Technical expertise</span>
+              <span className="note-label">Independent engineering</span>
               <strong>Inspect the implementation</strong>
               <span>Independent products with source code, architecture decisions, and verification.</span>
               <b>Explore the projects <span aria-hidden="true">↓</span></b>
@@ -105,21 +105,22 @@ export default function Home() {
               <p>Senior Software Engineer <span>September 2026–Present</span></p>
             </header>
             <p className="experience-summary">
-              Working within an engineering team, I contribute to applications,
-              enterprise integration, and the organization&apos;s first centralized
-              enterprise data foundation of this kind. The objective is consistent,
-              reusable datasets that can serve multiple business needs over time.
+              I independently designed and implemented the initial Microsoft Fabric
+              data foundation, addressing a longstanding need to bring disparate
+              enterprise systems together. It established the organization&apos;s
+              first centralized enterprise data foundation of this kind. I work with
+              stakeholders and the wider engineering team on interfaces and downstream needs.
             </p>
             <div className="enterprise-feature" aria-labelledby="enterprise-feature-heading">
               <div>
-                <span className="project-number">Architecture approach</span>
+                <span className="project-number">Professional case study</span>
                 <h4 id="enterprise-feature-heading">A shared foundation for enterprise data</h4>
                 <p>
-                  Microsoft Fabric ingestion pipelines and a Bronze/Silver/Gold
-                  medallion architecture separate source connectivity, transformation,
-                  and curated business data. The foundation includes validation,
-                  monitoring, and recovery capabilities; downstream consumers remain
-                  opportunities described separately from implemented work.
+                  Microsoft Fabric ingestion pipelines and a Bronze/Silver/Gold medallion architecture
+                  separate source connectivity, shared transformations, and curated
+                  data. Schema validation, reconciliation, and idempotent processing
+                  address correctness; preserved raw data and independent reprocessing
+                  support recovery. The case study explains these boundaries and their costs.
                 </p>
               </div>
               <div className="project-links">
@@ -496,35 +497,22 @@ export default function Home() {
           <div className="about-content">
             <div className="section-copy">
               <p>
-                Frontend engineering is a foundation of my work. Building
-                customer-facing applications taught me to connect interface
-                behavior with state, API contracts, and the systems behind them.
-                My work at PBK extends that perspective into enterprise integration
-                and data platforms.
+                I start by tracing what a person needs from a system back through
+                its interfaces, data, and dependencies. That makes the open questions
+                concrete: who owns a record, what makes a result valid, and what
+                happens when only part of the work succeeds?
               </p>
               <p>
-                I work with business stakeholders and engineers to clarify what
-                a system needs to accomplish, where responsibilities belong,
-                and how someone else will maintain it. I value technical depth
-                alongside enough understanding of adjacent disciplines to question
-                assumptions and recognize dependencies.
+                I want a design to explain both the normal path and the recovery
+                path. Preserving source data, rejecting stale saves, and keeping
+                execution reproducible are different answers to that concern in
+                the work shown here. Each adds a cost that belongs in the explanation.
               </p>
               <p>
-                My background spans geospatial data quality for Google Maps, a
-                decade in data and analytics at Microsoft, open-source software
-                engineering at WattTime, and customer-facing product engineering
-                at State Farm. That progression shapes how I connect technical
-                decisions to user behavior, operational context, and measurable
-                outcomes.
-              </p>
-              <p>
-                I value clear communication, sound engineering judgment, and
-                ownership beyond the initial release. I use AI-assisted
-                programming in professional and independent work for
-                implementation, refactoring, testing, and documentation while
-                retaining human review and architectural ownership. My
-                independent projects demonstrate engineering capabilities; AI
-                assistance is part of the development process.
+                A handoff should leave another engineer able to explain why the
+                system behaves as it does. I use reviews, tests, and documentation
+                to preserve those decisions, including the limits of what has been
+                verified and the conditions that would justify changing the design.
               </p>
               <a className="text-link" href={resumeHref}>
                 Read the resume

@@ -38,8 +38,8 @@ Project cards prioritize blue case-study links equally. The hero directs visitor
 The homepage introduction connects application engineering to enterprise systems.
 Three evidence links follow it: enterprise data architecture at PBK, production
 experience at State Farm, and inspectable independent projects. These express
-engineering judgment, organizational impact, and technical expertise through
-specific work. On narrow screens the primary Experience and enterprise data
+professional systems work, production applications, and independent engineering
+through specific work. On narrow screens the primary Experience and enterprise data
 case-study links remain in the first viewport. PBK's case-study feature precedes
 its responsibility rows; current work and the ongoing AI initiative are distinct.
 
@@ -62,7 +62,9 @@ PBK's Experience entry. State Farm has a separate entry containing its productio
 evidence. Independent Projects follows Experience and contains the personal
 products. The architecture approach returns to
 Experience. Its portrait diagram fits a 700px reading width and enlarges within
-the same scrollable viewport.
+the same scrollable viewport. Its cross-link leads to Pay Period Planner as
+independent application work, making the transition from professional architecture
+to an inspectable application explicit.
 
 ## Destination-specific artwork
 

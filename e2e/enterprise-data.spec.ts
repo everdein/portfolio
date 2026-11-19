@@ -24,7 +24,7 @@ test("enterprise architecture is discoverable from experience and its diagram en
       if (width !== 320) await page.screenshot({ path: testInfo.outputPath(`enterprise-${width}-${theme}.png`), fullPage: true });
     }
     await page.getByRole("link", { name: "Operations", exact: true }).click();
-    await expect(page.getByRole("heading", { name: "Make pipeline execution visible" })).toBeInViewport();
+    await expect(page.getByRole("heading", { name: "Account for incorrect data and incomplete runs" })).toBeInViewport();
   }
   await page.getByRole("link", { name: "Back to experience" }).click();
   await expect(page).toHaveURL(/#professional$/);

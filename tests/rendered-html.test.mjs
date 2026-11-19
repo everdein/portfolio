@@ -5,18 +5,28 @@ import test from "node:test";
 const root = new URL("../", import.meta.url);
 const outputRoot = new URL("../out/", import.meta.url);
 
-test("enterprise architecture preserves anonymous sources, team attribution, and qualified downstream uses", async () => {
+test("enterprise architecture preserves anonymous sources, independent ownership, and qualified downstream uses", async () => {
   const html = await readFile(new URL("work/enterprise-data/index.html", outputRoot), "utf8");
   const svg = await readFile(new URL("diagrams/enterprise-data/architecture.svg", outputRoot), "utf8");
-  assert.match(html, /Senior Software Engineer within an engineering team/);
+  assert.match(html, /Independent architecture and implementation/);
+  assert.match(html, /Microsoft Fabric was already in use when I joined PBK/);
+  assert.match(html, /We considered MuleSoft, Informatica, and Databricks as alternatives/);
+  assert.match(html, /data volume was manageable in Fabric/);
+  assert.match(html, /did not require extensive rework/);
+  assert.match(html, /I independently designed and implemented/);
+  assert.match(html, /schema and required-field validation/);
+  assert.match(html, /reconciliation/);
+  assert.match(html, /idempotent execution/);
+  assert.match(html, /reprocessing from Bronze/);
+  assert.match(html.replace(/<!--.*?-->/g, ""), /Independent application work: Pay Period Planner/);
   assert.match(html, /Back to experience/);
   assert.doesNotMatch(html, /Review draft|noindex/);
   assert.match(html, /rel="canonical" href="https:\/\/everdein\.github\.io\/portfolio\/work\/enterprise-data\//);
   assert.match(html, /Possible downstream consumers are not presented as delivered capabilities/);
   assert.match(svg, /Potential downstream consumers/);
   assert.match(svg, /Microsoft Fabric pipelines/);
-  assert.doesNotMatch(html + svg, /Deltek|Salesforce|Burbio|Concur|Workday|Autodesk|1,200\+|independently designed/i);
-  for (const section of ["context", "approach", "operations", "tradeoffs"]) {
+  assert.doesNotMatch(html + svg, /Deltek|Salesforce|Burbio|Concur|Workday|Autodesk|1,200\+/i);
+  for (const section of ["context", "approach", "operations", "tradeoffs", "capabilities"]) {
     assert.ok(html.includes(`id="${section}"`));
     assert.ok(html.includes(`href="#${section}"`));
   }
@@ -49,6 +59,8 @@ test("exports the resume with professional content and a downloadable PDF", asyn
   for (const heading of ["Professional summary", "Professional experience", "Selected independent projects", "Technical skills", "Education"]) assert.ok(html.includes(heading));
   assert.match(html, /September 2026–Present/);
   assert.match(html, /Microsoft Fabric ingestion pipelines/);
+  assert.match(html, /Independently designed and implemented/);
+  assert.match(html, /schema and required-field validation/);
   assert.match(html, /Bronze\/Silver\/Gold medallion architecture/);
   assert.match(html, /Work is ongoing/);
   assert.doesNotMatch(html, /Deltek|Salesforce|Burbio|Concur|Workday|Autodesk|1,200\+/);
@@ -74,6 +86,7 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /<title>Matthew Clark \| Senior Software Engineer<\/title>/i);
   assert.match(html, /<h1[^>]*>Matthew Clark<\/h1>/i);
   assert.match(html, /From application behavior to the systems behind it/);
+  assert.match(html, /I independently designed and implemented/);
   assert.match(html, /id="professional"/);
   assert.match(html, /id="projects"/);
   assert.match(html, /id="approach"/);
@@ -258,7 +271,7 @@ test("keeps the static site focused and free of server runtime", async () => {
 
 test("all internal page links and section anchors resolve", async () => {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-  const pages = ["", "resume/", "work/pay-period-planner/", "work/dsa-dojo/"];
+  const pages = ["", "resume/", "work/pay-period-planner/", "work/dsa-dojo/", "work/enterprise-data/"];
   for (const page of pages) {
     const html = await readFile(new URL(`${page}index.html`, outputRoot), "utf8");
     for (const [, href] of html.matchAll(/<a\b[^>]*href="([^"]+)"/g)) {
