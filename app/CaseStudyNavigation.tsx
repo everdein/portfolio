@@ -8,7 +8,7 @@ export function CaseStudyNavigation({
   sections?: string[];
 }) {
   const other =
-    project === "DSA Dojo"
+    project === "DSA Dojo" || project === "Enterprise data architecture"
       ? ["pay-period-planner", "Pay Period Planner"]
       : ["dsa-dojo", "DSA Dojo"];
   return (
@@ -32,7 +32,7 @@ export function CaseStudyNavigation({
           ))}
         </nav>
         <a className="case-other" href={`${basePath}/work/${other[0]}/`}>
-          Next case study: {other[1]}
+          {project === "Enterprise data architecture" ? "Independent application work" : "Next case study"}: {other[1]}
         </a>
       </div>
     </header>

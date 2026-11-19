@@ -22,19 +22,21 @@ export default function Home() {
               <p className="role">Senior Software Engineer</p>
               <h1 id="page-title">Matthew Clark</h1>
               <p className="hero-line">
-                I design and build systems people can rely on.
+                From application behavior to the systems behind it.
               </p>
               <p className="hero-detail">
-                I combine system design, application architecture, full-stack
-                development, enterprise integration, and technical leadership to connect business needs
-                with software teams can maintain and extend.
+                I independently designed and implemented PBK&apos;s initial
+                centralized enterprise data foundation in Microsoft Fabric.
+                Previously, I owned frontend architecture for two customer-facing
+                applications at State Farm. My work connects application behavior,
+                data correctness, and recovery when systems fail.
               </p>
               <div className="hero-actions">
                 <a className="primary-link" href="#professional">
                   Explore experience
                 </a>
                 <a href={resumeHref}>View resume</a>
-                <a href={`${basePath}/work/enterprise-data/`}>Enterprise architecture case study</a>
+                <a href={`${basePath}/work/enterprise-data/`}>Enterprise data architecture case study</a>
               </div>
             </div>
             <div className="hero-portrait">
@@ -54,6 +56,26 @@ export default function Home() {
               and leave evidence that the result works.
             </p>
           </div>
+          <nav className="engineering-evidence" aria-label="Explore engineering evidence">
+            <a href={`${basePath}/work/enterprise-data/`}>
+              <span className="note-label">Professional systems work</span>
+              <strong>Establish a shared data foundation</strong>
+              <span>Independent architecture and implementation, from source ingestion to validation and recovery.</span>
+              <b>Explore the architecture <span aria-hidden="true">↗</span></b>
+            </a>
+            <a href="#state-farm-experience">
+              <span className="note-label">Production applications</span>
+              <strong>Leave systems others can extend</strong>
+              <span>Application architecture, shared patterns, and production evidence from State Farm.</span>
+              <b>See the experience <span aria-hidden="true">↓</span></b>
+            </a>
+            <a href="#projects">
+              <span className="note-label">Independent engineering</span>
+              <strong>Inspect the implementation</strong>
+              <span>Independent products with source code, architecture decisions, and verification.</span>
+              <b>Explore the projects <span aria-hidden="true">↓</span></b>
+            </a>
+          </nav>
         </section>
 
         <section
@@ -83,27 +105,50 @@ export default function Home() {
               <p>Senior Software Engineer <span>September 2026–Present</span></p>
             </header>
             <p className="experience-summary">
-              Working within an engineering team, I contribute to enterprise
-              integration, data architecture, and application design. My work
-              includes Microsoft Fabric ingestion pipelines, layered data
-              transformation, and pipeline monitoring, logging, and notifications.
+              I independently designed and implemented the initial Microsoft Fabric
+              data foundation, addressing a longstanding need to bring disparate
+              enterprise systems together. It established the organization&apos;s
+              first centralized enterprise data foundation of this kind. I work with
+              stakeholders and the wider engineering team on interfaces and downstream needs.
             </p>
             <div className="enterprise-feature" aria-labelledby="enterprise-feature-heading">
               <div>
-                <span className="project-number">Architecture approach</span>
+                <span className="project-number">Professional case study</span>
                 <h4 id="enterprise-feature-heading">A shared foundation for enterprise data</h4>
                 <p>
-                  An anonymized look at ingestion, Bronze/Silver/Gold data layers,
-                  and operational visibility—the responsibilities and trade-offs
-                  behind the approach, with potential downstream uses clearly identified.
+                  Microsoft Fabric ingestion pipelines and a Bronze/Silver/Gold medallion architecture
+                  separate source connectivity, shared transformations, and curated
+                  data. Schema validation, reconciliation, and idempotent processing
+                  address correctness; preserved raw data and independent reprocessing
+                  support recovery. The case study explains these boundaries and their costs.
                 </p>
               </div>
               <div className="project-links">
                 <a className="primary-link" href={`${basePath}/work/enterprise-data/`}>
-                  Read enterprise architecture case study
+                  Read enterprise data case study
                 </a>
               </div>
             </div>
+            <dl className="experience-responsibilities">
+              <div>
+                <dt>Across system boundaries</dt>
+                <dd>I work with business stakeholders, IT, and external development
+                  teams to define interfaces, data flows, and dependencies across
+                  applications and enterprise systems.</dd>
+              </div>
+              <div>
+                <dt>Beyond implementation</dt>
+                <dd>Application reviews and technical handoffs address maintainability,
+                  code quality, documentation, and ongoing ownership. Pipeline monitoring,
+                  execution logging, and notifications provide operational visibility.</dd>
+              </div>
+              <div>
+                <dt>In development / AI-assisted review</dt>
+                <dd>I&apos;m developing a document review workflow to identify missing
+                  project data and produce completeness ratings that help prioritize
+                  follow-up. This work is ongoing.</dd>
+              </div>
+            </dl>
           </article>
 
           <article className="experience-employer" aria-labelledby="state-farm-heading" id="state-farm-experience">
@@ -399,37 +444,47 @@ export default function Home() {
           <div className="approach-grid">
             <div>
               <span className="note-label">03 / Approach</span>
-              <h2 id="approach-heading">How I lead the work</h2>
+              <h2 id="approach-heading">Decisions behind the work</h2>
             </div>
             <div className="approach-item">
               <strong>Clarify the product</strong>
               <p>
                 Start with the decision a person needs to make, then turn
                 ambiguous requirements into explicit behavior and testable
-                outcomes.
+                outcomes. In Pay Period Planner, the next-paycheck view connects
+                income and obligations to a concrete planning decision.
               </p>
+              <a className="text-link" href={`${caseStudyHref}#product`}>See the planning problem</a>
             </div>
             <div className="approach-item">
               <strong>Design the boundaries</strong>
               <p>
                 Keep state, domain rules, API contracts, and data ownership
-                clear across the stack.
+                clear across the stack. The enterprise data approach gives
+                source representation, shared transformations, and curated
+                business data distinct responsibilities.
               </p>
+              <a className="text-link" href={`${basePath}/work/enterprise-data/#approach`}>Explore the data boundaries</a>
             </div>
             <div className="approach-item">
               <strong>Build confidence</strong>
               <p>
                 Encode tests, accessibility, security, documentation, and
                 delivery controls into the system so quality does not depend on
-                individual memory.
+                individual memory. DSA Dojo connects deterministic execution
+                traces to lesson contracts and browser verification.
               </p>
+              <a className="text-link" href={`${basePath}/work/dsa-dojo/#evidence`}>Inspect the verification</a>
             </div>
             <div className="approach-item">
-              <strong>Create durable leverage</strong>
+              <strong>Leave work others can own</strong>
               <p>
-                Turn exploration and one-off work into documented, tested
-                capabilities that other engineers can extend, operate, and own.
+                At State Farm, shared components, documentation, and platform
+                patterns supported work that other engineers independently
+                extended and operated. Maintainability includes transferring
+                understanding as well as code.
               </p>
+              <a className="text-link" href="#state-farm-experience">See the production experience</a>
             </div>
           </div>
         </section>
@@ -440,80 +495,24 @@ export default function Home() {
             <h2 id="about-heading">About</h2>
           </div>
           <div className="about-content">
-            <dl
-              className="experience-facts"
-              aria-label="Professional experience"
-            >
-              <div>
-                <dt>Current role</dt>
-                <dd>
-                  <strong>Senior Software Engineer</strong>
-                  <span>PBK / Sep 2026–present</span>
-                </dd>
-              </div>
-              <div>
-                <dt>Previous role</dt>
-                <dd>
-                  <strong>Lead Software Engineer</strong>
-                  <span>State Farm / Sep 2023–Sep 2026</span>
-                </dd>
-              </div>
-              <div>
-                <dt>Earlier role</dt>
-                <dd>
-                  <strong>Software Engineer</strong>
-                  <span>State Farm / Jun 2021–Sep 2023</span>
-                </dd>
-              </div>
-            </dl>
             <div className="section-copy">
               <p>
-                At PBK, I provide technical direction and hands-on engineering
-                across frontend applications, backend services, APIs, storage,
-                and data platforms. I work with business stakeholders, IT, and
-                external development teams to define boundaries, interfaces,
-                data flows, and dependencies across enterprise systems.
+                I start by tracing what a person needs from a system back through
+                its interfaces, data, and dependencies. That makes the open questions
+                concrete: who owns a record, what makes a result valid, and what
+                happens when only part of the work succeeds?
               </p>
               <p>
-                I have designed and implemented Microsoft Fabric ingestion
-                pipelines connecting enterprise systems through APIs and ODBC,
-                along with a Bronze/Silver/Gold medallion architecture separating
-                raw ingestion, transformation, and curated business data. Pipeline
-                monitoring, execution logging, and automated success and failure
-                notifications provide visibility into ongoing operations.
+                I want a design to explain both the normal path and the recovery
+                path. Preserving source data, rejecting stale saves, and keeping
+                execution reproducible are different answers to that concern in
+                the work shown here. Each adds a cost that belongs in the explanation.
               </p>
               <p>
-                I&apos;m developing an AI-assisted document review workflow to
-                identify missing project data and produce completeness ratings
-                that help prioritize follow-up. This work is ongoing. I also
-                review applications, guide technical handoffs, and establish
-                shared practices for code quality, documentation, and ongoing
-                ownership.
-              </p>
-              <p>
-                At State Farm, I helped build two life insurance applications
-                from the ground up and progressed into a lead role. I owned
-                frontend architecture, guided modernization, and supported a
-                six-engineer team through design, mentoring, and production
-                delivery. Shared components, documentation, and tooling helped
-                other engineers build on that work.
-              </p>
-              <p>
-                My background spans geospatial data quality for Google Maps, a
-                decade in data and analytics at Microsoft, open-source software
-                engineering at WattTime, and customer-facing product engineering
-                at State Farm. That progression shapes how I connect technical
-                decisions to user behavior, operational context, and measurable
-                outcomes.
-              </p>
-              <p>
-                I value clear communication, sound engineering judgment, and
-                ownership beyond the initial release. I use AI-assisted
-                programming in professional and independent work for
-                implementation, refactoring, testing, and documentation while
-                retaining human review and architectural ownership. My
-                independent projects demonstrate engineering capabilities; AI
-                assistance is part of the development process.
+                A handoff should leave another engineer able to explain why the
+                system behaves as it does. I use reviews, tests, and documentation
+                to preserve those decisions, including the limits of what has been
+                verified and the conditions that would justify changing the design.
               </p>
               <a className="text-link" href={resumeHref}>
                 Read the resume

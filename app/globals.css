@@ -693,6 +693,22 @@ h1 {
 .experience-evidence-heading { font-size: 22px; margin: 32px 0 0; }
 .experience-employer .enterprise-feature { margin-bottom: 0; }
 .enterprise-feature .project-links { order: 0; }
+.engineering-evidence { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 36px; border-top: 1px solid var(--rule); }
+.engineering-evidence > a { display: flex; flex-direction: column; gap: 14px; padding: 24px 24px 8px 0; text-decoration: none; color: var(--ink); }
+.engineering-evidence > a + a { border-left: 1px solid var(--rule); padding-left: 24px; }
+.engineering-evidence strong { font-size: 21px; line-height: 1.25; }
+.engineering-evidence a > span:not(.note-label) { color: var(--ink-soft); line-height: 1.6; font-size: 14px; }
+.engineering-evidence b { color: var(--link); font-size: 14px; margin-top: auto; text-decoration: underline; text-underline-offset: 4px; }
+.engineering-evidence a:hover b { text-decoration-thickness: 2px; }
+.experience-responsibilities { margin: 28px 0 0; }
+.experience-responsibilities > div { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 32px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
+.experience-responsibilities dt { font-weight: 700; line-height: 1.6; }
+.experience-responsibilities dd { margin: 0; color: var(--ink-soft); line-height: 1.65; }
+@media (max-width: 760px) {
+  .engineering-evidence { grid-template-columns: minmax(0, 1fr); }
+  .engineering-evidence > a, .engineering-evidence > a + a { padding: 24px 0; border-left: 0; border-bottom: 1px solid var(--rule); }
+  .experience-responsibilities > div { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+}
 @media (max-width: 760px) {
   .enterprise-feature { grid-template-columns: minmax(0, 1fr); gap: 16px; }
 }
@@ -1546,7 +1562,7 @@ pre, code, kbd, samp { font-family: var(--font-code); }
 .resume-page-context { display: flex; justify-content: space-between; gap: 16px; max-width: 1320px; margin: auto; padding: 10px 52px; border-top: 1px solid var(--rule); font-size: 13px; }
 .resume-page-context span { font-weight: 800; }
 .resume-page-context a { color: var(--link); }
-.site-canvas section[id], #main-content, #resume-content { scroll-margin-top: 140px; }
+.site-canvas section[id], .experience-employer[id], #main-content, #resume-content { scroll-margin-top: 140px; }
 .case-navigation .case-navigation-heading { padding-top: 10px; padding-bottom: 10px; }
 .case-study-section { scroll-margin-top: 220px; }
 @media (max-width: 760px) {
