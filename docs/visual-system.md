@@ -35,6 +35,14 @@ its destination. Do not replace application evidence screenshots with artwork.
 
 Project cards prioritize blue case-study links equally. The hero directs visitors to Experience. Resume PDF formats receive equal blue buttons in separate Download PDF and View PDF groups.
 
+The homepage introduction connects application engineering to enterprise systems.
+Three evidence links follow it: enterprise data architecture at PBK, production
+experience at State Farm, and inspectable independent projects. These express
+engineering judgment, organizational impact, and technical expertise through
+specific work. On narrow screens the primary Experience and enterprise data
+case-study links remain in the first viewport. PBK's case-study feature precedes
+its responsibility rows; current work and the ongoing AI initiative are distinct.
+
 ## Architecture evidence
 
 Case-study System sections display all three reviewed SVG diagrams inline.

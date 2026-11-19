@@ -294,7 +294,8 @@ test("contains both routes across supported portfolio widths", async ({ page }) 
 
     await page.goto(homePath);
     await expectNoHorizontalOverflow(page);
-    await expectFirstViewportHint(page, "#professional");
+    await expectFirstViewportHint(page, ".hero-actions");
+    await expect(page.locator(".hero-actions").getByRole("link", { name: "Enterprise data architecture case study" })).toBeInViewport();
 
     await page.goto(caseStudyPath);
     await expectNoHorizontalOverflow(page);

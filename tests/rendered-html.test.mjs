@@ -73,7 +73,7 @@ test("exports the portfolio content and metadata", async () => {
 
   assert.match(html, /<title>Matthew Clark \| Senior Software Engineer<\/title>/i);
   assert.match(html, /<h1[^>]*>Matthew Clark<\/h1>/i);
-  assert.match(html, /I design and build systems people can rely on/);
+  assert.match(html, /From application behavior to the systems behind it/);
   assert.match(html, /id="professional"/);
   assert.match(html, /id="projects"/);
   assert.match(html, /id="approach"/);
@@ -137,15 +137,15 @@ test("exports the portfolio content and metadata", async () => {
   assert.match(html, /3,327 passing, 0 failing, with 97\.08% coverage/);
   assert.match(html, /other engineers independently extended and operated/);
   assert.match(html, /enterprise integration/);
-  assert.match(html, /PBK \/ Sep 2026–present/);
-  assert.match(html, /State Farm \/ Sep 2023–Sep 2026/);
-  assert.match(html, /State Farm \/ Jun 2021–Sep 2023/);
+  assert.match(html, /September 2026–Present/);
+  assert.match(html, /September 2023–September 2026/);
+  assert.match(html, /June 2021–September 2023/);
   assert.match(html, /Bronze\/Silver\/Gold medallion architecture/);
   assert.match(html, /This work is ongoing/);
   assert.doesNotMatch(html, /Deltek|Salesforce|Burbio|Concur|Workday|Autodesk|1,200\+/);
   assert.doesNotMatch(html, /State Farm \/ 2023-present/);
-  assert.match(html, /How I lead the work/);
-  assert.match(html, /Create durable leverage/);
+  assert.match(html, /Decisions behind the work/);
+  assert.match(html, /Leave work others can own/);
   assert.match(html, /Let&#x27;s talk about complex systems<\/h2>/);
   assert.match(html, /Switch to light theme/);
   assert.match(html, /aria-pressed="true"/);

@@ -5,7 +5,7 @@ import { DiagramView } from "../../DiagramView";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://everdein.github.io/portfolio";
 const title = "Enterprise Data Architecture | Matthew Clark";
-const description = "An anonymized architectural approach to enterprise ingestion, layered data transformation, and pipeline operations in Microsoft Fabric.";
+const description = "Establishing a shared enterprise data foundation in Microsoft Fabric, with reusable datasets, layered transformation, validation, and pipeline operations.";
 
 export const metadata: Metadata = {
   title,
@@ -26,9 +26,10 @@ const sections = [
   {
     id: "context",
     label: "01 / Context",
-    title: "Connect business data",
+    title: "Establish a shared capability",
     paragraphs: [
-      "Enterprise systems represent different parts of a business, each with its own interfaces and data structures. Bringing that information together requires decisions about where source-specific integration ends, where transformation belongs, and how the resulting data is prepared for use.",
+      "The objective was to establish the organization's first centralized enterprise data foundation of this kind: infrastructure for bringing information from disparate business systems into consistent, reusable datasets. The work created a new shared capability for ingestion, transformation, and data organization.",
+      "The architecture addresses a cross-system need. A common foundation allows integrations and transformations to serve multiple downstream needs over time, rather than being tied to an individual report or application. Source interfaces and data structures still require distinct integration boundaries within that shared environment.",
       "As a Senior Software Engineer working within an engineering team, I contributed to this foundation through Microsoft Fabric ingestion pipelines, a Bronze/Silver/Gold medallion architecture, and pipeline monitoring and notifications.",
     ],
   },
@@ -39,6 +40,7 @@ const sections = [
     paragraphs: [
       "API and ODBC connections bring enterprise data into a centralized environment. Source-specific connectivity belongs at the ingestion boundary; the layered architecture gives raw source representation, shared transformations, and business-oriented data distinct responsibilities.",
       "Bronze holds raw source data. Silver handles cleansing, transformation, and standardization. Gold contains curated business data prepared for consumption. The design intent is to support reuse and maintainability as integration and consumption needs evolve.",
+      "Consider a source field whose representation differs from the business meaning a consumer needs. In this separation of responsibilities, the source representation belongs in Bronze, a shared standardization belongs in Silver, and a consumption-oriented view belongs in Gold. This illustrates the boundary: each consumer should not need to repeat source-specific cleansing. It is a design example, not a description of a particular internal schema.",
     ],
   },
   {
@@ -47,7 +49,8 @@ const sections = [
     title: "Make pipeline execution visible",
     paragraphs: [
       "Implementation included pipeline monitoring, execution logging, operational reporting, and automated success and failure email notifications. These provide visibility into execution status and failures and support ownership beyond initial delivery.",
-      "Execution status and data quality answer different questions. A successful run shows that a pipeline completed; correctness and completeness require separate validation. The operational capabilities described here cover execution visibility.",
+      "The implemented solution also includes data validation and recovery capabilities. Validation addresses the data being processed, while monitoring and notifications surface execution results. Logs and operational reporting provide information for investigating those results.",
+      "Execution visibility, validation, and recovery have distinct responsibilities. Their presence does not by itself establish a reliability guarantee. This overview describes their role without specifying validation rules, recovery procedures, or automation behavior.",
     ],
   },
   {
@@ -60,6 +63,16 @@ const sections = [
       "Centralization makes shared ownership important. Changes in upstream structures or shared transformations can affect multiple consumers. Layer names alone do not prevent those effects; contracts, validation, and change practices determine how well the boundaries hold over time.",
     ],
   },
+  {
+    id: "capabilities",
+    label: "05 / Capabilities",
+    title: "Prepare data for further use",
+    paragraphs: [
+      "The implemented foundation combines ingestion, transformation, orchestration, data validation, monitoring, and recovery capabilities in Microsoft Fabric. Curated datasets establish a reusable boundary for downstream work, separating business-oriented data from source-specific connectivity.",
+      "Applications, reporting, services, and AI-assisted workflows are possible consumers of that foundation. Their placement in the diagram describes architectural opportunities; it does not establish deployed integrations, adoption, or measured business impact.",
+      "The capability established is a shared enterprise data foundation. Its scope does not imply that all organizational data has been consolidated. Downstream deployment, adoption, and measurable business benefits require evidence separate from the foundation itself.",
+    ],
+  },
 ];
 
 export default function EnterpriseDataCaseStudy() {
@@ -68,7 +81,7 @@ export default function EnterpriseDataCaseStudy() {
       <a className="skip-link" href="#case-study-content">Skip to case study</a>
       <CaseStudyNavigation
         project="Enterprise data architecture"
-        sections={["Context", "Approach", "Operations", "Tradeoffs"]}
+        sections={["Context", "Approach", "Operations", "Tradeoffs", "Capabilities"]}
       />
       <main className="case-study-main" id="case-study-content">
         <article>
@@ -76,8 +89,9 @@ export default function EnterpriseDataCaseStudy() {
             <p className="role">Architecture approach</p>
             <h1 id="case-study-title">A shared foundation for enterprise data</h1>
             <p className="case-study-deck">
-              Connecting enterprise ingestion, layered transformation, and
-              operational visibility through clear responsibilities in Microsoft Fabric.
+              Establishing a new organizational capability for integrating,
+              transforming, and organizing business data into reusable datasets
+              in Microsoft Fabric.
             </p>
             <dl className="case-study-facts" aria-label="Case study scope">
               <div><dt>Role</dt><dd>Senior Software Engineer within an engineering team</dd></div>
